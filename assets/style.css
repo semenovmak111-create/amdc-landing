@@ -1,434 +1,1048 @@
 @import url('fonts.css');
 
 /* ============================================================
-   Лендинг «Сайт для АМДЦ» — дизайн-система
-   Палитра унаследована от презентации-амдц: чернильный синий +
-   ванильный светлый. Акцент CTA — коралл, не больше 10% экрана.
+   «Сайт для АМДЦ» — предложение одному человеку.
+   Отсюда весь визуальный язык: не корпоративный лендинг,
+   а рабочее досье, которое положили на стол главврачу.
+   Бумага, разлиновка, штампы, пометки на полях, ярлыки.
+   Цвет — аптечная хвоя и янтарь.
+
+   Цвет правим ТОЛЬКО здесь, в :root. Ниже переменные, не хексы.
    ============================================================ */
 
 :root{
-  --ink:#06121F; --navy:#0A2038; --navy-2:#0E2E50; --navy-3:#123A63;
-  --blue:#0B6FBF; --blue-lit:#4FAEFF; --ice:#CFE8FF; --ice-dim:#9FC6E8;
-  --cta:#FF6A3D; --cta-dk:#D8481D; --cta-hi:#FF8055;
-  --green:#2FE0A0; --green-dk:#0F8E69; --green-pale:#DCF3E8;
-  --red:#E2452A; --red-dk:#B8331C; --red-pale:#FFE4DE;
-  --cream:#F2EDE1; --cream-2:#FAF6EC; --card:#FFFDF6;
-  --line:#E0D8C4; --line-2:#D2C8B0; --strip:#E8E0CC;
-  --text:#0C1526; --soft:#44536B; --dim:#7B889E;
-  --wrap:1180px;
+  /* --- чернила по бумаге --- */
+  --ink:#111A15;
+  --soft:#46564C;
+  --dim:#6B7A71;
+
+  /* --- хвоя: тёмные полосы --- */
+  --pine:#0E3B2C;
+  --pine-deep:#06221A;
+  --pine-card:#14503C;
+  --pine-line:#1D6349;
+  --mint:#5FD3A3;
+  --mint-pale:#C6E8D8;
+  --sage:#8FAFA0;
+
+  /* --- бумага: светлые полосы --- */
+  --paper:#F1E9DA;
+  --paper-2:#F9F4EA;
+  --card:#FFFCF4;
+  --line:#E2D7C2;
+  --line-2:#CDBFA4;
+
+  /* --- янтарь: единственный зовущий цвет --- */
+  --amber:#E8912C;
+  --amber-hi:#F6A63E;
+  --amber-dk:#A85F0E;
+  --amber-ink:#1B1206;
+  --amber-wash:#FBEBCF;
+
+  /* --- оценки --- */
+  --grass:#1F7D53;
+  --grass-wash:#E0EFE4;
+  --rust:#C1452A;
+  --rust-dk:#8F2F1B;
+  --rust-wash:#FAE2DB;
+  --peach:#FFB59B;
+  --gold:#F2C56B;
+
+  --wrap:1160px;
+  --r:3px;           /* радиус почти прямой: бумага, а не пузырь */
 }
 
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
+
 body{
-  margin:0; background:var(--cream-2); color:var(--text);
-  font-family:'Manrope', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  font-size:17px; line-height:1.55; -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
+  margin:0; color:var(--ink); background:var(--paper-2);
+  font-family:"Golos Text", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size:17px; line-height:1.6; font-weight:400;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  font-variant-numeric:tabular-nums lining-nums;
 }
+
 img{ max-width:100%; display:block; }
 a{ color:inherit; text-decoration:none; }
-p{ margin:0 0 1rem; } p:last-child{ margin-bottom:0; }
-.mono{ font-family:'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace; }
-svg.i{ width:1em; height:1em; fill:none; stroke:currentColor; stroke-width:2.4;
-       stroke-linecap:round; stroke-linejoin:round; flex:none; }
-.vh{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+p{ margin:0 0 1rem; }
+p:last-child{ margin-bottom:0; }
 
-/* ---------------- секции ---------------- */
-section{ padding:5.6rem 0; }
-.wrap{ width:100%; max-width:var(--wrap); margin:0 auto; padding:0 2rem; }
-.dark{ background:var(--navy); color:#fff; }
-.darker{ background:var(--ink); color:#fff; }
-.light{ background:var(--cream); }
-.light2{ background:var(--cream-2); }
-
-/* ---------------- типографика ---------------- */
-h1,h2,h3,h4{ margin:0; letter-spacing:-.022em; font-weight:800; line-height:1.13; }
-h1{ font-size:clamp(2rem, 4.4vw, 2.95rem); line-height:1.08; }
-h2{ font-size:clamp(1.6rem, 3.2vw, 2.35rem); max-width:22ch; }
-h2.wide{ max-width:32ch; }
-h3{ font-size:1.06rem; letter-spacing:-.012em; }
-.eyebrow{
-  font-family:'IBM Plex Mono', monospace; font-weight:600; font-size:.76rem;
-  letter-spacing:.15em; text-transform:uppercase; color:var(--blue);
-  display:flex; align-items:center; gap:.7rem; margin-bottom:1.1rem;
+svg.i{
+  width:1em; height:1em; fill:none; stroke:currentColor; stroke-width:2.3;
+  stroke-linecap:round; stroke-linejoin:round; flex:none;
 }
-.eyebrow::before{ content:""; width:1.9rem; height:2px; background:currentColor; flex:none; }
-.dark .eyebrow, .darker .eyebrow{ color:var(--blue-lit); }
-.lede{ font-size:1.13rem; line-height:1.55; color:var(--soft); max-width:46rem; margin-top:1.1rem; }
-.dark .lede, .darker .lede{ color:var(--ice); }
-.lede b{ font-weight:800; color:var(--text); }
-.dark .lede b, .darker .lede b{ color:#fff; }
-.note{ font-size:.88rem; line-height:1.55; color:var(--dim); margin-top:1.4rem; max-width:58rem; }
-.dark .note, .darker .note{ color:var(--ice-dim); }
-.hl{ color:var(--blue); font-weight:800; }
-.dark .hl, .darker .hl{ color:var(--blue-lit); }
-.num{ font-family:'IBM Plex Mono', monospace; font-weight:600; letter-spacing:-.01em; }
+.vh{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
 
-/* ---------------- кнопки ---------------- */
-.btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
-  background:var(--cta); color:#fff; font-weight:800; font-size:1.04rem;
-  padding:1.05rem 2rem; border-radius:10px; border:0; cursor:pointer;
-  box-shadow:0 5px 0 var(--cta-dk); letter-spacing:-.008em;
-  font-family:inherit; transition:background .15s, transform .08s, box-shadow .08s;
+/* Полоска прочитанного. Где animation-timeline не поддержан — её просто нет. */
+.progress{ display:none; }
+@supports (animation-timeline: scroll()){
+  .progress{
+    display:block; position:fixed; top:0; left:0; height:3px; width:100%; z-index:60;
+    background:var(--amber); transform-origin:0 50%; transform:scaleX(0);
+    animation:grow linear both; animation-timeline:scroll(root block);
+  }
+  @keyframes grow{ to{ transform:scaleX(1); } }
 }
-.btn:hover{ background:var(--cta-hi); }
-.btn:active{ transform:translateY(3px); box-shadow:0 2px 0 var(--cta-dk); }
-.btn.sm{ font-size:.82rem; padding:.6rem 1.15rem; border-radius:8px; box-shadow:0 3px 0 var(--cta-dk); }
-.btn.wide{ width:100%; }
-.btn.ghost{ background:#fff; color:var(--navy); box-shadow:0 5px 0 #C6D3E1; }
-.btn.ghost:hover{ background:#F2F7FC; }
-.btn svg.i{ width:.95em; height:.95em; stroke-width:3; }
-.undercta{ font-size:.87rem; color:var(--dim); margin-top:.9rem; max-width:32rem; line-height:1.5; }
-.dark .undercta, .darker .undercta{ color:var(--ice-dim); }
-
-/* ---------------- шапка ---------------- */
-.top{
-  position:sticky; top:0; z-index:50; background:var(--ink); color:#fff;
-  border-bottom:1px solid #16385C;
-}
-.top .wrap{ display:flex; align-items:center; justify-content:space-between; height:64px; gap:1.5rem; }
-.brand{ display:flex; align-items:center; gap:.65rem; }
-.mark{ width:32px; height:32px; border-radius:8px; background:var(--blue); color:#fff;
-       display:flex; align-items:center; justify-content:center; flex:none; }
-.mark svg.i{ width:17px; height:17px; stroke-width:3; }
-.bname{ font-weight:800; font-size:.86rem; letter-spacing:.05em; text-transform:uppercase; line-height:1.15; }
-.bsub{ font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ice-dim); margin-top:2px; }
-.menu{ display:flex; gap:1.6rem; font-size:.85rem; font-weight:600; color:var(--ice-dim); }
-.menu a:hover{ color:#fff; }
-.topr{ display:flex; align-items:center; gap:1.1rem; }
-.toptel{ font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:.92rem; white-space:nowrap; }
-
-/* ---------------- первый экран ---------------- */
-.hero{ background:var(--navy); color:#fff; padding:4.2rem 0 4.6rem; overflow:hidden; }
-.hero .wrap{ display:flex; gap:2.9rem; align-items:center; }
-.hero .left{ flex:1 1 0; min-width:0; }
-.hero .right{ flex:0 0 400px; min-width:0; }
-.hero h1 b{ color:var(--blue-lit); }
-.bul{ list-style:none; margin:1.6rem 0 0; padding:0; display:flex; flex-direction:column; gap:.7rem; max-width:37rem; }
-.bul li{ display:flex; gap:.72rem; align-items:flex-start; font-size:1rem; line-height:1.45; }
-.bul li .ck{ flex:none; width:19px; height:19px; border-radius:50%; background:var(--green-dk); color:#fff;
-             display:flex; align-items:center; justify-content:center; margin-top:2px; }
-.bul li .ck svg.i{ width:11px; height:11px; stroke-width:3.4; }
-.bul li b{ font-weight:800; }
-.ctarow{ display:flex; align-items:center; gap:1.5rem; margin-top:1.9rem; flex-wrap:wrap; }
-.trust{ display:flex; gap:1.7rem; margin-top:1.8rem; padding-top:1.3rem; border-top:1px solid #16385C; flex-wrap:wrap; }
-.trust .t{ font-size:.81rem; color:var(--ice-dim); line-height:1.4; max-width:11.4rem; }
-.trust .t b{ display:block; font-family:'IBM Plex Mono',monospace; font-weight:600;
-             font-size:1.12rem; color:var(--ice); margin-bottom:.15rem; }
-
-/* ---------------- макет окна браузера ---------------- */
-.win{ background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 18px 0 #04101D; }
-.win .bar{ background:#E9EDF2; height:30px; display:flex; align-items:center; gap:6px; padding:0 11px; }
-.win .bar i{ width:9px; height:9px; border-radius:50%; background:#C3CBD6; flex:none; }
-.win .url{ flex:1; margin-left:9px; background:#fff; border-radius:5px; height:17px; font-size:10px;
-           color:#7B889E; display:flex; align-items:center; padding:0 8px;
-           font-family:'IBM Plex Mono',monospace; overflow:hidden; white-space:nowrap; }
-.mk-nav{ display:flex; align-items:center; justify-content:space-between; padding:10px 14px; border-bottom:1px solid #E7EBF0; }
-.mk-logo{ display:flex; align-items:center; gap:6px; }
-.mk-logo i{ width:16px; height:16px; border-radius:5px; background:var(--blue); flex:none; }
-.mk-logo span{ font-size:10px; font-weight:800; letter-spacing:.05em; color:var(--navy); }
-.mk-menu{ display:flex; gap:9px; align-items:center; }
-.mk-menu i{ height:5px; border-radius:3px; background:#D5DCE5; }
-.mk-btn{ font-size:8.5px; font-weight:800; color:#fff; background:var(--cta); padding:5px 9px; border-radius:5px; }
-.mk-hero{ background:var(--navy-2); color:#fff; padding:17px 14px 15px; }
-.mk-eye{ font-size:8px; letter-spacing:.14em; text-transform:uppercase; color:var(--blue-lit); font-weight:700; margin-bottom:7px; }
-.mk-h{ font-size:16px; font-weight:800; line-height:1.13; letter-spacing:-.02em; margin-bottom:8px; }
-.mk-sub{ font-size:9px; color:var(--ice); line-height:1.4; margin-bottom:11px; }
-.mk-cta{ display:flex; align-items:center; gap:9px; }
-.mk-cta .b{ font-size:9px; font-weight:800; color:#fff; background:var(--cta); padding:7px 12px; border-radius:6px; }
-.mk-cta .t{ font-size:9px; color:var(--ice); font-family:'IBM Plex Mono',monospace; }
-.mk-cards{ display:flex; gap:8px; padding:12px 14px 14px; background:var(--cream-2); }
-.mk-card{ flex:1 1 0; background:#fff; border:1px solid var(--line); border-top:2px solid var(--blue);
-          border-radius:6px; padding:8px 9px; min-width:0; }
-.mk-card .n{ font-size:7.5px; font-weight:800; color:var(--navy); margin-bottom:5px; line-height:1.2; }
-.mk-card .p{ font-size:9px; font-weight:700; color:var(--blue); font-family:'IBM Plex Mono',monospace; }
-.mk-card .l{ display:block; height:3px; border-radius:2px; background:#E7E1D2; margin-top:5px; }
-.capt{ text-align:center; font-size:.8rem; color:var(--ice-dim); margin-top:1.1rem; }
-
-/* ---------------- сетки карточек ---------------- */
-.grid{ display:grid; gap:1.4rem; margin-top:2.4rem; }
-.g2{ grid-template-columns:repeat(2,1fr); }
-.g3{ grid-template-columns:repeat(3,1fr); }
-.g4{ grid-template-columns:repeat(4,1fr); }
-.card{ background:var(--card); border:1px solid var(--line); border-top:3px solid var(--blue);
-       border-radius:10px; padding:1.5rem 1.5rem 1.6rem; }
-.dark .card, .darker .card{ background:var(--navy-2); border-color:var(--navy-3); color:#fff; }
-.card .cnum{ font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:1.9rem;
-             color:var(--blue); line-height:1; margin-bottom:.7rem; }
-.dark .card .cnum, .darker .card .cnum{ color:var(--blue-lit); }
-.card h3{ margin-bottom:.5rem; }
-.card p{ font-size:.93rem; line-height:1.5; color:var(--soft); margin:0; }
-.dark .card p, .darker .card p{ color:var(--ice); }
-.card .ic{ width:38px; height:38px; border-radius:9px; background:var(--strip); color:var(--blue);
-           display:flex; align-items:center; justify-content:center; margin-bottom:.9rem; }
-.dark .card .ic, .darker .card .ic{ background:var(--navy-3); color:var(--blue-lit); }
-.card .ic svg.i{ width:19px; height:19px; }
-
-/* ---------------- полоса-вывод ---------------- */
-.strip{
-  margin-top:2.2rem; background:var(--strip); border-left:4px solid var(--blue);
-  padding:1.25rem 1.7rem; font-size:1.02rem; font-weight:700; line-height:1.5; border-radius:0 8px 8px 0;
-}
-.dark .strip, .darker .strip{ background:var(--navy-2); border-left-color:var(--blue-lit); color:#fff; }
-.strip.warn{ background:var(--red-pale); border-left-color:var(--red); }
-.strip.good{ background:var(--green-pale); border-left-color:var(--green-dk); }
-
-/* ---------------- два исхода ---------------- */
-.boxes{ display:grid; grid-template-columns:1fr 1fr; gap:1.8rem; margin-top:2.4rem; }
-.box{ border-radius:11px; padding:1.6rem 1.7rem 1.8rem; }
-.box.bad{ background:var(--red-pale); border-top:4px solid var(--red); }
-.box.good{ background:var(--green-pale); border-top:4px solid var(--green-dk); }
-.box .lab{ font-size:.79rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; margin-bottom:1.1rem; }
-.box.bad .lab{ color:var(--red-dk); }
-.box.good .lab{ color:var(--green-dk); }
-.box ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.85rem; }
-.box li{ font-size:.97rem; line-height:1.45; display:flex; gap:.8rem; color:var(--text); }
-.box li .tm{ font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:.85rem;
-             color:var(--soft); flex:none; width:3.6rem; padding-top:1px; }
-
-/* ---------------- таблица расчёта ---------------- */
-.calc{ width:100%; border-collapse:collapse; margin-top:2.2rem; }
-.calc th{ text-align:left; font-size:.74rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase;
-          color:var(--dim); padding:.6rem 0; border-bottom:1px solid var(--line-2); }
-.calc th.r,.calc td.r{ text-align:right; }
-.calc td{ padding:1rem .6rem 1rem 0; border-bottom:1px solid var(--line); vertical-align:middle; font-size:1rem; }
-.calc td small{ display:block; font-size:.83rem; color:var(--dim); margin-top:.2rem; line-height:1.4; }
-.calc td.v{ font-family:'IBM Plex Mono',monospace; font-weight:600; white-space:nowrap; }
-.calc tr:last-child td{ border-bottom:0; }
-.calc .res{ color:var(--blue); font-weight:700; }
-.total{
-  margin-top:1.8rem; background:var(--navy); color:#fff; border-radius:12px;
-  padding:1.7rem 2rem; display:flex; align-items:center; gap:2rem; flex-wrap:wrap;
-}
-.total .big{ font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:2.8rem; line-height:1; color:var(--blue-lit); }
-.total .txt{ font-size:1.02rem; line-height:1.5; color:var(--ice); flex:1 1 20rem; }
-.total .txt b{ color:#fff; }
-
-/* ---------------- аудит: окно с кодом ---------------- */
-.audit{ display:flex; gap:2.4rem; align-items:flex-start; margin-top:2.4rem; }
-.audit .w{ flex:1 1 0; min-width:0; }
-.code{ background:#04101D; border:1px solid var(--navy-3); border-radius:11px; overflow:hidden; }
-.code .bar{ background:var(--navy-2); height:32px; display:flex; align-items:center; gap:6px; padding:0 12px;
-            font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--ice-dim); }
-.code .bar i{ width:9px; height:9px; border-radius:50%; background:var(--navy-3); flex:none; }
-.code pre{ margin:0; padding:1.2rem 1.3rem; font-family:'IBM Plex Mono',monospace; font-size:.82rem;
-           line-height:1.75; color:var(--ice); overflow-x:auto; white-space:pre-wrap; word-break:break-word; }
-.code .tag{ color:#6F9ECF; }
-.code .bad{ color:#FF8E72; font-weight:600; }
-.code .cm{ color:#5E7593; }
-.findings{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:1rem; }
-.findings li{ display:flex; gap:.85rem; align-items:flex-start; font-size:.96rem; line-height:1.45; }
-.findings li .x{ flex:none; width:21px; height:21px; border-radius:50%; background:var(--red-dk); color:#fff;
-                 display:flex; align-items:center; justify-content:center; margin-top:1px; }
-.findings li .x svg.i{ width:11px; height:11px; stroke-width:3.4; }
-.findings li b{ font-weight:800; }
-
-/* ---------------- 14 направлений ---------------- */
-.dirs{ display:flex; flex-wrap:wrap; gap:.7rem; margin-top:2.2rem; }
-.dir{ display:flex; align-items:center; gap:.5rem; border-radius:8px; padding:.62rem 1rem;
-      font-size:.93rem; font-weight:700; border:1px solid var(--navy-3); background:var(--navy-2); }
-.dir svg.i{ width:14px; height:14px; stroke-width:3.2; }
-.dir.yes{ border-color:var(--green-dk); color:var(--green); }
-.dir.part{ border-color:#4E3D18; color:#FFC46B; }
-.dir.no{ border-color:#4A2318; color:#FFB09A; }
-.dirlegend{ display:flex; gap:1.6rem; margin-top:1.3rem; font-size:.85rem; color:var(--ice-dim); flex-wrap:wrap; }
-.dirlegend span{ display:flex; align-items:center; gap:.45rem; }
-.dirlegend i{ width:10px; height:10px; border-radius:3px; flex:none; }
-
-/* ---------------- этапы ---------------- */
-.steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.3rem; margin-top:2.4rem; }
-.step{ background:var(--card); border:1px solid var(--line); border-radius:10px; padding:1.4rem 1.4rem 1.5rem; position:relative; }
-.step .badge{ width:34px; height:34px; border-radius:50%; background:var(--blue); color:#fff;
-              font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:.88rem;
-              display:flex; align-items:center; justify-content:center; margin-bottom:.9rem; }
-.step .when{ font-family:'IBM Plex Mono',monospace; font-size:.78rem; font-weight:600;
-             color:var(--blue); margin-bottom:.4rem; }
-.step h3{ margin-bottom:.45rem; }
-.step p{ font-size:.91rem; line-height:1.48; color:var(--soft); margin:0; }
-.step .got{ margin-top:.8rem; padding-top:.8rem; border-top:1px solid var(--line);
-            font-size:.85rem; color:var(--green-dk); font-weight:700; line-height:1.4; }
-
-/* ---------------- конкуренты ---------------- */
-.vs{ display:flex; flex-direction:column; gap:1px; margin-top:2.2rem; background:var(--line); border-radius:10px; overflow:hidden; }
-.vs .row{ display:flex; gap:1.8rem; padding:1.35rem 1.6rem; background:var(--card); align-items:flex-start; }
-.vs .row.me{ background:#FFF3F0; }
-.vs .who{ flex:0 0 15rem; font-weight:800; font-size:1rem; line-height:1.3; }
-.vs .who small{ display:block; font-weight:500; font-size:.8rem; color:var(--dim); margin-top:.3rem; line-height:1.4; }
-.vs .what{ flex:1 1 0; font-size:.95rem; line-height:1.5; color:var(--soft); }
-.vs .what b{ color:var(--text); font-weight:800; }
-.vs .row.me .what b{ color:var(--red-dk); }
-.vs .rate{ flex:0 0 5.4rem; text-align:right; font-family:'IBM Plex Mono',monospace; font-weight:600; }
-.vs .rate .n{ font-size:1.35rem; line-height:1; }
-.vs .rate .o{ font-size:.74rem; color:var(--dim); margin-top:.25rem; }
-.vs .row.ok .rate .n{ color:var(--green-dk); }
-.vs .row.me .rate .n{ color:var(--red-dk); }
-
-/* ---------------- бары опроса ---------------- */
-.bars{ display:flex; flex-direction:column; gap:1.5rem; margin-top:2.4rem; }
-.brow{ display:flex; align-items:center; gap:1.2rem; flex-wrap:wrap; }
-.brow .blab{ flex:0 0 15rem; font-weight:700; font-size:1rem; }
-.brow .track{ flex:1 1 14rem; height:32px; background:var(--navy-2); border-radius:6px; overflow:hidden; }
-.brow .fill{ display:block; height:100%; border-radius:6px; }
-.brow .val{ flex:0 0 4.2rem; font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:1.15rem; }
-.brow .cap{ flex:1 1 100%; font-size:.88rem; padding-left:16.2rem; margin-top:-.4rem; }
-.brow .cap.no{ color:#FFB09A; } .brow .cap.yes{ color:var(--green); }
-
-/* ---------------- форма ---------------- */
-.form{ background:var(--navy-2); border:1px solid var(--navy-3); border-radius:14px; padding:1.9rem 1.9rem 2rem; }
-.light .form, .light2 .form{ background:var(--card); border-color:var(--line); }
-.form h3{ font-size:1.28rem; line-height:1.25; margin-bottom:.5rem; }
-.form .sub{ font-size:.92rem; color:var(--ice-dim); margin-bottom:1.3rem; line-height:1.5; }
-.light .form .sub, .light2 .form .sub{ color:var(--soft); }
-.field{ margin-bottom:.9rem; }
-.field label{ display:block; font-size:.82rem; font-weight:700; margin-bottom:.35rem; color:var(--ice); }
-.light .field label, .light2 .field label{ color:var(--soft); }
-.field input{
-  width:100%; background:#fff; border:1px solid var(--line-2); border-radius:8px;
-  padding:.85rem 1rem; font-size:1rem; font-family:inherit; color:var(--text);
-}
-.field input:focus{ outline:2px solid var(--blue-lit); outline-offset:1px; }
-.agree{ display:flex; gap:.6rem; align-items:flex-start; font-size:.78rem; line-height:1.45;
-        color:var(--ice-dim); margin-top:.9rem; }
-.light .agree, .light2 .agree{ color:var(--dim); }
-.agree input{ margin-top:3px; flex:none; }
-.agree a{ text-decoration:underline; }
-.formgrid{ display:flex; gap:3rem; align-items:center; }
-.formgrid .l{ flex:1 1 0; min-width:0; }
-.formgrid .r{ flex:0 0 25rem; }
-
-/* ---------------- лид-магнит ---------------- */
-.lm{ display:flex; gap:2.6rem; align-items:flex-start; }
-.lm .doc{ flex:0 0 16rem; margin-top:3.4rem; background:var(--card); border:1px solid var(--line); border-radius:10px;
-          padding:1.5rem 1.4rem 1.6rem; box-shadow:0 14px 0 #04101D; }
-.lm .doc .t{ font-family:'IBM Plex Mono',monospace; font-size:.68rem; letter-spacing:.12em;
-             text-transform:uppercase; color:var(--blue); margin-bottom:.6rem; }
-.lm .doc h4{ font-size:1.02rem; line-height:1.25; margin-bottom:.9rem; color:var(--text); }
-.lm .doc .ln{ display:flex; flex-direction:column; gap:.42rem; }
-.lm .doc .ln i{ height:6px; border-radius:3px; background:#E7E1D2; display:block; }
-.lm .doc .ln i.s{ width:62%; } .lm .doc .ln i.m{ width:84%; }
-
-/* ---------------- спойлеры страхов ---------------- */
-.faq{ margin-top:2.4rem; border-top:1px solid var(--line); }
-.faq details{ border-bottom:1px solid var(--line); }
-.faq summary{ list-style:none; cursor:pointer; padding:1.15rem 2.5rem 1.15rem 0; position:relative;
-              font-weight:800; font-size:1.04rem; line-height:1.4; }
-.faq summary::-webkit-details-marker{ display:none; }
-.faq summary::after{ content:""; position:absolute; right:.4rem; top:1.55rem; width:11px; height:11px;
-                     border-right:2.5px solid var(--blue); border-bottom:2.5px solid var(--blue);
-                     transform:rotate(45deg); transition:transform .18s; }
-.faq details[open] summary::after{ transform:rotate(-135deg); top:1.75rem; }
-.faq .ans{ padding:0 3rem 1.4rem 0; font-size:.98rem; line-height:1.6; color:var(--soft); }
-.faq .ans b{ color:var(--text); font-weight:800; }
-
-/* ---------------- состав работ ---------------- */
-.incl{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; margin-top:2.4rem; }
-.incl .col{ background:var(--navy-2); border:1px solid var(--navy-3); border-top:3px solid var(--blue-lit);
-            border-radius:10px; padding:1.4rem 1.4rem 1.5rem; }
-.incl .col h3{ margin-bottom:.9rem; }
-.incl ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.55rem; }
-.incl li{ display:flex; gap:.6rem; font-size:.9rem; line-height:1.45; color:var(--ice); }
-.incl li svg.i{ width:13px; height:13px; stroke-width:3.2; color:var(--green); margin-top:5px; }
-
-/* ---------------- кейс ---------------- */
-.case{ display:flex; gap:2.8rem; align-items:center; }
-.case .l{ flex:1 1 0; min-width:0; }
-.case .r{ flex:0 0 25rem; }
-.biglink{ display:inline-flex; align-items:center; gap:.7rem; font-family:'IBM Plex Mono',monospace;
-          font-weight:600; font-size:1.5rem; color:var(--blue); border-bottom:3px solid var(--blue);
-          padding-bottom:.25rem; margin-top:1.4rem; }
-.kpi{ display:flex; gap:2.4rem; margin-top:1.8rem; flex-wrap:wrap; }
-.kpi .k b{ display:block; font-family:'IBM Plex Mono',monospace; font-weight:600;
-           font-size:1.7rem; color:var(--blue); line-height:1; margin-bottom:.3rem; }
-.kpi .k span{ font-size:.85rem; color:var(--soft); }
-
-/* ---------------- подвал ---------------- */
-footer{ background:var(--ink); color:var(--ice-dim); padding:3.4rem 0 2.6rem; font-size:.88rem; }
-footer .cols{ display:flex; gap:3rem; flex-wrap:wrap; justify-content:space-between; }
-footer h4{ color:#fff; font-size:.95rem; margin-bottom:.8rem; }
-footer a:hover{ color:#fff; }
-footer .fbot{ margin-top:2.4rem; padding-top:1.4rem; border-top:1px solid #16385C;
-              display:flex; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; font-size:.8rem; }
-.contacts{ display:flex; flex-direction:column; gap:.6rem; }
-.contacts a{ display:flex; align-items:center; gap:.6rem; font-weight:700; color:#fff; font-size:1rem; }
-.contacts a svg.i{ width:16px; height:16px; color:var(--blue-lit); }
-
-/* ---------------- липкая кнопка на мобильных ---------------- */
-.sticky{ display:none; position:fixed; left:0; right:0; bottom:0; z-index:60; gap:.6rem;
-         padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom)); background:var(--ink);
-         border-top:1px solid #16385C; }
-.sticky .btn{ flex:1 1 0; font-size:.92rem; padding:.85rem 1rem; }
-.sticky .btn.ghost{ flex:0 0 auto; }
 
 /* ============================================================
-   Адаптив
+   ПОЛОСЫ
+   Светлые — бумага с еле различимой фактурой: две косые
+   штриховки на пределе видимости. Тёмные — миллиметровка,
+   по которой чертят макет.
    ============================================================ */
-@media (max-width:1080px){
-  .menu{ display:none; }
-  .hero .wrap{ flex-direction:column; align-items:stretch; gap:2.4rem; }
-  .hero .right{ flex:1 1 auto; max-width:30rem; margin:0 auto; width:100%; }
-  .g4{ grid-template-columns:repeat(2,1fr); }
-  .steps{ grid-template-columns:repeat(2,1fr); }
-  .formgrid{ flex-direction:column; gap:2rem; align-items:stretch; }
-  .formgrid .r{ flex:1 1 auto; }
-  .case{ flex-direction:column; align-items:stretch; gap:2rem; }
-  .case .r{ flex:1 1 auto; }
-  .audit{ flex-direction:column; gap:1.8rem; }
+
+section{ padding:5.4rem 0; position:relative; }
+.wrap{ width:100%; max-width:var(--wrap); margin:0 auto; padding:0 2rem; position:relative; }
+
+.light{ background:var(--paper); }
+.light2{ background:var(--paper-2); }
+.light, .light2{
+  background-image:
+    repeating-linear-gradient(115deg, rgba(140,120,80,.035) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(25deg, rgba(140,120,80,.028) 0 1px, transparent 1px 11px);
 }
-@media (max-width:820px){
+
+.dark{ background:var(--pine); color:#fff; }
+.darker{ background:var(--pine-deep); color:#fff; }
+.dark, .darker{
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size:34px 34px, 34px 34px;
+}
+
+/* Стык полос: линейка с янтарной засечкой слева, как на полях чертежа */
+.light + .dark::before, .light2 + .dark::before,
+.light + .darker::before, .light2 + .darker::before,
+.dark + .light::before, .dark + .light2::before,
+.darker + .light::before, .darker + .light2::before{
+  content:""; position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg, var(--amber) 0 92px, rgba(0,0,0,.07) 92px);
+}
+.light + .dark::before, .light2 + .dark::before,
+.light + .darker::before, .light2 + .darker::before{
+  background:linear-gradient(90deg, var(--amber) 0 92px, rgba(255,255,255,.12) 92px);
+}
+
+/* ============================================================
+   ТИПОГРАФИКА
+   Заголовки — слэб (Bitter), текст — гротеск (Golos Text).
+   Моноширинный работает только на числах, рубриках и коде.
+   ============================================================ */
+
+h1,h2,h3,h4{
+  margin:0; font-family:"Bitter", Georgia, serif;
+  font-weight:700; line-height:1.14; letter-spacing:-.012em;
+}
+h1{ font-size:clamp(2.05rem, 4.3vw, 3.05rem); line-height:1.08; letter-spacing:-.02em; }
+h2{ font-size:clamp(1.6rem, 3.1vw, 2.3rem); max-width:21ch; letter-spacing:-.016em; }
+h2.wide{ max-width:30ch; }
+h3{ font-size:1.08rem; font-weight:700; line-height:1.28; letter-spacing:-.005em; }
+h4{ font-size:.95rem; font-weight:700; }
+
+/* Рубрика с колонцифрой: «03 — Что я увидел на am-dc.ru» */
+.rub{
+  font-family:"IBM Plex Mono", ui-monospace, monospace;
+  font-weight:500; font-size:.73rem; letter-spacing:.17em; text-transform:uppercase;
+  color:var(--dim); display:flex; align-items:baseline; gap:.75rem;
+  margin-bottom:1.15rem; flex-wrap:wrap;
+}
+.rub .n{
+  font-weight:600; color:var(--amber-dk); letter-spacing:.06em;
+  border-bottom:2px solid var(--amber); padding-bottom:2px; flex:none;
+}
+.dark .rub, .darker .rub{ color:var(--sage); }
+.dark .rub .n, .darker .rub .n{ color:var(--gold); border-bottom-color:var(--gold); }
+
+.lede{
+  font-size:1.11rem; line-height:1.6; color:var(--soft);
+  max-width:44rem; margin-top:1.05rem;
+}
+.lede b{ font-weight:700; color:var(--ink); }
+.dark .lede, .darker .lede{ color:var(--mint-pale); }
+.dark .lede b, .darker .lede b{ color:#fff; }
+
+.note{
+  font-size:.87rem; line-height:1.6; color:var(--dim);
+  margin-top:1.5rem; max-width:56rem;
+}
+.dark .note, .darker .note{ color:var(--sage); }
+
+/* Маркер. Края намеренно размыты — так ведёт себя фломастер. */
+mark{
+  background:linear-gradient(100deg,
+    rgba(232,145,44,0) 0%, rgba(232,145,44,.42) 2.5%,
+    rgba(232,145,44,.42) 97%, rgba(232,145,44,0) 100%);
+  color:inherit; padding:0 .12em; border-radius:2px;
+}
+/* На хвойном фоне полупрозрачный янтарь выцветает в серый,
+   поэтому на тёмном маркер не прозрачный, а плотный жёлтый
+   с тёмными чернилами поверх — как настоящий текстовыделитель. */
+.dark mark, .darker mark{
+  background:var(--gold); color:var(--pine-deep); font-weight:600;
+  box-shadow:0 0 0 1px rgba(242,197,107,.4);
+}
+
+.mono{ font-family:"IBM Plex Mono", ui-monospace, monospace; font-weight:500; }
+
+/* Пометка на полях — то, что дописывают карандашом сбоку.
+   Уголок нарисован границами, а не стрелкой из шрифта:
+   в моноширинном «↳» попросту нет, и вместо него лезет квадрат. */
+.aside{
+  font-family:"IBM Plex Mono", ui-monospace, monospace;
+  font-size:.78rem; line-height:1.5; color:var(--dim);
+  display:flex; gap:.65rem; align-items:flex-start; margin-top:.85rem;
+}
+.aside::before{
+  content:""; flex:none; width:9px; height:9px; margin-top:3px;
+  border-left:1.5px solid var(--amber-dk); border-bottom:1.5px solid var(--amber-dk);
+}
+.dark .aside, .darker .aside{ color:var(--sage); }
+.dark .aside::before, .darker .aside::before{ border-color:var(--gold); }
+
+/* ============================================================
+   КНОПКИ
+   Янтарь и тёмные чернила поверх: белый текст на жёлтом
+   не читается, что бы ни говорили про «белое на кнопке».
+   Тень снизу плотная — кнопку хочется вдавить пальцем.
+   ============================================================ */
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.6rem;
+  font-family:"Golos Text", sans-serif; font-weight:700; font-size:1.02rem;
+  background:var(--amber); color:var(--amber-ink);
+  padding:1.05rem 1.9rem; border:0; border-radius:var(--r); cursor:pointer;
+  box-shadow:0 4px 0 var(--amber-dk); letter-spacing:-.005em; text-align:center;
+  transition:background .14s, transform .07s, box-shadow .07s;
+}
+.btn:hover{ background:var(--amber-hi); }
+.btn:active{ transform:translateY(3px); box-shadow:0 1px 0 var(--amber-dk); }
+.btn:focus-visible{ outline:3px solid var(--pine); outline-offset:3px; }
+.btn svg.i{ width:.92em; height:.92em; stroke-width:3; }
+.btn.sm{ font-size:.82rem; padding:.62rem 1.1rem; box-shadow:0 3px 0 var(--amber-dk); }
+.btn.wide{ width:100%; }
+.btn.ghost{
+  background:transparent; color:#fff; box-shadow:none;
+  border:2px solid var(--pine-line); padding:1rem 1.25rem;
+}
+.btn.ghost:hover{ background:var(--pine-card); }
+
+.undercta{ font-size:.86rem; line-height:1.55; color:var(--dim); margin-top:.85rem; max-width:30rem; }
+.dark .undercta, .darker .undercta{ color:var(--sage); }
+
+/* Штамп: ставится поверх макета и поверх сумм, слегка криво */
+.stamp{
+  display:inline-block; font-family:"IBM Plex Mono", monospace;
+  font-weight:600; font-size:.71rem; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--rust); border:2px solid var(--rust); border-radius:2px;
+  padding:.3rem .58rem; transform:rotate(-3.5deg); opacity:.94;
+  box-shadow:inset 0 0 0 1px rgba(193,69,42,.22);
+}
+.stamp.ok{ color:var(--grass); border-color:var(--grass); box-shadow:inset 0 0 0 1px rgba(31,125,83,.22); }
+.stamp.amber{ color:var(--amber-dk); border-color:var(--amber-dk); box-shadow:inset 0 0 0 1px rgba(168,95,14,.22); }
+
+/* ============================================================
+   ШАПКА
+   ============================================================ */
+
+.top{
+  position:sticky; top:0; z-index:50;
+  background:var(--pine-deep); color:#fff;
+  border-bottom:1px solid var(--pine-line);
+}
+.top .wrap{ display:flex; align-items:center; justify-content:space-between; height:62px; gap:1.4rem; }
+.brand{ display:flex; align-items:center; gap:.6rem; }
+.mark{
+  width:30px; height:30px; flex:none; border-radius:2px;
+  background:var(--amber); color:var(--amber-ink);
+  display:flex; align-items:center; justify-content:center;
+  font-family:"Bitter", serif; font-weight:800; font-size:.95rem; line-height:1;
+}
+.bname{ display:block; font-family:"Bitter", serif; font-weight:700; font-size:.86rem; line-height:1.2; }
+.bsub{
+  display:block; font-family:"IBM Plex Mono", monospace; font-size:.63rem;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--sage); margin-top:1px;
+}
+.menu{ display:flex; gap:1.5rem; font-size:.84rem; font-weight:500; color:var(--mint-pale); }
+.menu a{ padding-bottom:2px; border-bottom:1.5px solid transparent; }
+.menu a:hover{ color:#fff; border-bottom-color:var(--amber); }
+.topr{ display:flex; align-items:center; gap:1.1rem; }
+.toptel{
+  font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:.89rem;
+  white-space:nowrap; color:var(--mint-pale);
+}
+.toptel:hover{ color:var(--gold); }
+
+/* ============================================================
+   ПЕРВЫЙ ЭКРАН
+   ============================================================ */
+
+.hero{ padding:3.6rem 0 4.4rem; overflow:hidden; }
+.hero .wrap{ display:flex; gap:3rem; align-items:flex-start; }
+.hero .left{ flex:1 1 0; min-width:0; }
+.hero .right{ flex:0 0 386px; min-width:0; padding-top:.6rem; }
+
+/* Ярлык «кому»: приколотая к досье карточка.
+   Класс именно .addressee, а не .tag — .tag занят подсветкой
+   html-тегов в блоке кода ниже, и общее имя их сталкивает. */
+.addressee{
+  display:inline-flex; align-items:center; gap:.6rem;
+  font-family:"IBM Plex Mono", monospace; font-size:.73rem; font-weight:500;
+  letter-spacing:.11em; text-transform:uppercase; color:var(--gold);
+  border:1px dashed var(--pine-line); border-left:3px solid var(--amber);
+  padding:.45rem .85rem .45rem .7rem; margin-bottom:1.5rem;
+}
+.addressee i{ width:5px; height:5px; border-radius:50%; background:var(--mint); flex:none; }
+
+.hero h1{ max-width:19ch; font-size:clamp(1.95rem, 3.7vw, 2.72rem); }
+.hero h1 .big{
+  display:block; color:var(--gold); font-size:1.05em; letter-spacing:-.028em;
+  white-space:nowrap;
+}
+.hero .lede{ margin-top:1.25rem; max-width:36rem; }
+
+.bul{ list-style:none; margin:1.7rem 0 0; padding:0; display:flex; flex-direction:column; gap:.75rem; max-width:37rem; }
+.bul li{ display:flex; gap:.75rem; align-items:flex-start; font-size:.99rem; line-height:1.5; }
+.bul li .ck{
+  flex:none; width:20px; height:20px; border-radius:2px;
+  background:var(--mint); color:var(--pine-deep);
+  display:flex; align-items:center; justify-content:center; margin-top:3px;
+}
+.light .bul li .ck, .light2 .bul li .ck{ background:var(--grass); color:#fff; }
+.bul li .ck svg.i{ width:11px; height:11px; stroke-width:3.6; }
+.bul li b{ font-weight:700; }
+
+.ctarow{ display:flex; align-items:center; gap:1.6rem; margin-top:2rem; flex-wrap:wrap; }
+
+/* Три цифры доверия: набраны как колонки таблицы, с разделителями */
+.trust{
+  display:flex; margin-top:2rem; border-top:1px solid var(--pine-line);
+  padding-top:1.4rem; flex-wrap:wrap; gap:0;
+}
+.trust .t{
+  font-size:.8rem; line-height:1.45; color:var(--sage);
+  padding:0 1.5rem; border-left:1px solid var(--pine-line); max-width:12.5rem;
+}
+.trust .t:first-child{ padding-left:0; border-left:0; }
+.trust .t b{
+  display:block; font-family:"IBM Plex Mono", monospace; font-weight:600;
+  font-size:1.24rem; color:var(--gold); margin-bottom:.25rem; letter-spacing:-.01em;
+}
+
+/* ============================================================
+   МАКЕТ БРАУЗЕРА
+   ============================================================ */
+
+.shot{ position:relative; }
+.win{
+  background:#fff; border-radius:4px; overflow:hidden;
+  box-shadow:0 16px 0 rgba(0,0,0,.22), 0 30px 60px -30px rgba(0,0,0,.5);
+}
+.light .win, .light2 .win{ box-shadow:0 14px 0 var(--line-2), 0 26px 50px -28px rgba(0,0,0,.35); }
+.win .bar{
+  background:#E8E4DA; height:29px; display:flex; align-items:center; gap:6px; padding:0 11px;
+  border-bottom:1px solid #D8D2C4;
+}
+.win .bar i{ width:9px; height:9px; border-radius:50%; background:#C2BCAE; flex:none; }
+.win .url{
+  flex:1; margin-left:9px; background:#fff; border-radius:2px; height:17px; font-size:10px;
+  color:#8A8375; display:flex; align-items:center; padding:0 8px;
+  font-family:"IBM Plex Mono", monospace; overflow:hidden; white-space:nowrap;
+}
+.mk-nav{ display:flex; align-items:center; justify-content:space-between; padding:10px 14px; border-bottom:1px solid #EDE7DA; }
+.mk-logo{ display:flex; align-items:center; gap:6px; }
+.mk-logo i{ width:16px; height:16px; border-radius:2px; background:var(--pine); flex:none; }
+.mk-logo span{ font-family:"Bitter", serif; font-size:10px; font-weight:700; letter-spacing:.04em; color:var(--pine); }
+.mk-menu{ display:flex; gap:9px; align-items:center; }
+.mk-menu i{ height:5px; border-radius:2px; background:#DCD5C6; }
+.mk-btn{ font-size:8.5px; font-weight:700; color:var(--amber-ink); background:var(--amber); padding:5px 9px; border-radius:2px; }
+.mk-hero{ background:var(--pine); color:#fff; padding:17px 14px 15px; }
+.mk-eye{ font-family:"IBM Plex Mono", monospace; font-size:8px; letter-spacing:.13em; text-transform:uppercase; color:var(--gold); font-weight:500; margin-bottom:7px; }
+.mk-h{ font-family:"Bitter", serif; font-size:16px; font-weight:700; line-height:1.16; letter-spacing:-.015em; margin-bottom:8px; }
+.mk-sub{ font-size:9px; color:var(--mint-pale); line-height:1.45; margin-bottom:11px; }
+.mk-cta{ display:flex; align-items:center; gap:9px; }
+.mk-cta .b{ font-size:9px; font-weight:700; color:var(--amber-ink); background:var(--amber); padding:7px 12px; border-radius:2px; }
+.mk-cta .t{ font-size:9px; color:var(--mint-pale); font-family:"IBM Plex Mono", monospace; }
+.mk-cards{ display:flex; gap:8px; padding:12px 14px 14px; background:var(--paper-2); }
+.mk-card{
+  flex:1 1 0; background:#fff; border:1px solid var(--line);
+  border-top:2px solid var(--grass); border-radius:2px; padding:8px 9px; min-width:0;
+}
+.mk-card .n{ font-size:7.5px; font-weight:700; color:var(--pine); margin-bottom:5px; line-height:1.25; }
+.mk-card .p{ font-size:9px; font-weight:600; color:var(--amber-dk); font-family:"IBM Plex Mono", monospace; }
+.mk-card .l{ display:block; height:3px; border-radius:2px; background:#EBE4D3; margin-top:5px; }
+
+/* Подпись под макетом + штамп, наклеенный на угол */
+.capt{
+  display:flex; align-items:center; gap:.7rem; margin-top:1.1rem;
+  font-family:"IBM Plex Mono", monospace; font-size:.75rem; line-height:1.45; color:var(--sage);
+}
+.light .capt, .light2 .capt{ color:var(--dim); }
+.shot .onstamp{ position:absolute; right:-14px; top:-13px; z-index:2; background:var(--paper-2); }
+
+/* Опись под макетом: правая колонка иначе заканчивается пустотой,
+   а человеку в этом месте как раз интересно, что он получит */
+.inside{ margin-top:1.5rem; border-top:1px solid var(--pine-line); padding-top:1.1rem; }
+.inside .t{
+  font-family:"IBM Plex Mono", monospace; font-size:.68rem; font-weight:600;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:.8rem;
+}
+.inside ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.6rem; }
+.inside li{
+  display:flex; gap:.75rem; align-items:baseline;
+  font-size:.86rem; line-height:1.4; color:var(--mint-pale);
+}
+.inside .k{
+  font-family:"Bitter", serif; font-weight:800; font-size:1.05rem; color:var(--mint);
+  flex:none; width:1.4rem; text-align:right;
+}
+
+/* ============================================================
+   ТАЛОНЫ «ДВА ИСХОДА»
+   Перфорация по краю сделана радиальными градиентами — это
+   тот же приём, что у настоящих отрывных квитанций.
+   ============================================================ */
+
+.tickets{ display:grid; grid-template-columns:1fr 1fr; gap:1.7rem; margin-top:2.4rem; }
+.ticket{
+  position:relative; padding:1.55rem 1.7rem 1.7rem; border-radius:var(--r);
+  background:var(--card);
+  border:1px solid var(--line);
+  box-shadow:0 2px 0 var(--line);
+}
+.ticket.good{ border-top:4px solid var(--grass); }
+.ticket.bad{ border-top:4px solid var(--rust); }
+.ticket .lab{
+  font-family:"IBM Plex Mono", monospace; font-size:.72rem; font-weight:600;
+  letter-spacing:.13em; text-transform:uppercase; margin-bottom:1.15rem;
+  display:flex; align-items:center; gap:.55rem;
+}
+.ticket.good .lab{ color:var(--grass); }
+.ticket.bad .lab{ color:var(--rust); }
+.ticket .lab::after{ content:""; flex:1; height:1px; background:currentColor; opacity:.3; }
+.ticket ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.05rem; }
+.ticket li{
+  font-size:.96rem; line-height:1.5; display:flex; gap:.9rem;
+  padding:.55rem 0; border-bottom:1px dotted var(--line-2);
+}
+/* Последняя строка — корешок талона: линия отрыва и чуть больше веса */
+.ticket li:last-child{
+  border-bottom:0; margin-top:.45rem; padding-top:.9rem; padding-bottom:0;
+  border-top:2px dashed var(--line-2);
+}
+.ticket li .tm{
+  font-family:"IBM Plex Mono", monospace; font-weight:600; font-size:.8rem;
+  color:var(--dim); flex:none; width:4.4rem; padding-top:2px; letter-spacing:-.02em;
+}
+.ticket.good li:last-child .tm{ color:var(--grass); }
+.ticket.bad li:last-child .tm{ color:var(--rust); }
+.ticket li b{ font-weight:700; }
+
+/* ============================================================
+   ПОЛОСА-ВЫВОД
+   ============================================================ */
+
+.strip{
+  margin-top:2.3rem; padding:1.3rem 1.6rem 1.35rem;
+  background:var(--amber-wash); border-left:4px solid var(--amber);
+  font-family:"Bitter", serif; font-size:1.04rem; font-weight:600; line-height:1.5;
+  border-radius:0 var(--r) var(--r) 0; color:var(--ink);
+}
+.dark .strip, .darker .strip{
+  background:rgba(255,255,255,.05); border-left-color:var(--gold); color:#fff;
+}
+.strip.warn{ background:var(--rust-wash); border-left-color:var(--rust); }
+.strip.good{ background:var(--grass-wash); border-left-color:var(--grass); }
+.dark .strip.warn, .darker .strip.warn{ background:rgba(193,69,42,.16); border-left-color:var(--peach); }
+.dark .strip.good, .darker .strip.good{ background:rgba(95,211,163,.12); border-left-color:var(--mint); }
+
+/* ============================================================
+   АУДИТ: КОД И НАХОДКИ
+   ============================================================ */
+
+.audit{ display:grid; grid-template-columns:1.05fr 1fr; gap:2.6rem; align-items:start; margin-top:2.4rem; }
+.code{
+  background:#04160F; border:1px solid var(--pine-line); border-radius:var(--r); overflow:hidden;
+  box-shadow:0 14px 40px -22px rgba(0,0,0,.8);
+}
+.code .bar{
+  background:var(--pine-card); height:31px; display:flex; align-items:center; gap:6px; padding:0 12px;
+  font-family:"IBM Plex Mono", monospace; font-size:.71rem; color:var(--sage);
+}
+.code .bar i{ width:8px; height:8px; border-radius:50%; background:var(--pine-line); flex:none; }
+.code pre{
+  margin:0; padding:1.15rem 1.25rem; font-family:"IBM Plex Mono", monospace;
+  font-size:.8rem; line-height:1.8; color:var(--mint-pale);
+  overflow-x:auto; white-space:pre-wrap; word-break:break-word;
+}
+.code .tag{ color:#6FA88C; }
+.code .cm{ color:#54705F; }
+/* Ошибки подчёркнуты волной — ровно как их показывает редактор кода */
+.code .bad{
+  color:var(--peach); font-weight:500;
+  text-decoration:underline wavy var(--rust); text-underline-offset:3px;
+}
+
+.findings{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; }
+.findings li{
+  display:flex; gap:.85rem; align-items:flex-start; font-size:.95rem; line-height:1.5;
+  padding:.85rem 0; border-bottom:1px solid rgba(255,255,255,.08);
+}
+.findings li:first-child{ padding-top:0; }
+.findings li:last-child{ border-bottom:0; }
+.findings li .x{
+  flex:none; width:20px; height:20px; border-radius:2px;
+  background:rgba(193,69,42,.22); color:var(--peach);
+  display:flex; align-items:center; justify-content:center; margin-top:2px;
+}
+.findings li .x svg.i{ width:11px; height:11px; stroke-width:3.4; }
+.findings li b{ font-weight:700; color:#fff; }
+
+/* ============================================================
+   ВЕДОМОСТЬ (арифметика)
+   Считаем как в бухгалтерской книге: разлиновка, цифры
+   моноширинным, итог отбит двойной чертой.
+   ============================================================ */
+
+.ledger{
+  width:100%; border-collapse:collapse; margin-top:2.3rem;
+  background:var(--card); border:1px solid var(--line);
+}
+.ledger th{
+  text-align:left; font-family:"IBM Plex Mono", monospace;
+  font-size:.68rem; font-weight:600; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--dim); padding:.8rem 1rem; border-bottom:2px solid var(--line-2);
+  background:var(--paper-2);
+}
+.ledger th.r, .ledger td.r{ text-align:right; }
+.ledger td{
+  padding:1rem; border-bottom:1px solid var(--line); vertical-align:top; font-size:.99rem;
+}
+.ledger td:first-child{ border-right:1px solid var(--line); }
+.ledger td small{ display:block; font-size:.82rem; color:var(--dim); margin-top:.25rem; line-height:1.45; }
+.ledger td.v{ font-family:"IBM Plex Mono", monospace; font-weight:600; white-space:nowrap; }
+.ledger tr:last-child td{ border-bottom:0; }
+.ledger tr:last-child{ background:var(--paper-2); }
+.ledger .mx{ color:var(--dim); font-weight:400; }
+.ledger .res{ color:var(--amber-dk); font-weight:600; }
+.ledger .cut{ color:var(--rust); }
+
+/* Итог года — плашка-штамп на весь разворот */
+.total{
+  margin-top:1.7rem; background:var(--pine); color:#fff;
+  border-radius:var(--r); padding:1.8rem 2rem;
+  display:flex; align-items:center; gap:2.2rem; flex-wrap:wrap;
+  position:relative; overflow:hidden;
+}
+.total::before{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+             linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size:26px 26px, 26px 26px; pointer-events:none;
+}
+.total .big{
+  font-family:"Bitter", serif; font-weight:800; font-size:3rem; line-height:.95;
+  color:var(--gold); letter-spacing:-.03em; position:relative;
+}
+.total .big small{ display:block; font-family:"IBM Plex Mono", monospace; font-size:.72rem;
+  font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--sage); margin-top:.5rem; }
+.total .txt{ font-size:1.02rem; line-height:1.55; color:var(--mint-pale); flex:1 1 20rem; position:relative; }
+.total .txt b{ color:#fff; font-weight:700; }
+
+/* ============================================================
+   ЛИД-МАГНИТ И ФОРМЫ
+   ============================================================ */
+
+.lm{ display:flex; gap:3rem; align-items:flex-start; }
+.lm .doc{ flex:0 0 232px; }
+.lm .body{ flex:1 1 0; min-width:0; }
+
+/* Визуализированный прототип: стопка листов с загнутым уголком */
+.doc{ position:relative; }
+.doc .sheet{
+  background:var(--card); color:var(--ink); border:1px solid var(--line-2);
+  border-radius:2px; padding:1.15rem 1.2rem 1.3rem; position:relative;
+  box-shadow:6px 6px 0 rgba(0,0,0,.18);
+}
+.doc .sheet::before{
+  content:""; position:absolute; top:-7px; left:7px; right:7px; height:7px;
+  background:var(--paper); border:1px solid var(--line-2); border-bottom:0; border-radius:2px 2px 0 0;
+}
+.doc .t{
+  font-family:"IBM Plex Mono", monospace; font-size:.66rem; font-weight:600;
+  letter-spacing:.13em; text-transform:uppercase; color:var(--amber-dk); margin-bottom:.5rem;
+}
+.doc h4{ font-family:"Bitter", serif; font-size:1rem; line-height:1.25; margin-bottom:.9rem; }
+.doc .ln{ display:flex; flex-direction:column; gap:6px; }
+.doc .ln i{ display:block; height:6px; border-radius:2px; background:var(--line); }
+.doc .ln i.m{ width:78%; } .doc .ln i.s{ width:52%; }
+.doc .ln i.acc{ background:var(--amber); width:38%; height:8px; }
+.doc .pin{ position:absolute; right:-10px; top:-16px; z-index:2; }
+
+.form{
+  background:var(--card); border:1px solid var(--line-2); border-radius:var(--r);
+  padding:1.7rem 1.7rem 1.8rem; color:var(--ink);
+  box-shadow:0 3px 0 rgba(0,0,0,.14);
+}
+.dark .form, .darker .form{ box-shadow:0 4px 0 rgba(0,0,0,.3); }
+.form h3{ font-size:1.26rem; line-height:1.25; margin-bottom:.5rem; }
+.form .sub{ font-size:.9rem; color:var(--soft); margin-bottom:1.3rem; line-height:1.5; }
+.field{ margin-bottom:.85rem; }
+.field label{
+  display:block; font-family:"IBM Plex Mono", monospace; font-size:.7rem; font-weight:500;
+  letter-spacing:.09em; text-transform:uppercase; color:var(--dim); margin-bottom:.35rem;
+}
+.field input{
+  width:100%; background:#fff; border:1px solid var(--line-2); border-radius:2px;
+  padding:.85rem .95rem; font-size:1rem; font-family:inherit; color:var(--ink);
+  transition:border-color .12s, box-shadow .12s;
+}
+.field input::placeholder{ color:#B5AC9A; }
+.field input:focus{
+  outline:0; border-color:var(--amber); box-shadow:0 0 0 3px rgba(232,145,44,.22);
+}
+/* Сетка, а не flex: во flex ссылка «политикой конфиденциальности»
+   становится отдельной колонкой и уезжает от своего предложения */
+.agree{
+  display:grid; grid-template-columns:auto 1fr; gap:.55rem;
+  font-size:.77rem; line-height:1.5; color:var(--dim); margin-top:.95rem;
+}
+.agree input{ margin-top:3px; accent-color:var(--grass); }
+.agree a{ text-decoration:underline; }
+
+.formgrid{ display:flex; gap:3rem; align-items:flex-start; }
+.formgrid .l{ flex:1 1 0; min-width:0; }
+.formgrid .r{ flex:0 0 24.5rem; }
+
+/* ============================================================
+   ВЫГОДЫ
+   Сетка намеренно неровная: первая карточка на две колонки,
+   остальные обычные. Шесть одинаковых плиток — это не вёрстка,
+   это обои.
+   ============================================================ */
+
+.gains{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.3rem; margin-top:2.4rem; }
+.gain{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--r);
+  padding:1.45rem 1.5rem 1.55rem; position:relative;
+  box-shadow:0 2px 0 var(--line);
+}
+.gain .ic{
+  width:36px; height:36px; border-radius:2px; background:var(--pine); color:var(--gold);
+  display:flex; align-items:center; justify-content:center; margin-bottom:.95rem;
+}
+.gain .ic svg.i{ width:18px; height:18px; }
+.gain h3{ margin-bottom:.45rem; }
+.gain p{ font-size:.92rem; line-height:1.55; color:var(--soft); margin:0; }
+.gain .no{
+  display:block; margin-top:.8rem; padding-top:.75rem; border-top:1px dotted var(--line-2);
+  font-family:"IBM Plex Mono", monospace; font-size:.74rem; color:var(--rust); line-height:1.45;
+}
+.gain.lead{ grid-column:span 2; background:var(--pine); border-color:var(--pine-line); color:#fff; }
+.gain.lead .ic{ background:var(--amber); color:var(--amber-ink); }
+.gain.lead h3{ font-size:1.42rem; }
+.gain.lead p{ color:var(--mint-pale); font-size:.99rem; max-width:38rem; }
+.gain.lead .no{ border-top-color:var(--pine-line); color:var(--peach); }
+
+/* Шестая карточка ложится поперёк всего ряда: 1 крупная + 4 обычные
+   оставляют в сетке пустую клетку, а так ряд закрывается выводом */
+.gain.full{
+  grid-column:span 3; display:flex; align-items:flex-start; gap:1.4rem;
+  background:var(--paper); border-left:3px solid var(--amber);
+}
+.gain.full .ic{ margin-bottom:0; }
+.gain.full .txt{ flex:1 1 0; min-width:0; }
+.gain.full p{ max-width:52rem; }
+
+/* ============================================================
+   14 НАПРАВЛЕНИЙ
+   ============================================================ */
+
+.score{
+  display:flex; align-items:baseline; gap:1.1rem; margin-top:2rem;
+  font-family:"Bitter", serif; font-weight:800;
+}
+.score .a{ font-size:3.3rem; line-height:1; color:var(--mint); letter-spacing:-.03em; }
+.score .b{ font-size:1.6rem; line-height:1; color:var(--sage); }
+.score .c{
+  font-family:"Golos Text", sans-serif; font-weight:400; font-size:.95rem;
+  color:var(--mint-pale); line-height:1.45; max-width:20rem;
+}
+
+.dirs{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.8rem; }
+.dir{
+  display:flex; align-items:center; gap:.5rem; border-radius:2px;
+  padding:.6rem .95rem; font-size:.92rem; font-weight:600;
+  border:1px solid var(--pine-line); background:rgba(255,255,255,.04);
+}
+.dir svg.i{ width:13px; height:13px; stroke-width:3.2; }
+.dir.yes{ border-color:var(--mint); color:var(--mint); background:rgba(95,211,163,.1); }
+.dir.part{ border-color:rgba(242,197,107,.55); color:var(--gold); }
+.dir.no{ border-color:rgba(255,181,155,.4); color:var(--peach); }
+.dir.no svg.i{ opacity:.7; }
+.dirlegend{
+  display:flex; gap:1.7rem; margin-top:1.2rem; flex-wrap:wrap;
+  font-family:"IBM Plex Mono", monospace; font-size:.75rem; color:var(--sage);
+}
+.dirlegend span{ display:flex; align-items:center; gap:.45rem; }
+.dirlegend i{ width:9px; height:9px; border-radius:2px; flex:none; }
+
+.facts{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.3rem; margin-top:2.6rem; }
+.fact{ border-top:2px solid var(--pine-line); padding-top:1.1rem; }
+.fact .n{
+  font-family:"Bitter", serif; font-weight:800; font-size:2.5rem; line-height:1;
+  letter-spacing:-.03em; margin-bottom:.55rem;
+}
+.fact.ok .n{ color:var(--mint); } .fact.ok{ border-top-color:var(--mint); }
+.fact.bad .n{ color:var(--peach); } .fact.bad{ border-top-color:var(--peach); }
+.fact.warn .n{ color:var(--gold); } .fact.warn{ border-top-color:var(--gold); }
+.fact h3{ margin-bottom:.4rem; }
+.fact p{ font-size:.91rem; line-height:1.55; color:var(--mint-pale); margin:0; }
+
+/* ============================================================
+   ЭТАПЫ
+   Не четыре одинаковые плитки, а лента с общей линией времени.
+   ============================================================ */
+
+.steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; margin-top:2.6rem; position:relative; }
+.steps::before{
+  content:""; position:absolute; left:0; right:0; top:17px; height:2px;
+  background:repeating-linear-gradient(90deg, var(--line-2) 0 8px, transparent 8px 14px);
+}
+.step{ position:relative; padding-top:2.9rem; display:flex; flex-direction:column; }
+.step .badge{
+  position:absolute; top:0; left:0; width:36px; height:36px; border-radius:50%;
+  background:var(--paper); border:2px solid var(--line-2); color:var(--dim);
+  font-family:"IBM Plex Mono", monospace; font-weight:600; font-size:.85rem;
+  display:flex; align-items:center; justify-content:center;
+}
+.step.now .badge{ background:var(--amber); border-color:var(--amber-dk); color:var(--amber-ink); }
+.step .when{
+  font-family:"IBM Plex Mono", monospace; font-size:.75rem; font-weight:600;
+  color:var(--dim); margin-bottom:.45rem; letter-spacing:.04em;
+}
+.step.now .when{ color:var(--amber-dk); }
+.step h3{ margin-bottom:.45rem; }
+.step p{ font-size:.9rem; line-height:1.55; color:var(--soft); margin:0; }
+/* «Вы получаете» у всех четырёх шагов стоит на одной линии,
+   хотя текст выше разной длины — иначе лента выглядит рваной */
+.step .got{
+  margin-top:auto; padding-top:.8rem; border-top:1px solid var(--line);
+  font-size:.84rem; color:var(--grass); font-weight:600; line-height:1.45;
+}
+.step p{ margin-bottom:.85rem; }
+
+/* ============================================================
+   СОСЕДИ ПО КВАРТАЛУ
+   ============================================================ */
+
+.vs{ margin-top:2.3rem; border:1px solid var(--line-2); border-radius:var(--r); overflow:hidden; }
+.vs .row{
+  display:flex; gap:1.7rem; padding:1.3rem 1.6rem; background:var(--card);
+  align-items:flex-start; border-bottom:1px solid var(--line);
+}
+.vs .row:last-child{ border-bottom:0; }
+.vs .row.me{ background:var(--rust-wash); border-top:2px solid var(--rust); }
+.vs .who{ flex:0 0 14.5rem; font-family:"Bitter", serif; font-weight:700; font-size:1.02rem; line-height:1.3; }
+.vs .who small{
+  display:block; font-family:"IBM Plex Mono", monospace; font-weight:400; font-size:.74rem;
+  color:var(--dim); margin-top:.35rem; line-height:1.5;
+}
+.vs .what{ flex:1 1 0; font-size:.94rem; line-height:1.55; color:var(--soft); }
+.vs .what b{ color:var(--ink); font-weight:700; }
+.vs .row.me .what b{ color:var(--rust-dk); }
+/* Рейтинги набраны слэбом: в моноширинном запятая стоит на полной
+   ширине знака и «4,9» разъезжается в «4 , 9» */
+.vs .rate{ flex:0 0 5.4rem; text-align:right; }
+.vs .rate .n{
+  font-family:"Bitter", serif; font-weight:800; font-size:1.5rem;
+  line-height:1; color:var(--grass); letter-spacing:-.02em;
+}
+.vs .rate .o{
+  font-family:"IBM Plex Mono", monospace; font-size:.71rem; color:var(--dim);
+  margin-top:.35rem; font-weight:400;
+}
+.vs .row.me .rate .n{ color:var(--rust); }
+
+/* ============================================================
+   ОПРОС: ШКАЛА С ЗАСЕЧКАМИ
+   ============================================================ */
+
+.bars{ margin-top:2.4rem; }
+.scale{
+  display:flex; justify-content:space-between; margin-left:15.5rem;
+  font-family:"IBM Plex Mono", monospace; font-size:.7rem; color:var(--sage);
+  border-bottom:1px solid var(--pine-line); padding-bottom:.4rem; margin-bottom:1.3rem;
+}
+.brow{ display:flex; align-items:center; gap:1.2rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+.brow .blab{ flex:0 0 14.3rem; font-weight:600; font-size:.99rem; line-height:1.35; }
+.brow .track{ flex:1 1 14rem; height:30px; background:rgba(255,255,255,.06); border-radius:2px; overflow:hidden; }
+.brow .fill{ display:block; height:100%; border-radius:0 2px 2px 0; }
+.brow .val{ flex:0 0 4rem; font-family:"IBM Plex Mono", monospace; font-weight:600; font-size:1.12rem; }
+.brow .cap{
+  flex:1 1 100%; font-size:.86rem; line-height:1.5; padding-left:15.5rem; margin-top:-.5rem;
+  display:flex; gap:.5rem;
+}
+.brow .cap::before{ content:"\21B3"; flex:none; }
+.brow .cap.no{ color:var(--peach); }
+.brow .cap.yes{ color:var(--mint); }
+
+/* ============================================================
+   КЕЙС
+   ============================================================ */
+
+.case{ display:flex; gap:3rem; align-items:center; }
+.case .l{ flex:1 1 0; min-width:0; }
+.case .r{ flex:0 0 372px; }
+.biglink{
+  display:inline-flex; align-items:center; gap:.6rem; margin-top:1.4rem;
+  font-family:"IBM Plex Mono", monospace; font-weight:600; font-size:1.06rem;
+  color:var(--amber-dk); border-bottom:2px solid var(--amber); padding-bottom:3px;
+}
+.biglink:hover{ color:var(--ink); }
+.kpi{ display:flex; gap:0; margin-top:1.8rem; border-top:1px solid var(--line-2); padding-top:1.3rem; }
+.kpi .k{ padding:0 1.5rem; border-left:1px solid var(--line-2); }
+.kpi .k:first-child{ padding-left:0; border-left:0; }
+.kpi .k b{
+  display:block; font-family:"Bitter", serif; font-weight:800; font-size:1.85rem;
+  line-height:1; color:var(--pine); letter-spacing:-.02em;
+}
+.kpi .k span{ display:block; font-size:.79rem; color:var(--dim); margin-top:.35rem; line-height:1.4; max-width:8.5rem; }
+
+/* ============================================================
+   ВОПРОСЫ
+   ============================================================ */
+
+.faq{ margin-top:2.3rem; border-top:1px solid var(--line-2); }
+.faq details{ border-bottom:1px solid var(--line-2); }
+.faq summary{
+  list-style:none; cursor:pointer; padding:1.25rem 3rem 1.25rem 0; position:relative;
+  font-family:"Bitter", serif; font-weight:700; font-size:1.08rem; line-height:1.35;
+}
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary::after{
+  content:""; position:absolute; right:.4rem; top:1.45rem;
+  width:15px; height:15px;
+  background:
+    linear-gradient(var(--amber-dk) 0 0) center/100% 2.5px no-repeat,
+    linear-gradient(var(--amber-dk) 0 0) center/2.5px 100% no-repeat;
+  transition:transform .18s;
+}
+/* Открытый вопрос помечен минусом, а не повёрнутым плюсом:
+   диагональная палка читается как «ошибка», а не как «свернуть» */
+.faq details[open] summary::after{ background-size:100% 2.5px, 0 0; }
+.faq details[open] summary{ color:var(--amber-dk); }
+.faq summary:hover{ color:var(--amber-dk); }
+.faq .ans{
+  padding:0 3.5rem 1.4rem 0; font-size:.98rem; line-height:1.65; color:var(--soft);
+  max-width:56rem;
+}
+.faq .ans b{ color:var(--ink); font-weight:700; }
+.faq .ans a{ color:var(--amber-dk); font-weight:600; border-bottom:1px solid var(--amber); }
+
+/* ============================================================
+   СОСТАВ РАБОТЫ
+   ============================================================ */
+
+.incl{ display:grid; grid-template-columns:repeat(3,1fr); gap:2.4rem; margin-top:2.4rem; }
+.incl .col h3{
+  font-family:"IBM Plex Mono", monospace; font-size:.76rem; font-weight:600;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--gold);
+  padding-bottom:.7rem; border-bottom:2px solid var(--pine-line); margin-bottom:1rem;
+}
+.incl ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.7rem; }
+.incl li{ display:flex; gap:.65rem; align-items:flex-start; font-size:.93rem; line-height:1.5; color:var(--mint-pale); }
+.incl li svg.i{ width:14px; height:14px; color:var(--mint); margin-top:4px; stroke-width:3.2; }
+
+.guards{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.3rem; margin-top:2.6rem; }
+.guard{
+  border:1px solid var(--pine-line); border-left:3px solid var(--mint);
+  border-radius:0 var(--r) var(--r) 0; padding:1.2rem 1.35rem 1.3rem;
+  background:rgba(255,255,255,.03);
+}
+.guard h3{ margin-bottom:.4rem; }
+.guard p{ font-size:.9rem; line-height:1.55; color:var(--mint-pale); margin:0; }
+
+/* ============================================================
+   ПОДВАЛ
+   ============================================================ */
+
+footer{ background:var(--pine-deep); color:#fff; padding:3.4rem 0 2rem; }
+footer .cols{ display:flex; gap:3rem; flex-wrap:wrap; }
+footer h4{
+  font-family:"IBM Plex Mono", monospace; font-size:.72rem; font-weight:600;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:.9rem;
+}
+footer p{ font-size:.88rem; color:var(--sage); line-height:1.6; }
+.contacts{ display:flex; flex-direction:column; gap:.65rem; }
+.contacts a{ display:flex; align-items:center; gap:.6rem; font-size:.92rem; color:var(--mint-pale); }
+.contacts a:hover{ color:var(--gold); }
+.contacts svg.i{ width:15px; height:15px; color:var(--mint); }
+.fbot{
+  display:flex; justify-content:space-between; gap:1.5rem; flex-wrap:wrap;
+  margin-top:2.6rem; padding-top:1.3rem; border-top:1px solid var(--pine-line);
+  font-family:"IBM Plex Mono", monospace; font-size:.73rem; color:var(--sage);
+}
+
+/* ============================================================
+   СТРАНИЦА-ДОКУМЕНТ (политика конфиденциальности)
+   Отдельная страница, но той же системы: бумага, разлиновка,
+   номера разделов моноширинным на поле слева.
+   ============================================================ */
+
+.docbar{ background:var(--pine-deep); color:#fff; padding:.9rem 0; }
+.docbar .wrap{ display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+.back{
+  display:inline-flex; align-items:center; gap:.5rem;
+  font-family:"IBM Plex Mono", monospace; font-size:.8rem; font-weight:500;
+  letter-spacing:.08em; text-transform:uppercase; color:var(--gold);
+}
+.back:hover{ color:#fff; }
+.docbar .who{ font-family:"IBM Plex Mono", monospace; font-size:.73rem; color:var(--sage); letter-spacing:.08em; }
+
+.docpage{ background:var(--paper-2); padding:3.2rem 0 4.5rem; }
+.docpage .wrap{ max-width:47rem; }
+.docpage h1{ font-size:clamp(1.7rem, 3.4vw, 2.15rem); max-width:24ch; }
+.docpage .date{
+  font-family:"IBM Plex Mono", monospace; font-size:.78rem; color:var(--dim);
+  margin-top:.8rem; padding-bottom:1.6rem; border-bottom:2px solid var(--line-2);
+}
+
+/* Раздел с номером на поле слева — как в договоре.
+   padding сбрасываем: это <section>, а им выше роздано 5.4rem полей. */
+.legal{
+  margin-top:2.2rem; padding:0;
+  display:grid; grid-template-columns:2.6rem 1fr; gap:0 1.2rem;
+}
+.legal .n{
+  font-family:"IBM Plex Mono", monospace; font-weight:600; font-size:.85rem;
+  color:var(--amber-dk); padding-top:.28rem;
+}
+.legal h2{ font-size:1.14rem; max-width:100%; margin-bottom:.6rem; }
+.legal .body{ grid-column:2; }
+.legal p, .legal li{ font-size:.97rem; line-height:1.7; color:var(--soft); }
+.legal ul{ margin:.6rem 0 0; padding-left:1.1rem; }
+.legal li{ margin-bottom:.45rem; }
+.legal li::marker{ color:var(--amber); }
+
+/* Напоминание самому себе: на боевом домене его быть не должно */
+.todo{
+  background:var(--amber-wash); border-left:4px solid var(--amber);
+  padding:1.1rem 1.35rem; border-radius:0 var(--r) var(--r) 0;
+  font-size:.92rem; line-height:1.6; color:var(--ink); margin:1.8rem 0 0;
+}
+
+@media (max-width:600px){
+  .legal{ grid-template-columns:1fr; gap:0; }
+  .legal .n{ padding-top:0; margin-bottom:.25rem; }
+  .legal .body{ grid-column:1; }
+}
+
+/* ============================================================
+   ЛИПКАЯ КНОПКА НА ТЕЛЕФОНЕ
+   ============================================================ */
+
+.sticky{ display:none; }
+
+/* ============================================================
+   АДАПТИВ
+   Ломается не «под 768», а там, где реально ломается макет.
+   ============================================================ */
+
+@media (max-width:1080px){
+  .hero .wrap{ flex-direction:column; gap:2.6rem; }
+  .hero .right{ flex:1 1 auto; width:100%; max-width:460px; }
+  .hero h1{ max-width:20ch; }
+  .audit{ grid-template-columns:1fr; gap:1.9rem; }
+  .case{ flex-direction:column; align-items:flex-start; gap:2.4rem; }
+  .case .r{ flex:1 1 auto; width:100%; max-width:440px; }
+  .lm{ flex-direction:column; gap:2rem; }
+  .lm .doc{ flex:1 1 auto; width:240px; }
+  .formgrid{ flex-direction:column; gap:2.2rem; }
+  .formgrid .r{ flex:1 1 auto; width:100%; }
+  .steps{ grid-template-columns:1fr 1fr; gap:1.8rem 1.4rem; }
+  .steps::before{ display:none; }
+  .step{ padding-top:0; padding-left:3.2rem; }
+  .step .badge{ top:-2px; }
+  .menu{ display:none; }
+}
+
+@media (max-width:760px){
   body{ font-size:16px; }
   section{ padding:3.6rem 0; }
   .wrap{ padding:0 1.15rem; }
-  .top .wrap{ height:58px; }
+  .top .wrap{ height:56px; }
   .bsub{ display:none; }
   .toptel{ display:none; }
-  .g2,.g3,.g4{ grid-template-columns:1fr; }
-  .boxes{ grid-template-columns:1fr; gap:1.2rem; }
-  .incl{ grid-template-columns:1fr; }
-  .steps{ grid-template-columns:1fr; }
-  .grid{ gap:1rem; margin-top:1.8rem; }
-  h2{ max-width:100%; }
-  .lm{ flex-direction:column; align-items:stretch; gap:1.6rem; }
-  .lm .doc{ flex:1 1 auto; margin-top:0; box-shadow:0 10px 0 #04101D; }
-  .vs .row{ flex-direction:column; gap:.7rem; padding:1.15rem 1.2rem; }
+  .tickets{ grid-template-columns:1fr; gap:1.2rem; }
+  .gains{ grid-template-columns:1fr; }
+  .gain.lead{ grid-column:auto; }
+  .facts, .incl, .guards{ grid-template-columns:1fr; gap:1.6rem; }
+  .steps{ grid-template-columns:1fr; gap:1.5rem; }
+  .vs .row{ flex-direction:column; gap:.6rem; padding:1.15rem 1.15rem 1.25rem; }
   .vs .who{ flex:1 1 auto; }
-  .vs .rate{ flex:1 1 auto; text-align:left; display:flex; align-items:baseline; gap:.6rem; }
+  .vs .rate{ flex:1 1 auto; text-align:left; display:flex; align-items:baseline; gap:.5rem; }
   .vs .rate .o{ margin-top:0; }
+  .scale{ display:none; }
+  .brow{ gap:.6rem 1rem; }
   .brow .blab{ flex:1 1 100%; }
-  .brow .cap{ padding-left:0; }
-  .brow .val{ flex:0 0 3.6rem; }
-  .total{ padding:1.4rem 1.3rem; gap:1.1rem; }
-  .total .big{ font-size:2.2rem; }
-  /* таблица расчёта не сжимается в три колонки — разворачиваем в стопку */
-  .calc thead{ display:none; }
-  .calc, .calc tbody, .calc tr, .calc td{ display:block; width:100%; }
-  .calc tr{ border-bottom:1px solid var(--line); padding:1.05rem 0; }
-  .calc tr:last-child{ border-bottom:0; }
-  .calc td{ border:0; padding:0; text-align:left; font-size:.95rem; }
-  .calc td:first-child{ font-weight:800; margin-bottom:.5rem; }
-  .calc td:first-child small{ font-weight:500; font-size:.82rem; margin-top:.25rem; }
-  .calc td.v{ display:inline; white-space:normal; }
-  .calc td.v + td.v::before{ content:" → "; color:var(--dim); font-weight:400; }
-  .calc td.v:last-child{ font-weight:700; }
-  .kpi{ gap:1.4rem; }
-  .sticky{ display:flex; }
-  body{ padding-bottom:4.6rem; }
-  .btn{ font-size:1rem; padding:1rem 1.5rem; }
-  .biglink{ font-size:1.15rem; }
-  footer .cols{ gap:2rem; }
-}
-@media (max-width:520px){
-  .hero{ padding:2.6rem 0 3rem; }
-  h1{ font-size:1.92rem; }
-  .trust{ gap:1.2rem; }
-  .trust .t{ max-width:100%; flex:1 1 100%; }
-  .ctarow{ gap:.9rem; }
-  .ctarow .btn{ width:100%; }
-  .box{ padding:1.2rem 1.2rem 1.4rem; }
-  .box li{ flex-direction:column; gap:.15rem; }
-  .box li .tm{ width:auto; }
-  .faq summary{ font-size:.98rem; }
+  .brow .cap{ padding-left:0; margin-top:0; }
+  .kpi{ flex-wrap:wrap; gap:1.2rem 0; }
+  .kpi .k{ flex:0 0 50%; }
+  .kpi .k:nth-child(odd){ padding-left:0; border-left:0; }
+  .total{ padding:1.5rem 1.3rem; gap:1.2rem; }
+  .total .big{ font-size:2.4rem; }
+  .ledger td, .ledger th{ padding:.75rem .6rem; font-size:.9rem; }
+  .ledger td small{ font-size:.78rem; }
+  .faq summary{ font-size:1rem; padding-right:2.4rem; }
+  .faq .ans{ padding-right:0; }
+  .trust{ gap:1.2rem 0; }
+  .trust .t{ flex:0 0 50%; max-width:none; padding:0 1rem; }
+  .trust .t:nth-child(odd){ padding-left:0; border-left:0; }
+  .shot .onstamp{ right:-4px; top:-10px; }
+  .hero{ padding-bottom:3rem; }
+
+  /* На телефоне кнопка обязана быть всегда под большим пальцем */
+  .sticky{
+    display:flex; position:fixed; left:0; right:0; bottom:0; z-index:55; gap:.6rem;
+    padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom));
+    background:rgba(6,34,26,.95); border-top:1px solid var(--pine-line);
+    backdrop-filter:blur(6px);
+  }
+  .sticky .btn{ flex:1 1 auto; padding:.95rem 1rem; font-size:.97rem; }
+  .sticky .btn.ghost{ flex:0 0 auto; padding:.95rem 1.05rem; }
+  footer{ padding-bottom:5.5rem; }
+  .fbot{ font-size:.7rem; }
 }
 
-@media (max-width:820px){ .calc .mx{ display:none; } }
+@media (max-width:520px){
+  /* На узком экране запрет переноса в «+22 пациента и 191 000 ₽»
+     выталкивал строку за край — здесь она переносится как обычно */
+  .hero h1 .big{ white-space:normal; }
+}
+
+@media (max-width:420px){
+  .hero h1{ font-size:1.92rem; }
+  .score .a{ font-size:2.7rem; }
+  .btn{ font-size:.97rem; padding:1rem 1.3rem; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
+  *{ animation-duration:.001ms !important; transition-duration:.001ms !important; }
+}
+
+/* ============================================================
+   ПЕЧАТЬ
+   Предложение вполне могут распечатать и положить на стол.
+   ============================================================ */
+
+@media print{
+  .top, .sticky, .progress{ display:none !important; }
+  body{ background:#fff; font-size:11pt; }
+  section{ padding:1.2rem 0; break-inside:avoid; }
+  .dark, .darker{ background:#fff !important; color:#000 !important; }
+  .dark .lede, .darker .lede, .dark .note, .darker .note{ color:#333 !important; }
+  .win, .code, .form{ box-shadow:none; }
+}
