@@ -1721,6 +1721,8 @@ html.js .hero.lit h1 .ln > i{
   content:'';position:absolute;left:12px;right:12px;top:19px;height:0;
   border-top:1px dashed rgba(200,164,95,.42);
 }
+.steps.three{grid-template-columns:repeat(3,1fr)}
+
 @media (max-width:940px){
   .steps{grid-template-columns:1fr 1fr}
   .steps::before{display:none}
@@ -1850,6 +1852,17 @@ html.js .hero.lit h1 .ln > i{
   letter-spacing:.06em;margin-top:.14rem;
 }
 .b-onyx .vs .rate .o,.b-indigo .vs .rate .o,.b-emerald .vs .rate .o{color:var(--t4)}
+/* строка-«сломано»: тот же приём, что и .me, но карнеолом —
+   так помечается направление, которое работает вживую и не
+   существует на сайте */
+.vs .row.warn{
+  background:linear-gradient(90deg,var(--carn-wash),transparent 75%);
+  box-shadow:inset 2px 0 0 var(--carn);
+  padding-left:1.1rem;
+}
+.vs .row.warn .rate .n{color:var(--carn-ink)}
+.b-onyx .vs .row.warn .rate .n,.b-indigo .vs .row.warn .rate .n{color:var(--carn-hi)}
+
 .vs .row.me{
   background:linear-gradient(90deg,var(--au-wash),transparent 75%);
   box-shadow:inset 2px 0 0 var(--au);
@@ -2014,6 +2027,15 @@ html.js .hero.lit h1 .ln > i{
   margin-top:clamp(1.6rem,2.6vw,2.2rem);
 }
 @media (max-width:860px){.guards{grid-template-columns:1fr}}
+/* те же карточки, но другим числом в ряд: четыре — под краткое
+   «что получаете / за какой срок / почему сейчас / чем рискуете»,
+   две — под развёрнутые доводы об окупаемости */
+.guards.four{grid-template-columns:repeat(4,1fr)}
+.guards.two{grid-template-columns:repeat(2,1fr)}
+@media (max-width:1100px){.guards.four{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:860px){
+  .guards.four,.guards.two{grid-template-columns:1fr}
+}
 .guard{
   padding:1.2rem 1.3rem;
   border:1px solid var(--au-faint);
