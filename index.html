@@ -18,6 +18,11 @@
 
 <div class="progress" aria-hidden="true"></div>
 
+<!-- Рельса разделов: шестнадцать засечек на левом поле.
+     Показывает, где человек находится в документе, и даёт
+     вернуться к любому развороту одним движением. -->
+<nav class="rail" aria-label="Разделы страницы"></nav>
+
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5l5.5 5.5L20 6.5"/></symbol>
@@ -60,11 +65,20 @@
 </header>
 
 <!-- ============ 1. ПЕРВЫЙ ЭКРАН ============ -->
-<section class="hero dark" id="top">
+<section class="hero dark" id="top" data-sec="s01" data-title="Предложение">
   <div class="wrap">
+    <div class="docline">
+      <span class="k">Предложение</span>
+      <span class="v">№ 001 / 2026</span>
+      <span class="sep" aria-hidden="true"></span>
+      <span class="v">Санкт-Петербург</span>
+      <span class="sep" aria-hidden="true"></span>
+      <span class="v">11.09.2026</span>
+      <span class="r">14 направлений · 1 сайт</span>
+    </div>
     <div class="head">
       <div class="addressee"><i></i>Кому: АМДЦ, ул. Орбели, 19</div>
-      <h1>Сайт для АМДЦ за 10 дней:<span class="big">+22 пациента и 191 000 ₽</span>в месяц без рекламного бюджета</h1>
+      <h1><span class="ln"><i>Сайт для АМДЦ за 10 дней:</i></span><span class="ln big"><i>+22 пациента и 191 000 ₽</i></span><span class="ln"><i>в месяц без рекламного бюджета</i></span></h1>
     </div>
     <div class="left">
       <p class="lede">За счёт того, что все <b>14 направлений</b> получат свои страницы с ценами, врачами и записью. Сегодня полноценно продают <mark>три</mark> — остальные одиннадцать либо без цен и без врача, либо не существуют на сайте вовсе.</p>
@@ -96,17 +110,22 @@
           <div class="mk-hero">
             <div class="mk-eye">Медцентр с 2002 года · Выборгский район</div>
             <div class="mk-h">Приём без очереди у метро Площадь Мужества</div>
-            <div class="mk-sub">Урология, гинекология, проктология, стоматология, косметология и лаборатория — 14 направлений в одном центре.</div>
-            <div class="mk-cta"><span class="b">Записаться на приём</span><span class="t">+7 812 943-84-86</span></div>
+            <div class="mk-sub">Урология, гинекология, проктология, стоматология, косметология и лаборатория — 14 направлений в одном центре.<em class="pin">3</em></div>
+            <div class="mk-cta"><span class="b">Записаться на приём<em class="pin">2</em></span><span class="t">+7 812 943-84-86</span></div>
           </div>
           <div class="mk-cards">
-            <div class="mk-card"><div class="n">Приём уролога</div><div class="p">от 300 ₽</div><i class="l" style="width:70%"></i></div>
+            <div class="mk-card"><em class="pin">1</em><div class="n">Приём уролога</div><div class="p">от 300 ₽</div><i class="l" style="width:70%"></i></div>
             <div class="mk-card"><div class="n">Лечение кариеса</div><div class="p">от 5 000 ₽</div><i class="l" style="width:55%"></i></div>
             <div class="mk-card"><div class="n">Анализы</div><div class="p">от 220 ₽</div><i class="l" style="width:80%"></i></div>
           </div>
         </div>
       </div>
-      <div class="capt">Так будет выглядеть первый экран.<br>Прототип — бесплатно, через 4–5 дней.</div>
+      <div class="pins">
+        <span><b>1</b>Цена видна до звонка</span>
+        <span><b>2</b>Запись в одно касание</span>
+        <span><b>3</b>Все 14 направлений</span>
+      </div>
+      <div class="capt">Так будет выглядеть первый экран. Прототип — бесплатно, через 4–5 дней.</div>
       <div class="inside">
         <div class="t">Что будет в прототипе</div>
         <ul>
@@ -125,7 +144,7 @@
 </section>
 
 <!-- ============ 2. БОЛЬ ============ -->
-<section class="light" id="problem">
+<section class="light" id="problem" data-sec="s02" data-title="Один вечер">
   <div class="wrap">
     <div class="rub"><span class="n">02</span>Один вечер, два исхода</div>
     <h2 class="wide">Два человека, один и тот же запрос. Разница только в том, что один <mark>нашёл страницу</mark>.</h2>
@@ -156,7 +175,7 @@
 </section>
 
 <!-- ============ 3. АУДИТ ============ -->
-<section class="darker">
+<section class="darker" data-sec="s03" data-title="Аудит сайта">
   <div class="wrap">
     <div class="rub"><span class="n">03</span>Что я увидел на am-dc.ru 11 сентября 2026</div>
     <h2 class="wide">Сайт у вас рабочий. Просто одиннадцати направлений из четырнадцати на нём <mark>не существует</mark>.</h2>
@@ -201,10 +220,53 @@ adipiscing elit, sed do eiusmod tempor…</span>
 </section>
 
 <!-- ============ 4. АРИФМЕТИКА ============ -->
-<section class="light" id="money">
+<section class="light" id="money" data-sec="s04" data-title="Арифметика">
   <div class="wrap">
     <div class="rub"><span class="n">04</span>Сколько это стоит вам</div>
     <h2 class="wide">22 пациента и 191 000 ₽ проходят мимо каждый месяц</h2>
+    <!-- Воронка потока: та же арифметика, что в ведомости, но
+         увиденная целиком. Высоты взяты по корню от значения —
+         иначе 13 рядом с 420 превращается в невидимую полоску. -->
+    <figure class="funnel" role="img"
+            aria-label="Из 420 просмотров карточек до приёма доходят 13 человек">
+      <svg viewBox="0 0 1100 300" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="fnl" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0"   stop-color="#0070B4"/>
+            <stop offset=".52" stop-color="#3E93C2"/>
+            <stop offset="1"   stop-color="#E03B22"/>
+          </linearGradient>
+          <linearGradient id="fnlv" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0"   stop-color="#fff" stop-opacity=".34"/>
+            <stop offset=".5"  stop-color="#fff" stop-opacity="0"/>
+            <stop offset="1"   stop-color="#000" stop-opacity=".14"/>
+          </linearGradient>
+        </defs>
+        <g class="fnl-grid">
+          <line x1="60" y1="18" x2="60" y2="282"/>
+          <line x1="400" y1="18" x2="400" y2="282"/>
+          <line x1="740" y1="18" x2="740" y2="282"/>
+          <line x1="1040" y1="18" x2="1040" y2="282"/>
+        </g>
+        <path class="fnl-body"
+              d="M60 32 L400 49 L740 126 L1040 129 L1040 171 L740 174 L400 251 L60 268 Z"
+              fill="url(#fnl)"/>
+        <path class="fnl-body"
+              d="M60 32 L400 49 L740 126 L1040 129 L1040 171 L740 174 L400 251 L60 268 Z"
+              fill="url(#fnlv)"/>
+      </svg>
+      <figcaption class="fnl-lab">
+        <span style="--x:5.4%">
+          <b>420</b><i>просмотров карточек<br>в месяц</i></span>
+        <span style="--x:36.4%">
+          <b>305</b><i>ушли, не позвонив<br>72,6%</i></span>
+        <span style="--x:67.3%">
+          <b>18</b><i>оставили бы заявку<br>на странице с кнопкой</i></span>
+        <span class="end" style="--x:94.5%">
+          <b>13</b><i>дошли бы до приёма<br>≈ 65 000 ₽</i></span>
+      </figcaption>
+    </figure>
+
     <table class="ledger">
       <thead>
         <tr><th>Показатель</th><th class="r">Сейчас</th><th class="r">Коэффициент</th><th class="r">Итог</th></tr>
@@ -237,7 +299,7 @@ adipiscing elit, sed do eiusmod tempor…</span>
 </section>
 
 <!-- ============ 5. ФОРМА ЗАХВАТА №1 ============ -->
-<section class="dark" id="start">
+<section class="dark" id="start" data-sec="s05" data-title="Прототип">
   <div class="wrap">
     <div class="rub"><span class="n">05</span>Бесплатный первый шаг</div>
     <h2 class="wide">Соберу прототип главной страницы АМДЦ и покажу через 4–5 дней</h2>
@@ -302,7 +364,7 @@ adipiscing elit, sed do eiusmod tempor…</span>
 </section>
 
 <!-- ============ 6. ВЫГОДЫ ============ -->
-<section class="light2">
+<section class="light2" data-sec="s06" data-title="Что изменится">
   <div class="wrap">
     <div class="rub"><span class="n">06</span>Что изменится</div>
     <h2 class="wide">Шесть вещей, которые начнут работать на вас каждый день</h2>
@@ -347,13 +409,41 @@ adipiscing elit, sed do eiusmod tempor…</span>
 </section>
 
 <!-- ============ 7. 14 НАПРАВЛЕНИЙ ============ -->
-<section class="dark">
+<section class="dark" data-sec="s07" data-title="Направления">
   <div class="wrap">
     <div class="rub"><span class="n">07</span>Ваши направления</div>
     <h2 class="wide">Четырнадцать направлений. Продаются — три.</h2>
     <div class="score">
-      <span class="a">3</span><span class="b">/ 14</span>
-      <span class="c">направлений имеют страницу, цену и описание. Остальные одиннадцать пациент на сайте не найдёт.</span>
+    <figure class="ring" role="img" aria-label="Три направления из четырнадцати имеют страницу с ценой">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <circle class="rg-bg" cx="60" cy="60" r="36.0"/>
+        <circle class="rg-fg" cx="60" cy="60" r="36.0"
+                stroke-dasharray="48.47 177.72" transform="rotate(-90 60 60)"/>
+        <line class="t-yes" x1="60.00" y1="17.00" x2="60.00" y2="6.00"/>
+        <line class="t-yes" x1="78.66" y1="21.26" x2="83.43" y2="11.35"/>
+        <line class="t-yes" x1="93.62" y1="33.19" x2="102.22" y2="26.33"/>
+        <line class="t-part" x1="101.92" y1="50.43" x2="112.65" y2="47.98"/>
+        <line class="t-part" x1="101.92" y1="69.57" x2="112.65" y2="72.02"/>
+        <line class="t-no" x1="93.62" y1="86.81" x2="102.22" y2="93.67"/>
+        <line class="t-no" x1="78.66" y1="98.74" x2="83.43" y2="108.65"/>
+        <line class="t-no" x1="60.00" y1="103.00" x2="60.00" y2="114.00"/>
+        <line class="t-no" x1="41.34" y1="98.74" x2="36.57" y2="108.65"/>
+        <line class="t-no" x1="26.38" y1="86.81" x2="17.78" y2="93.67"/>
+        <line class="t-no" x1="18.08" y1="69.57" x2="7.35" y2="72.02"/>
+        <line class="t-no" x1="18.08" y1="50.43" x2="7.35" y2="47.98"/>
+        <line class="t-no" x1="26.38" y1="33.19" x2="17.78" y2="26.33"/>
+        <line class="t-no" x1="41.34" y1="21.26" x2="36.57" y2="11.35"/>
+      </svg>
+      <figcaption><b>3</b><i>из 14</i></figcaption>
+    </figure>
+      <div class="c">
+        <p>Три направления из четырнадцати имеют собственную страницу, цену и описание. Остальные одиннадцать пациент на сайте не найдёт — по ним вас просто нет в поиске.</p>
+        <div class="ded">
+          <span><i class="t-yes"></i>3 продают</span>
+          <span><i class="t-part"></i>2 наполовину</span>
+          <span><i class="t-no"></i>9 не существует</span>
+        </div>
+      </div>
     </div>
     <div class="dirs">
       <span class="dir yes"><svg class="i"><use href="#i-check"/></svg>Урология</span>
@@ -370,11 +460,6 @@ adipiscing elit, sed do eiusmod tempor…</span>
       <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Детский невролог</span>
       <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Детский психолог</span>
       <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Репродуктология</span>
-    </div>
-    <div class="dirlegend">
-      <span><i style="background:#2FE0A0"></i> Страницы, цены и описание есть</span>
-      <span><i style="background:#F2C56B"></i> Страницы есть, цен и врача нет</span>
-      <span><i style="background:#FF6B4A"></i> Пункт меню — и всё</span>
     </div>
     <div class="facts">
       <div class="fact ok">
@@ -397,7 +482,7 @@ adipiscing elit, sed do eiusmod tempor…</span>
 </section>
 
 <!-- ============ 8. КАК РАБОТАЮ ============ -->
-<section class="light" id="how">
+<section class="light" id="how" data-sec="s08" data-title="Как работаю">
   <div class="wrap">
     <div class="rub"><span class="n">08</span>Как проходит работа</div>
     <h2 class="wide">Десять дней, четыре шага и ни одного вашего выходного</h2>
@@ -436,10 +521,39 @@ adipiscing elit, sed do eiusmod tempor…</span>
 </section>
 
 <!-- ============ 9. СОСЕДИ ============ -->
-<section class="light2">
+<section class="light2" data-sec="s09" data-title="Соседи">
   <div class="wrap">
-    <div class="rub"><span class="n">09</span>Соседи по кварталу</div>
-    <h2 class="wide">Ближайшие конкуренты забирают ваших пациентов с помощью сайтов</h2>
+    <div class="vs-head">
+      <div class="vs-intro">
+        <div class="rub"><span class="n">09</span>Соседи по кварталу</div>
+        <h2 class="wide">Ближайшие конкуренты забирают ваших пациентов с помощью сайтов</h2>
+        <p class="lede">Все трое — в пятнадцати минутах пешком. Двое из них стоят в выдаче выше вас по тем же запросам, а один сидит буквально в вашем подъезде.</p>
+      </div>
+      <figure class="quarter" role="img"
+              aria-label="Схема: АМДЦ и три ближайших конкурента в радиусе 750 метров">
+        <svg viewBox="0 0 320 260" aria-hidden="true">
+          <g class="q-rings">
+            <circle cx="150" cy="140" r="42"/>
+            <circle cx="150" cy="140" r="80"/>
+            <circle cx="150" cy="140" r="116"/>
+          </g>
+          <g class="q-ray">
+            <line x1="150" y1="140" x2="76" y2="105"/>
+            <line x1="150" y1="140" x2="252" y2="187"/>
+            <line x1="150" y1="140" x2="168" y2="122"/>
+          </g>
+          <circle class="q-dot q-them" cx="76"  cy="105" r="6"/>
+          <circle class="q-dot q-them" cx="252" cy="187" r="6"/>
+          <circle class="q-dot q-them" cx="168" cy="122" r="6"/>
+          <circle class="q-dot q-me"   cx="150" cy="140" r="8.5"/>
+        </svg>
+        <span class="q-lab q-l-me"   style="--x:47%;--y:59%">АМДЦ<i>вы</i></span>
+        <span class="q-lab q-l-a"    style="--x:54%;--y:38%">Амрита<i>тот же дом</i></span>
+        <span class="q-lab q-l-m"    style="--x:4%;--y:29%">МИРОС<i>500 м</i></span>
+        <span class="q-lab q-l-p"    style="--x:70%;--y:76%">Праксимед<i>одна остановка</i></span>
+        <figcaption>Радиусы — 250, 500 и 750 метров</figcaption>
+      </figure>
+    </div>
     <div class="vs">
       <div class="row ok">
         <div class="who">Амрита<small>ул. Орбели, 19 — ваш дом · clinic-amrita.ru</small></div>
@@ -467,7 +581,7 @@ adipiscing elit, sed do eiusmod tempor…</span>
 </section>
 
 <!-- ============ 10. ОПРОС ============ -->
-<section class="darker">
+<section class="darker" data-sec="s10" data-title="Опрос">
   <div class="wrap">
     <div class="rub"><span class="n">10</span>Опрос пациентов · исследование НаПоправку</div>
     <h2 class="wide">72,6% петербуржцев хотят записываться без звонка. У вас работает только звонок.</h2>
@@ -496,7 +610,7 @@ adipiscing elit, sed do eiusmod tempor…</span>
 </section>
 
 <!-- ============ 11. КЕЙС ============ -->
-<section class="light" id="case">
+<section class="light" id="case" data-sec="s11" data-title="Пример работы">
   <div class="wrap">
     <div class="case">
       <div class="l">
@@ -541,7 +655,7 @@ adipiscing elit, sed do eiusmod tempor…</span>
 </section>
 
 <!-- ============ 12. ФОРМА ЗАХВАТА №2 — ЛИД-МАГНИТ ============ -->
-<section class="dark">
+<section class="dark" data-sec="s12" data-title="Разбор сайта">
   <div class="wrap">
     <div class="formgrid">
       <div class="l">
@@ -576,7 +690,7 @@ adipiscing elit, sed do eiusmod tempor…</span>
 </section>
 
 <!-- ============ 13. СТРАХИ ============ -->
-<section class="light2" id="faq">
+<section class="light2" id="faq" data-sec="s13" data-title="Вопросы">
   <div class="wrap">
     <div class="rub"><span class="n">13</span>Вопросы, которые вы себе задаёте</div>
     <h2 class="wide">Отвечаю на то, о чём обычно не спрашивают вслух</h2>
@@ -614,7 +728,7 @@ adipiscing elit, sed do eiusmod tempor…</span>
 </section>
 
 <!-- ============ 14. ЧТО ВХОДИТ ============ -->
-<section class="dark">
+<section class="dark" data-sec="s14" data-title="Состав работы">
   <div class="wrap">
     <div class="rub"><span class="n">14</span>Состав работы</div>
     <h2 class="wide">Что входит в сайт за 10 дней</h2>
@@ -670,7 +784,7 @@ adipiscing elit, sed do eiusmod tempor…</span>
 </section>
 
 <!-- ============ 15. ЧЕРЕЗ ГОД ============ -->
-<section class="light">
+<section class="light" data-sec="s15" data-title="Через год">
   <div class="wrap">
     <div class="rub"><span class="n">15</span>Куда вы придёте через год</div>
     <h2 class="wide">Одна и та же клиника через двенадцать месяцев. Разница — в решении, которое принимается сейчас.</h2>
@@ -699,7 +813,7 @@ adipiscing elit, sed do eiusmod tempor…</span>
 </section>
 
 <!-- ============ 16. ФИНАЛЬНЫЙ CTA ============ -->
-<section class="dark" id="final">
+<section class="dark" id="final" data-sec="s16" data-title="Начать">
   <div class="wrap">
     <div class="formgrid">
       <div class="l">
@@ -759,6 +873,14 @@ adipiscing elit, sed do eiusmod tempor…</span>
         <p style="margin-top:.7rem"><a href="privacy.html" style="text-decoration:underline">Политика конфиденциальности</a></p>
       </div>
     </div>
+    <!-- Колофон: чем набрано и как сделано. Мелочь, но она
+         говорит, что страницу собирал человек, а не шаблон. -->
+    <div class="colophon">
+      <span><b>Набрано</b>Bitter · Golos Text · IBM Plex Mono</span>
+      <span><b>Собрано</b>вручную, без конструкторов и тем</span>
+      <span><b>Проверено</b>на am-dc.ru 11 сентября 2026</span>
+    </div>
+    <div class="fmark" aria-hidden="true">АМДЦ</div>
     <div class="fbot">
       <span>© 2026 · Персональное предложение для АМДЦ</span>
       <span>Данные: am-dc.ru, Яндекс Карты, 2ГИС, Zoon, ПроДокторов, НаПоправку</span>
@@ -791,6 +913,7 @@ adipiscing elit, sed do eiusmod tempor…</span>
   var sticky = document.querySelector('.sticky');
   var hero   = document.querySelector('.hero');
   var tick   = false;
+  var railTick = false;
 
   function onScroll(){
     var y   = window.pageYOffset;
@@ -818,7 +941,7 @@ adipiscing elit, sed do eiusmod tempor…</span>
     'section:not(.hero) .wrap > .lede',
     'section:not(.hero) .wrap > .strip',
     'section:not(.hero) .wrap > .note',
-    '.ticket', '.audit > *', '.ledger', '.total',
+    '.ticket', '.audit > *', '.funnel', '.ledger', '.total',
     '.formgrid > *', '.gain', '.score', '.dirs', '.dirlegend',
     '.fact', '.step', '.vs .row', '.brow', '.case > *',
     '.faq details', '.incl .col', '.guard'
@@ -856,6 +979,40 @@ adipiscing elit, sed do eiusmod tempor…</span>
       });
     }, {threshold:0.4});
     fills.forEach(function(el){ io2.observe(el); });
+  }
+
+  /* ---- 3b. Рельса разделов -------------------------------- */
+  var rail = document.querySelector('.rail');
+  var secs = [].slice.call(document.querySelectorAll('section[data-sec]'));
+  if (rail && secs.length){
+    secs.forEach(function(sec,i){
+      var a = document.createElement('a');
+      a.href = '#' + (sec.id || sec.dataset.sec);
+      if (!sec.id) sec.id = sec.dataset.sec;
+      /* формы и первый экран весят больше — засечка длиннее */
+      if (sec.querySelector('form') || i === 0) a.className = 'big';
+      a.innerHTML = '<i></i><span data-n="' + String(i+1).padStart(2,'0') + '"></span>';
+      a.querySelector('span').appendChild(
+        document.createTextNode(sec.dataset.title || ''));
+      a.setAttribute('aria-label', sec.dataset.title || '');
+      rail.appendChild(a);
+    });
+    var links = [].slice.call(rail.children);
+    var markRail = function(){
+      /* активна та полоса, что пересекает треть высоты экрана */
+      var line = window.pageYOffset + window.innerHeight * 0.34;
+      var cur = 0;
+      secs.forEach(function(sec,i){ if (sec.offsetTop <= line) cur = i; });
+      links.forEach(function(a,i){ a.classList.toggle('here', i === cur); });
+      rail.classList.toggle('on-dark',
+        /dark|darker|hero/.test(secs[cur].className));
+    };
+    addEventListener('scroll', function(){
+      if (!railTick){ railTick = true; requestAnimationFrame(function(){
+        markRail(); railTick = false;
+      }); }
+    }, {passive:true});
+    markRail();
   }
 
   /* ---- 4. Заявка уходит готовым сообщением в WhatsApp ----- */
