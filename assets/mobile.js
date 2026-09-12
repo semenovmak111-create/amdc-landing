@@ -81,6 +81,21 @@
     return box;
   }
 
+  /* ---- Пара «имя + телефон» ------------------------------
+     Лёжа экран 390 px высотой, и форма столбиком туда не
+     помещается — а правило методички «вся форма с призывом
+     в один экран» действует в любой ориентации. Оборачиваем
+     первые два поля в общий блок: стоя он ничего не меняет,
+     лёжа раскладывает их в две колонки. */
+  document.querySelectorAll('form.form').forEach(function(f){
+    var fs = f.querySelectorAll('.field');
+    if (fs.length < 2) return;
+    var g = document.createElement('div');
+    g.className = 'fields2';
+    fs[0].parentNode.insertBefore(g, fs[0]);
+    g.appendChild(fs[0]); g.appendChild(fs[1]);
+  });
+
   function sec(n){ return document.querySelector('section[data-sec="' + n + '"]'); }
   function wrapOf(n){ var s = sec(n); return s && s.querySelector('.wrap'); }
 
@@ -268,17 +283,30 @@
      details раскрывается мгновенно, и содержимое выталкивает
      страницу вниз рывком. Подводим заголовок спойлера к
      верхнему краю, чтобы раскрытое оказалось перед глазами,
-     а не уехало под сгиб. */
-  document.addEventListener('toggle', function(e){
-    var d = e.target;
-    if (!d.classList || !d.classList.contains('mob-sp') || !d.open) return;
-    var top = d.getBoundingClientRect().top;
+     а не уехало под сгиб.
+
+     Слушаем click на самом заголовке, а не событие toggle.
+     toggle приходит и на программное раскрытие — и тогда,
+     если открыть несколько спойлеров разом, страница уезжает
+     на сумму всех доводок. Поймано на съёмке: одиннадцать
+     раскрытых спойлеров утащили страницу на двадцать тысяч
+     пикселей вниз. Клик бывает только от человека. */
+  document.addEventListener('click', function(e){
+    var s = e.target.closest && e.target.closest('.mob-sp > summary');
+    if (!s) return;
+    var d = s.parentNode;
+    /* на момент клика details ещё не переключился: открывается
+       тот, который сейчас закрыт */
+    if (d.open) return;
     var hdr = parseInt(getComputedStyle(document.documentElement)
                 .getPropertyValue('--hdr'), 10) || 56;
-    if (top < hdr + 8 || top > innerHeight * 0.55){
-      scrollBy({top: top - hdr - 12, behavior: 'smooth'});
-    }
-  }, true);
+    requestAnimationFrame(function(){
+      var top = d.getBoundingClientRect().top;
+      if (top < hdr + 8 || top > innerHeight * 0.55){
+        scrollBy({top: top - hdr - 12, behavior: 'smooth'});
+      }
+    });
+  });
 
   /* ---- 4. Блоки внутри спойлера показываются сразу -------
      Основной скрипт прячет блоки до попадания в экран через
@@ -315,6 +343,30 @@
     new IntersectionObserver(function(e){
       root.classList.toggle('sticky-ready', !e[0].isIntersecting);
     }, {threshold:0}).observe(cta);
+  })();
+
+  /* ---- 6. Клавиатура и липкая полоса --------------------
+     Пока человек заполняет поле, полоса внизу должна уйти:
+     клавиатура поднимает её ровно на свой край, и она встаёт
+     поверх того поля, которое он заполняет. Кнопка у формы
+     своя и находится в двух сантиметрах выше — дублировать
+     её в этот момент незачем. */
+  (function(){
+    var root = document.documentElement, off;
+    function typing(on){
+      clearTimeout(off);
+      if (on) root.classList.add('typing');
+      /* небольшая задержка на возврат: при переходе между
+         полями focusout приходит раньше focusin, и полоса
+         успевала мигнуть */
+      else off = setTimeout(function(){ root.classList.remove('typing'); }, 180);
+    }
+    addEventListener('focusin', function(e){
+      if (/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) typing(true);
+    });
+    addEventListener('focusout', function(e){
+      if (/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) typing(false);
+    });
   })();
 
   document.documentElement.classList.add('mob');

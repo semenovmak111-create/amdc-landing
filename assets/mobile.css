@@ -332,17 +332,17 @@
    остаётся весь до последнего слова. */
 @media (max-width:360px){
   :root{--hdr:52px}
-  .hero{padding-top:calc(var(--hdr) + .5rem)}
-  .hero h1{font-size:1.88rem;line-height:1.1;margin-bottom:.62rem}
-  .hero .lede{font-size:.92rem;line-height:1.5}
-  .docline{padding-bottom:.5rem;margin-bottom:.58rem}
+  .hero{padding-top:calc(var(--hdr) + .4rem)}
+  .hero h1{font-size:1.78rem;line-height:1.09;margin-bottom:.55rem}
+  .hero .lede{font-size:.91rem;line-height:1.46}
+  .docline{padding-bottom:.42rem;margin-bottom:.46rem}
   .addressee{
-    margin-bottom:.55rem;padding:.4rem .7rem .4rem .58rem;
-    font-size:.71rem;letter-spacing:.04em;
+    margin-bottom:.46rem;padding:.36rem .66rem .36rem .55rem;
+    font-size:.7rem;letter-spacing:.03em;
   }
-  .ctarow{margin-top:.8rem}
+  .ctarow{margin-top:.7rem}
   .btn{min-height:50px;padding:.9rem 1rem;font-size:.93rem}
-  .undercta{margin-top:.75rem;font-size:.79rem}
+  .undercta{margin-top:.7rem;font-size:.78rem}
 }
 
 /* ============================================================
@@ -418,6 +418,23 @@
 @media (max-width:360px){
   .sticky .btn:not(.ghost){font-size:.83rem;padding:.9rem .5rem}
   .sticky{gap:.4rem}
+}
+
+/* ---- полоса уходит, когда открыта клавиатура ------------
+   На телефоне клавиатура занимает нижнюю половину экрана, и
+   всё, что прибито к низу через position:fixed, всплывает
+   ровно на её край — прямо поверх поля, которое человек
+   заполняет. На iOS это к тому же дёргается при каждом
+   символе.
+
+   Пока в фокусе поле ввода, полосы быть не должно: кнопка
+   у формы своя, и она в двух сантиметрах выше. Класс ставит
+   mobile.js по focusin/focusout. */
+@media (max-width:860px){
+  html.typing .sticky{
+    transform:translateY(110%);
+    transition:transform .22s var(--ease);
+  }
 }
 
 /* ============================================================
@@ -1262,4 +1279,79 @@
   /* в липкой полосе и в шапке текст не переносится */
   .sticky .btn,
   .top .btn.sm{white-space:nowrap}
+}
+
+/* ============================================================
+   ТЕЛЕФОН ЛЁЖА
+
+   Экран 844×390: ширины вдвое больше, высоты втрое меньше.
+   Липкая полоса в 52 px плюс отбивки съедает шестую часть
+   того, что осталось, а первый экран в такую высоту не
+   помещается никакими ужиманиями.
+
+   Ловим не по ширине, а по высоте вьюпорта — ровно так же,
+   как десктопная версия ловит низкий ноутбук. Полоса
+   становится тоньше, первый экран перестаёт держать высоту
+   и просто течёт дальше, а макет будущего сайта встаёт
+   рядом с текстом, а не под ним: ширина это позволяет.
+   ============================================================ */
+
+@media (max-width:860px) and (max-height:500px) and (orientation:landscape){
+  :root{--hdr:48px;--tap:44px;--pad:2.2rem;--pad-s:1.8rem;--pad-l:2.6rem}
+
+  .hero{padding-top:calc(var(--hdr) + .6rem);padding-bottom:1.6rem}
+  .hero h1{font-size:1.75rem;line-height:1.1;margin-bottom:.6rem}
+  .hero .lede{font-size:.95rem;line-height:1.5;margin:0}
+  .ctarow{margin-top:0}
+
+  /* Лёжа высоты 390 px не хватает на заголовок, подводку и
+     кнопку столбиком — кнопка уходит за сгиб. Зато ширины
+     844 px избыток. Поэтому подводка и кнопки встают рядом,
+     а не друг под друга: это возвращает кнопке те сто с
+     лишним пикселей, которых ей не хватало. */
+  .hero-l{
+    display:grid;
+    grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+    gap:0 1.6rem;align-items:start;
+  }
+  .btns{flex-direction:column}
+  .btns .btn{width:100%}
+  .ctarow::before{display:none}       /* подсветка тут только мешает */
+  .undercta{margin-top:.6rem;font-size:.76rem}
+
+  .sticky{padding-top:.45rem;padding-bottom:calc(.45rem + env(safe-area-inset-bottom))}
+  .sticky .btn{min-height:44px;padding:.7rem .8rem}
+  .sticky .btn.ghost{flex:0 0 44px;width:44px}
+  body{padding-bottom:calc(44px + 1.2rem + env(safe-area-inset-bottom))}
+
+  /* блоки, которым лёжа хватает ширины на две колонки */
+  .tickets,.facts,.guards,.incl,.gains{grid-template-columns:1fr 1fr}
+  .gain.lead,.gain.full,.fact:last-child,.guard:last-child{grid-column:span 2}
+  .formgrid,.case,.audit,.vs-head{grid-template-columns:1fr 1fr;gap:1.6rem}
+
+  /* Правило 11 держится и лёжа: от заголовка формы до кнопки
+     должно быть меньше высоты экрана. Столбиком в 390 px не
+     умещается ничем — зато форма стоит в половине ширины
+     844 px, и поля спокойно встают парами. */
+  .form{padding:.95rem .95rem 1.05rem}
+  .form::after{inset:5px}
+  .form h3{font-size:1.08rem;line-height:1.13}
+  .form .sub{font-size:.8rem;line-height:1.4;margin-top:.32rem}
+
+  .form .fields2{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:0 .8rem;
+  }
+  .form .fields2 .field{margin-top:.7rem}
+  .field > label{margin-bottom:.3rem}
+  .field input[type=text],
+  .field input[type=tel]{min-height:44px;padding:.7rem .8rem}
+  .field .hint{font-size:.75rem;margin-top:.3rem}
+
+  .form .btn{margin-top:.85rem;min-height:46px;font-size:.93rem}
+  .agree{margin-top:.6rem;padding:.3rem 0;font-size:.76rem}
+  .formfoot{margin-top:.7rem}
+
+  .mob-sp{margin-top:.6rem}
+  .mob-sp > summary{min-height:44px;padding:.65rem .9rem}
 }
