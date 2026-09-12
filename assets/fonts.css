@@ -1,43 +1,79 @@
 /* ============================================================
-   Шрифты лендинга. Три гарнитуры, все свои, с диска:
-   Bitter      — слэб-сериф, только заголовки и крупные цифры
-   Golos Text  — гротеск с родной кириллицей, весь текст
-   IBM Plex Mono — рубрики, время, суммы, код
-   Bitter и Golos переменные: один файл на всё семейство,
-   поэтому в font-weight стоит диапазон, а не одно значение.
-   Кириллица и латиница разнесены по unicode-range, чтобы
-   на русской странице не грузилась латинская половина.
+   ШРИФТЫ. Три гарнитуры, файлами, без CDN.
+
+   Cormorant Garamond — дисплейный сериф старого стиля с высоким
+   контрастом штриха. Работает только крупно: заголовки, цифры,
+   врезки. Кириллица родная, не подставная.
+
+   Manrope — геометрический гротеск с закрытыми апертурами.
+   Весь читаемый текст, интерфейс, кнопки.
+
+   JetBrains Mono — моноширинный. Рубрики, номера разделов,
+   табличные цифры, код. Держит колонку и не даёт цифрам гулять.
+
+   Все три — вариативные: одна ось веса на файл, поэтому
+   восемь файлов закрывают четырнадцать начертаний.
    ============================================================ */
 
+/* ---- Cormorant Garamond: прямое ------------------------- */
 @font-face{
-  font-family:'Bitter'; font-style:normal; font-weight:500 800; font-display:swap;
-  src:url(fonts/bitter-var-cyr.woff2) format('woff2');
-  unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  font-family:'Cormorant Garamond';
+  font-style:normal; font-weight:300 700; font-display:swap;
+  src:url(fonts/cormorant-cyrillic.woff2) format('woff2');
+  unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 @font-face{
-  font-family:'Bitter'; font-style:normal; font-weight:500 800; font-display:swap;
-  src:url(fonts/bitter-var-lat.woff2) format('woff2');
-  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
-                U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
-                U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family:'Cormorant Garamond';
+  font-style:normal; font-weight:300 700; font-display:swap;
+  src:url(fonts/cormorant-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,
+    U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,
+    U+2212,U+2215,U+FEFF,U+FFFD;
+}
+/* ---- Cormorant Garamond: курсив (врезки, подписи) ------- */
+@font-face{
+  font-family:'Cormorant Garamond';
+  font-style:italic; font-weight:300 600; font-display:swap;
+  src:url(fonts/cormorant-it-cyrillic.woff2) format('woff2');
+  unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face{
+  font-family:'Cormorant Garamond';
+  font-style:italic; font-weight:300 600; font-display:swap;
+  src:url(fonts/cormorant-it-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,
+    U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,
+    U+2212,U+2215,U+FEFF,U+FFFD;
 }
 
+/* ---- Manrope -------------------------------------------- */
 @font-face{
-  font-family:'Golos Text'; font-style:normal; font-weight:400 900; font-display:swap;
-  src:url(fonts/golos-var-cyr.woff2) format('woff2');
-  unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  font-family:'Manrope';
+  font-style:normal; font-weight:200 800; font-display:swap;
+  src:url(fonts/manrope-cyrillic.woff2) format('woff2');
+  unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 @font-face{
-  font-family:'Golos Text'; font-style:normal; font-weight:400 900; font-display:swap;
-  src:url(fonts/golos-var-lat.woff2) format('woff2');
-  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
-                U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
-                U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family:'Manrope';
+  font-style:normal; font-weight:200 800; font-display:swap;
+  src:url(fonts/manrope-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,
+    U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,
+    U+2212,U+2215,U+FEFF,U+FFFD;
 }
 
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/plexmono-400-cyr.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/plexmono-400-lat.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/plexmono-500-cyr.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/plexmono-500-lat.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/plexmono-600-cyr.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/plexmono-600-lat.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+/* ---- JetBrains Mono ------------------------------------- */
+@font-face{
+  font-family:'JetBrains Mono';
+  font-style:normal; font-weight:300 700; font-display:swap;
+  src:url(fonts/jetbrains-cyrillic.woff2) format('woff2');
+  unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face{
+  font-family:'JetBrains Mono';
+  font-style:normal; font-weight:300 700; font-display:swap;
+  src:url(fonts/jetbrains-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,
+    U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,
+    U+2212,U+2215,U+FEFF,U+FFFD;
+}
