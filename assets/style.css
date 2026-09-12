@@ -626,7 +626,7 @@ p:last-child{margin-bottom:0}
 /* ============================================================
    РЕЛЬСА РАЗДЕЛОВ
 
-   Шестнадцать засечек на левом поле. Видно, где ты в
+   Засечка на каждый блок, на левом поле. Видно, где ты в
    документе; подпись всплывает при наведении. Ниже 1420 px
    поля для неё нет — исчезает.
    ============================================================ */
@@ -897,6 +897,7 @@ html.js .hero.lit h1 .ln > i{
   padding:.4rem .82rem;
   font:600 var(--f-rub)/1 var(--mono);
   letter-spacing:.18em;text-transform:uppercase;
+  white-space:nowrap;
   border-radius:2px;
   transform:rotate(-2.5deg);
 }
@@ -913,7 +914,7 @@ html.js .hero.lit h1 .ln > i{
   border:1px solid #35AE89;
   box-shadow:0 10px 22px -12px rgba(0,0,0,.8);
 }
-.stamp.pin{
+.stamp.gold{
   color:#140F05;
   background:linear-gradient(180deg,var(--au-hi),var(--au));
   border:1px solid #B6934E;
@@ -1498,8 +1499,9 @@ html.js .hero.lit h1 .ln > i{
 
 /* ---- лист прототипа: артефакт нарисован, а не назван ---- */
 .doc{position:relative;margin-top:clamp(1.6rem,2.6vw,2.2rem);max-width:24rem}
-.doc .stamp.pin{position:absolute;top:-.7rem;left:-.6rem;z-index:3}
+.doc .stamp.gold{position:absolute;top:-.7rem;left:-.6rem;z-index:5}
 .sheet{
+  position:relative;z-index:1;
   padding:1.3rem 1.4rem 1.5rem;
   border:1px solid var(--rule);
   border-radius:var(--r);

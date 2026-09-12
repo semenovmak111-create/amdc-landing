@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Сайт для АМДЦ за 10 дней — +22 пациента в месяц без рекламного бюджета</title>
+<title>Сайт для АМДЦ за 10 дней — +22 пациента в месяц без рекламного бюджета</title>
 <meta name="description" content="Персональное предложение для АМДЦ, ул. Орбели 19. Новый сайт за 10 дней: все 14 направлений с ценами, врачами и записью. Прототип главной — бесплатно, через 4–5 дней. Оплата после приёмки.">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#0A0C0E">
@@ -29,7 +29,7 @@
 
 <div class="progress" aria-hidden="true"></div>
 
-<!-- Рельса разделов: шестнадцать засечек на левом поле.
+<!-- Рельса разделов: засечка на каждый блок, на левом поле.
      Показывает, где человек находится в документе, и даёт
      вернуться к любому развороту одним движением. -->
 <nav class="rail" aria-label="Разделы страницы"></nav>
@@ -58,12 +58,12 @@
     <a class="brand" href="#top">
       <span class="mark">+</span>
       <span>
-        <span class="bname">Сайты для клиник</span>
+        <span class="bname">Сайты для клиник</span>
         <span class="bsub">Санкт-Петербург</span>
       </span>
     </a>
     <nav class="menu">
-      <a href="#problem">Что не так</a>
+      <a href="#problem">Что не так</a>
       <a href="#money">Расчёт</a>
       <a href="#how">Как работаю</a>
       <a href="#case">Пример</a>
@@ -77,10 +77,9 @@
 </header>
 
 <!-- ============ 1. ПЕРВЫЙ ЭКРАН ============ -->
-<!-- Порядок решает всё: до линии сгиба обязаны попасть
-     адресат, заголовок, подводка и кнопка. Макет и буллиты
-     уходят ниже намеренно — они подтверждают решение, а не
-     открывают его. Проверено на 1440×900, 1366×768 и 390×844. -->
+<!-- До линии сгиба обязаны попасть адресат, заголовок, одна
+     строка подводки и кнопка. Всё остальное подтверждает
+     решение, а не открывает его. -->
 <section class="hero band b-onyx" id="top" data-sec="s01" data-title="Предложение">
   <div class="glow" aria-hidden="true"></div>
   <div class="wrap">
@@ -96,9 +95,7 @@
     </div>
 
     <!-- Гравированная печать. Единственный по-настоящему
-         подвижный объект на странице: оборот за 54 секунды.
-         Стоит в углу письма, как оттиск, и больше нигде
-         не повторяется. -->
+         подвижный объект на странице: оборот за 54 секунды. -->
     <svg class="seal" viewBox="0 0 120 120" aria-hidden="true">
       <defs>
         <path id="seal-arc"
@@ -121,20 +118,26 @@
 
     <div class="addressee"><i></i>Кому: АМДЦ, ул. Орбели, 19</div>
 
-    <h1><span class="ln"><i>Сайт для АМДЦ за 10 дней:</i></span><span class="ln big"><i>+22 пациента и 191 000 ₽</i></span><span class="ln"><i>в месяц без рекламного бюджета</i></span></h1>
+    <h1><span class="ln"><i>Сайт для АМДЦ за 10 дней:</i></span><span class="ln big"><i>+22 пациента и 191 000 ₽</i></span><span class="ln"><i>в месяц без рекламного бюджета</i></span></h1>
 
     <div class="hero-grid">
 
       <div class="hero-l">
-        <p class="lede">За счёт того, что все <b>14 направлений</b> получат свои страницы с ценами, врачами и записью. Сегодня полноценно продают <mark>три</mark> — остальные одиннадцать либо без цен и без врача, либо не существуют на сайте вовсе.</p>
+        <p class="lede">Из <b>14 ваших направлений</b> сайт продаёт <mark>три</mark>. Остальные одиннадцать получат свои страницы — с ценами, врачами и записью.</p>
 
         <div class="ctarow">
           <div class="btns">
             <a class="btn" href="#start">Посмотреть прототип бесплатно <svg class="i"><use href="#i-arr"/></svg></a>
-            <a class="btn wa" href="https://wa.me/79111112122?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AD%D1%82%D0%BE%20%D0%90%D0%9C%D0%94%D0%A6.%20%D0%9F%D0%BE%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D1%82%D0%B8%D0%BF." target="_blank" rel="noopener"><svg class="i"><use href="#i-wa"/></svg> Спросить в WhatsApp</a>
+            <a class="btn wa" href="https://wa.me/79111112122?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AD%D1%82%D0%BE%20%D0%90%D0%9C%D0%94%D0%A6.%20%D0%9F%D0%BE%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D1%82%D0%B8%D0%BF." target="_blank" rel="noopener"><svg class="i"><use href="#i-wa"/></svg> Спросить в WhatsApp</a>
           </div>
-          <div class="undercta">Ничего решать не нужно и никто не будет звонить без спроса. Отвечу в WhatsApp или Telegram в течение часа.</div>
+          <div class="undercta">Сначала смотрите, потом решаете. Никто не будет звонить без спроса.</div>
         </div>
+
+        <ul class="bul">
+          <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span><b>Прототип главной — бесплатно,</b> через 4–5 дней и без обязательств</span></li>
+          <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span><b>10 дней до запуска</b> — срок стоит в договоре</span></li>
+          <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span><b>Оплата после приёмки</b> — ни аванса, ни доплат за правки</span></li>
+        </ul>
       </div>
 
       <div class="hero-r">
@@ -151,92 +154,95 @@
               <div class="mk-eye">Медцентр с 2002 года · Выборгский район</div>
               <div class="mk-h">Приём без очереди у метро Площадь Мужества</div>
               <div class="mk-sub">Урология, гинекология, проктология, стоматология, косметология и лаборатория — 14 направлений в одном центре.<em class="pin">3</em></div>
-              <div class="mk-cta"><span class="b">Записаться на приём<em class="pin">2</em></span><span class="t">+7 812 943-84-86</span></div>
+              <div class="mk-cta"><span class="b">Записаться на приём<em class="pin">2</em></span><span class="t">+7 812 943-84-86</span></div>
             </div>
             <div class="mk-cards">
-              <div class="mk-card"><em class="pin">1</em><div class="n">Приём уролога</div><div class="p">от 300 ₽</div><i class="l" style="width:70%"></i></div>
-              <div class="mk-card"><div class="n">Лечение кариеса</div><div class="p">от 5 000 ₽</div><i class="l" style="width:55%"></i></div>
-              <div class="mk-card"><div class="n">Анализы</div><div class="p">от 220 ₽</div><i class="l" style="width:80%"></i></div>
+              <div class="mk-card"><em class="pin">1</em><div class="n">Приём уролога</div><div class="p">от 300 ₽</div><i class="l" style="width:70%"></i></div>
+              <div class="mk-card"><div class="n">Лечение кариеса</div><div class="p">от 5 000 ₽</div><i class="l" style="width:55%"></i></div>
+              <div class="mk-card"><div class="n">Анализы</div><div class="p">от 220 ₽</div><i class="l" style="width:80%"></i></div>
             </div>
           </div>
         </div>
         <div class="pins">
-          <span><b>1</b>Цена видна до звонка</span>
+          <span><b>1</b>Цена видна до звонка</span>
           <span><b>2</b>Запись в одно касание</span>
           <span><b>3</b>Все 14 направлений</span>
         </div>
-        <div class="capt">Так будет выглядеть первый экран. Прототип — бесплатно, через 4–5 дней.</div>
-        <div class="inside">
-          <div class="t">Что будет в прототипе</div>
-          <ul>
-            <li><span class="k">8</span>экранов главной страницы целиком</li>
-            <li><span class="k">14</span>направлений с ценами и врачом</li>
-            <li><span class="k">2</span>версии: для компьютера и телефона</li>
-          </ul>
+        <div class="capt">Так будет выглядеть первый экран. Прототип — бесплатно, через 4–5 дней.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. ЧТО НЕ ТАК ============ -->
+<!-- Один блок вместо трёх: покрытие направлений, исходный код
+     и находки. Мысль одна — чинить нужно не всё. -->
+<section class="band b-indigo" id="problem" data-sec="s02" data-title="Что не так">
+  <div class="wrap">
+    <div class="rub"><span class="n">02</span>Аудит am-dc.ru · 11 сентября 2026</div>
+    <h2 class="wide">Сайт у вас рабочий. Просто одиннадцати направлений из четырнадцати на нём <mark>не существует</mark>.</h2>
+    <p class="lede">Хорошая новость: переделывать всё не нужно. Урология и анализы собраны правильно — эту же схему достаточно повторить ещё одиннадцать раз.</p>
+    <div class="score">
+    <figure class="ring" role="img" aria-label="Три направления из четырнадцати имеют страницу с ценой">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <defs>
+          <linearGradient id="au-arc" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#EBD6A6"/>
+            <stop offset="1" stop-color="#AE8946"/>
+          </linearGradient>
+        </defs>
+        <circle class="rg-bg" cx="60" cy="60" r="36.0"/>
+        <circle class="rg-fg" cx="60" cy="60" r="36.0"
+                stroke-dasharray="48.47 177.72" transform="rotate(-90 60 60)"/>
+        <line class="t-yes" x1="60.00" y1="19.00" x2="60.00" y2="13.00"/>
+        <line class="t-yes" x1="77.79" y1="23.06" x2="80.39" y2="17.65"/>
+        <line class="t-yes" x1="92.06" y1="34.44" x2="96.75" y2="30.70"/>
+        <line class="t-part" x1="99.97" y1="50.88" x2="105.82" y2="49.54"/>
+        <line class="t-part" x1="99.97" y1="69.12" x2="105.82" y2="70.46"/>
+        <line class="t-no" x1="92.06" y1="85.56" x2="96.75" y2="89.30"/>
+        <line class="t-no" x1="77.79" y1="96.94" x2="80.39" y2="102.35"/>
+        <line class="t-no" x1="60.00" y1="101.00" x2="60.00" y2="107.00"/>
+        <line class="t-no" x1="42.21" y1="96.94" x2="39.61" y2="102.35"/>
+        <line class="t-no" x1="27.94" y1="85.56" x2="23.25" y2="89.30"/>
+        <line class="t-no" x1="20.03" y1="69.12" x2="14.18" y2="70.46"/>
+        <line class="t-no" x1="20.03" y1="50.88" x2="14.18" y2="49.54"/>
+        <line class="t-no" x1="27.94" y1="34.44" x2="23.25" y2="30.70"/>
+        <line class="t-no" x1="42.21" y1="23.06" x2="39.61" y2="17.65"/>
+      </svg>
+      <figcaption><b>3</b><i>из 14</i></figcaption>
+    </figure>
+      <div class="c">
+        <p>Три направления пациент найдёт. Одиннадцать — нет.</p>
+        <div class="ded">
+          <span><i class="t-yes"></i>3 продают</span>
+          <span><i class="t-part"></i>2 наполовину</span>
+          <span><i class="t-no"></i>9 не существует</span>
         </div>
       </div>
-
-      <ul class="bul">
-        <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span><b>10 дней</b> от старта до запуска — срок стоит в договоре, а не в обещании «как пойдёт»</span></li>
-        <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span><b>Прототип главной — бесплатно.</b> Сначала смотрите своими глазами, потом решаете</span></li>
-        <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span><b>Оплата после приёмки</b> — ни аванса, ни почасовки, ни «доплатите за правки»</span></li>
-        <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span><b>Домен, тексты и фотографии — ваши.</b> Их нельзя отключить и нельзя у вас забрать</span></li>
-      </ul>
-
     </div>
-
-    <div class="trust">
-      <div class="t"><b>4–5 дней</b>до готового прототипа главной страницы</div>
-      <div class="t"><b>0 ₽</b>стоит его увидеть и отказаться</div>
-      <div class="t"><b>14 из 14</b>направлений получат страницу с ценой</div>
+    <div class="dirs">
+      <span class="dir yes"><svg class="i"><use href="#i-check"/></svg>Урология</span>
+      <span class="dir yes"><svg class="i"><use href="#i-check"/></svg>Лаборатория</span>
+      <span class="dir yes"><svg class="i"><use href="#i-check"/></svg>Гинекология</span>
+      <span class="dir part"><svg class="i"><use href="#i-x"/></svg>Проктология</span>
+      <span class="dir part"><svg class="i"><use href="#i-x"/></svg>Дерматовенерология</span>
+      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Стоматология</span>
+      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Косметология</span>
+      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Эндокринология</span>
+      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Терапия</span>
+      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Хирургия</span>
+      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Невролог</span>
+      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Детский невролог</span>
+      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Детский психолог</span>
+      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Репродуктология</span>
     </div>
-  </div>
-</section>
-
-<!-- ============ 2. БОЛЬ ============ -->
-<section class="band b-indigo" id="problem" data-sec="s02" data-title="Один вечер">
-  <div class="wrap">
-    <div class="rub"><span class="n">02</span>Один вечер, два исхода</div>
-    <h2 class="wide">Два человека, один и тот же запрос. Разница только в том, что один <mark>нашёл страницу</mark>.</h2>
-    <div class="tickets">
-      <div class="ticket good">
-        <div class="lab">Нашёл страницу — записался</div>
-        <ul>
-          <li><span class="tm">21:30</span><span>набирает «уролог Площадь Мужества»</span></li>
-          <li><span class="tm">21:31</span><span>открывает первую ссылку: врачи с фото, цены, кнопка записи</span></li>
-          <li><span class="tm">21:33</span><span>смотрит, что входит в приём и сколько это стоит</span></li>
-          <li><span class="tm">21:34</span><span>нажимает «записаться», выбирает четверг</span></li>
-          <li><span class="tm">21:34</span><span><b>Заявка у администратора. Вопрос закрыт за четыре минуты</b></span></li>
-        </ul>
-      </div>
-      <div class="ticket bad">
-        <div class="lab">Дошёл до вас — ушёл</div>
-        <ul>
-          <li><span class="tm">21:30</span><span>тот же запрос, тот же вечер, та же нужда</span></li>
-          <li><span class="tm">21:31</span><span>в выдаче каталог: вы в общем списке, без цен</span></li>
-          <li><span class="tm">21:32</span><span>заходит на am-dc.ru и видит «АМДЦ | Главная»</span></li>
-          <li><span class="tm">21:33</span><span>ни цены, ни кнопки записи на экране — закрывает вкладку</span></li>
-          <li><span class="tm">Завтра</span><span><b>Не звонит. Вопрос закрылся сам, у конкурента</b></span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="strip">Он не выбрал конкурента — он просто не смог выбрать вас.</div>
-  </div>
-</section>
-
-<!-- ============ 3. АУДИТ ============ -->
-<section class="band b-onyx" data-sec="s03" data-title="Аудит сайта">
-  <div class="wrap">
-    <div class="rub"><span class="n">03</span>Что я увидел на am-dc.ru 11 сентября 2026</div>
-    <h2 class="wide">Сайт у вас рабочий. Просто одиннадцати направлений из четырнадцати на нём <mark>не существует</mark>.</h2>
-    <p class="lede">Это не «плохой сайт». Урология и лаборатория собраны правильно: двадцать страниц услуг, полсотни позиций прайса и больше двухсот по анализам. Проблема точечная — и потому чинится быстро.</p>
     <div class="audit">
       <div>
         <div class="code">
-          <div class="bar"><i></i><i></i><i></i><span>am-dc.ru · исходный код страницы</span></div>
+          <div class="bar"><i></i><i></i><i></i><span>am-dc.ru · исходный код страницы</span></div>
 <pre><span class="cm">&lt;!-- главная страница --&gt;</span>
 <span class="tag">&lt;title&gt;</span><span class="bad">АМДЦ |  Главная </span><span class="tag">&lt;/title&gt;</span>
-<span class="cm">&lt;!-- meta description: отсутствует --&gt;</span>
 
 <span class="cm">&lt;!-- страница «Контакты» --&gt;</span>
 <span class="tag">&lt;title&gt;</span><span class="bad">Костомный титул</span><span class="tag">&lt;/title&gt;</span>
@@ -245,27 +251,78 @@
 <span class="tag">&lt;a href=</span><span class="bad">"#"</span><span class="tag">&gt;</span>Стоматология<span class="tag">&lt;/a&gt;</span>
 
 <span class="cm">&lt;!-- описание раздела «Стоматология» --&gt;</span>
-<span class="bad">Lorem ipsum dolor sit amet, consectetur
-adipiscing elit, sed do eiusmod tempor…</span>
-
-<span class="tag">&lt;script src=</span>"jquery-<span class="bad">1.11.0</span>.min.js"<span class="tag">&gt;</span>
-<span class="cm">&lt;!-- версия 2014 года --&gt;</span></pre>
+<span class="bad">Lorem ipsum dolor sit amet, consectetur…</span></pre>
         </div>
-        <div class="aside">Это не пересказ и не оценка на глаз — так страница отдаётся браузеру прямо сейчас. Откройте Ctrl+U и сверьте.</div>
+        <div class="aside">Так страница отдаётся браузеру прямо сейчас — откройте Ctrl+U и сверьте.</div>
       </div>
       <div>
         <ul class="findings">
-          <li><span class="x"><svg class="i"><use href="#i-x"/></svg></span><span><b>«Стоматология» ведёт на «#».</b> Направление принимает с 2010 года — а ссылка не ведёт никуда. То же в подвале сайта.</span></li>
-          <li><span class="x"><svg class="i"><use href="#i-x"/></svg></span><span><b>Lorem ipsum в описании</b> стоматологии, косметологии, детского невролога и детского психолога. Рыба из шаблона, которую видит пациент.</span></li>
-          <li><span class="x"><svg class="i"><use href="#i-x"/></svg></span><span><b>«Костомный титул»</b> — заголовок страницы «Контакты». Заглушка разработчика висит на живом сайте.</span></li>
-          <li><span class="x"><svg class="i"><use href="#i-x"/></svg></span><span><b>Нет описания для поисковика</b> у главной, прайса, врачей, урологии, косметологии, лаборатории. Заголовок везде «АМДЦ | Главная».</span></li>
-          <li><span class="x"><svg class="i"><use href="#i-x"/></svg></span><span><b>В прайсе — только анализы.</b> Ни одной стоматологической позиции, ни одной косметологической.</span></li>
-          <li><span class="x"><svg class="i"><use href="#i-x"/></svg></span><span><b>В разделе «Врачи» один врач</b> — главврач-уролог. На четырнадцать направлений.</span></li>
-          <li><span class="x"><svg class="i"><use href="#i-x"/></svg></span><span><b>Нет og-тегов.</b> Отправляете ссылку в WhatsApp — приходит голый адрес без картинки и названия.</span></li>
+          <li><span class="x"><svg class="i"><use href="#i-x"/></svg></span><span><b>«Стоматология» ведёт на «#».</b> Направление принимает с 2010 года, а ссылка не ведёт никуда.</span></li>
+          <li><span class="x"><svg class="i"><use href="#i-x"/></svg></span><span><b>Lorem ipsum</b> вместо описания стоматологии, косметологии и детских врачей. Это видит пациент.</span></li>
+          <li><span class="x"><svg class="i"><use href="#i-x"/></svg></span><span><b>«Костомный титул»</b> — так называется ваша страница «Контакты» в поиске.</span></li>
+          <li><span class="x"><svg class="i"><use href="#i-x"/></svg></span><span><b>В прайсе только анализы,</b> в разделе «Врачи» — один уролог на четырнадцать направлений.</span></li>
         </ul>
       </div>
     </div>
-    <div class="strip">Учиться тут нечему: с урологией и анализами это уже сделано правильно. Нужно повторить то же самое ещё для одиннадцати направлений — один раз.</div>
+  </div>
+</section>
+
+<!-- ============ 3. СОСЕДИ ============ -->
+<section class="band b-onyx tight" data-sec="s03" data-title="Соседи">
+  <div class="wrap">
+    <div class="vs-head">
+      <div class="vs-intro">
+        <div class="rub"><span class="n">03</span>Соседи по кварталу</div>
+        <h2 class="wide">Соседям вы проигрываете не медициной, а страницей. Это и чинится за десять дней.</h2>
+        <p class="lede">Все трое — в пятнадцати минутах пешком, один сидит в вашем же доме.</p>
+      </div>
+      <figure class="quarter" role="img"
+              aria-label="Схема: АМДЦ и три ближайших конкурента в радиусе 750 метров">
+        <svg viewBox="0 0 320 260" aria-hidden="true">
+          <g class="q-rings">
+            <circle cx="150" cy="140" r="42"/>
+            <circle cx="150" cy="140" r="80"/>
+            <circle cx="150" cy="140" r="116"/>
+          </g>
+          <g class="q-ray">
+            <line x1="150" y1="140" x2="76" y2="105"/>
+            <line x1="150" y1="140" x2="252" y2="187"/>
+            <line x1="150" y1="140" x2="168" y2="122"/>
+          </g>
+          <circle class="q-dot q-them" cx="76"  cy="105" r="6"/>
+          <circle class="q-dot q-them" cx="252" cy="187" r="6"/>
+          <circle class="q-dot q-them" cx="168" cy="122" r="6"/>
+          <circle class="q-dot q-me"   cx="150" cy="140" r="8.5"/>
+        </svg>
+        <span class="q-lab q-l-me"   style="--x:47%;--y:59%">АМДЦ<i>вы</i></span>
+        <span class="q-lab q-l-a"    style="--x:54%;--y:38%">Амрита<i>тот же дом</i></span>
+        <span class="q-lab q-l-m"    style="--x:4%;--y:29%">МИРОС<i>500 м</i></span>
+        <span class="q-lab q-l-p"    style="--x:70%;--y:76%">Праксимед<i>одна остановка</i></span>
+        <figcaption>Радиусы — 250, 500 и 750 метров</figcaption>
+      </figure>
+    </div>
+    <div class="vs">
+      <div class="row ok">
+        <div class="who">Амрита<small>ул. Орбели, 19 — ваш дом</small></div>
+        <div class="what">Врачи, цены и кнопка «записаться» на первом экране. Онлайн-запись.</div>
+        <div class="rate"><div class="n">4,9</div><div class="o">196 оценок</div></div>
+      </div>
+      <div class="row ok">
+        <div class="who">МИРОС на Мужества<small>просп. Непокорённых, 6к1</small></div>
+        <div class="what">500 метров. Сайт сети собрал 391 отзыв на НаПоправку.</div>
+        <div class="rate"><div class="n">391</div><div class="o">отзыв</div></div>
+      </div>
+      <div class="row ok">
+        <div class="who">Праксимед<small>2-й Муринский просп., 26</small></div>
+        <div class="what">Одна остановка. 19 врачей с фото и стажем на сайте.</div>
+        <div class="rate"><div class="n">94</div><div class="o">отзыва</div></div>
+      </div>
+      <div class="row me">
+        <div class="who">АМДЦ<small>ул. Орбели, 19 · am-dc.ru</small></div>
+        <div class="what">24 года работы, 14 направлений, лицензия. <b>Но на сайте — один врач и Lorem ipsum.</b></div>
+        <div class="rate"><div class="n">4,3</div><div class="o">28 оценок</div></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -274,9 +331,6 @@ adipiscing elit, sed do eiusmod tempor…</span>
   <div class="wrap">
     <div class="rub"><span class="n">04</span>Сколько это стоит вам</div>
     <h2 class="wide">22 пациента и 191 000 ₽ проходят мимо каждый месяц</h2>
-    <!-- Воронка потока: та же арифметика, что в ведомости, но
-         увиденная целиком. Высоты взяты по корню от значения —
-         иначе 13 рядом с 420 превращается в невидимую полоску. -->
     <figure class="funnel" role="img"
             aria-label="Из 420 просмотров карточек до приёма доходят 13 человек">
       <svg viewBox="0 0 1100 300" preserveAspectRatio="none" aria-hidden="true">
@@ -309,42 +363,18 @@ adipiscing elit, sed do eiusmod tempor…</span>
         <span style="--x:5.4%;--v:100%">
           <b>420</b><i>просмотров карточек<br>в месяц</i></span>
         <span style="--x:36.4%;--v:85%">
-          <b>305</b><i>ушли, не позвонив<br>72,6%</i></span>
+          <b>305</b><i>ушли, не позвонив<br>72,6%</i></span>
         <span style="--x:67.3%;--v:21%">
-          <b>18</b><i>оставили бы заявку<br>на странице с кнопкой</i></span>
+          <b>18</b><i>оставили бы заявку<br>на странице с кнопкой</i></span>
         <span class="end" style="--x:94.5%;--v:18%">
-          <b>13</b><i>дошли бы до приёма<br>≈ 65 000 ₽</i></span>
+          <b>13</b><i>дошли бы до приёма<br>≈ 65 000 ₽</i></span>
       </figcaption>
     </figure>
-
-    <table class="ledger">
-      <thead>
-        <tr><th>Показатель</th><th class="r">Сейчас</th><th class="r">Коэффициент</th><th class="r">Итог</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Открывают ваши карточки<small>Яндекс Карты, 2ГИС, Zoon, ПроДокторов</small></td>
-          <td class="v r" data-l="Сейчас">420</td><td class="v r cut" data-l="Коэффициент">72,6% не станут звонить</td><td class="v r" data-l="Итог">305 человек</td>
-        </tr>
-        <tr>
-          <td>Дошли бы до записи на сайте<small>если бы в карточке стояла живая ссылка на страницу с кнопкой</small></td>
-          <td class="v r" data-l="Сейчас">305</td><td class="v r" data-l="Коэффициент"><span class="mx">×</span> 6%</td><td class="v r" data-l="Итог">≈ 18 заявок</td>
-        </tr>
-        <tr>
-          <td>Дошли бы до приёма</td>
-          <td class="v r" data-l="Сейчас">18</td><td class="v r" data-l="Коэффициент"><span class="mx">×</span> 70%</td><td class="v r" data-l="Итог">≈ 13 пациентов</td>
-        </tr>
-        <tr>
-          <td>В деньгах<small>5 000 ₽ — консультация с обследованием по нижней границе</small></td>
-          <td class="v r" data-l="Сейчас">13</td><td class="v r" data-l="Коэффициент"><span class="mx">×</span> 5 000 ₽</td><td class="v r res" data-l="Итог">≈ 65 000 ₽</td>
-        </tr>
-      </tbody>
-    </table>
     <div class="total">
-      <div class="big">2,3 млн ₽<small>за двенадцать месяцев</small></div>
-      <div class="txt">пройдёт мимо кассы, пока страницы нет.<br>Месяц без нормального сайта — <b>минус 22 пациента</b>, квартал — <b>минус 66</b>.</div>
+      <div class="big">2,3 млн ₽<small>за двенадцать месяцев</small></div>
+      <div class="txt">пройдёт мимо кассы, пока страницы нет.<br>Месяц ожидания — <b>минус 22 пациента</b>, квартал — <b>минус 66</b>.</div>
     </div>
-    <p class="note">Второй поток — стоматология и косметология, которых на сайте нет вовсе: 3 170 стоматологических запросов в месяц в вашем районе дают ещё 9 пациентов и 126 000 ₽. Вместе — 22 пациента и 191 000 ₽ в месяц. 420 просмотров карточек — оценка по числу отзывов и оценок на площадках, а не выгрузка из кабинета: точные цифры лежат у вас в Яндекс Бизнесе и Метрике, сверим на созвоне.</p>
+    <p class="note">В воронке только урология и анализы. Стоматология и косметология, которых на сайте нет вовсе, добавляют ещё 9 пациентов и 126 000 ₽. Цифры оценочные — точные лежат в вашей Метрике, сверим на созвоне.</p>
   </div>
 </section>
 
@@ -352,19 +382,17 @@ adipiscing elit, sed do eiusmod tempor…</span>
 <section class="band b-emerald roomy" id="start" data-sec="s05" data-title="Прототип">
   <div class="wrap">
     <div class="rub"><span class="n">05</span>Бесплатный первый шаг</div>
-    <h2 class="wide">Соберу прототип главной страницы АМДЦ и покажу через 4–5 дней</h2>
+    <h2 class="wide">Соберу прототип главной страницы АМДЦ и покажу через 4–5 дней</h2>
     <div class="formgrid">
       <div class="l">
-        <p class="lede">Не договор, не предоплата и не созвон на час. Просто посмотрите, как будет выглядеть ваша главная, и скажете «да» или «нет». <b>Материалов от вас не нужно</b> — всё для работы я уже собрал сам.</p>
+        <p class="lede">От вас не нужно ни материалов, ни предоплаты, ни созвона на час. Посмотрите готовую страницу — и скажете «да» или «нет».</p>
         <ul class="bul">
-          <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span>Готовые экраны с вашими направлениями, ценами и кнопкой записи</span></li>
-          <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span>Тексты, написанные под пациента, а не «Lorem ipsum»</span></li>
-          <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span>Телефонная версия — с неё придёт больше половины пациентов</span></li>
-          <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span>Не понравится — расходимся, и вы не должны мне ничего</span></li>
+          <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span>Ваши направления, цены и кнопка записи — на готовых экранах</span></li>
+          <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span>Версия для телефона: оттуда приходит больше половины пациентов</span></li>
+          <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span>Не понравится — расходимся, и вы не должны мне ничего</span></li>
         </ul>
-
         <div class="doc">
-          <span class="stamp pin">Бесплатно</span>
+          <span class="stamp gold">Бесплатно</span>
           <div class="sheet">
             <div class="t">Прототип · 8 экранов</div>
             <h4>Главная страница АМДЦ</h4>
@@ -377,34 +405,20 @@ adipiscing elit, sed do eiusmod tempor…</span>
       <div class="r">
         <form class="form" style="margin-top:1.8rem" data-lead>
           <h3>Получить прототип главной — бесплатно</h3>
-          <div class="sub">Напишу в WhatsApp, уточню два-три момента по клинике и через 4–5 дней пришлю готовую страницу.</div>
+          <div class="sub">Напишу в WhatsApp и через 4–5 дней пришлю готовую страницу.</div>
           <div class="field">
             <label for="f1-name">Как к вам обращаться</label>
             <input id="f1-name" name="name" type="text" placeholder="Александр Валентинович" autocomplete="name">
           </div>
           <div class="field">
-            <label for="f1-phone">Номер, на который прислать прототип</label>
+            <label for="f1-phone">Номер, на который прислать прототип</label>
             <input id="f1-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
-            <div class="hint">Это же номер WhatsApp — туда и пришлю ссылку на готовую страницу.</div>
-          </div>
-          <div class="field">
-            <label>Когда вам удобно, чтобы я написал</label>
-            <div class="when-row">
-              <label><input type="radio" name="when" value="в любое время" checked><span>В любое время</span></label>
-              <label><input type="radio" name="when" value="до обеда"><span>До обеда</span></label>
-              <label><input type="radio" name="when" value="после 18:00"><span>После 18:00</span></label>
-            </div>
-          </div>
-          <div class="field">
-            <label for="f1-note">Что важно учесть — если есть, что сказать</label>
-            <textarea id="f1-note" name="note" placeholder="Например: стоматологию и косметологию нужно показать первыми, по ним сейчас нет вообще ничего. Цены по урологии актуальные, по анализам — меняли в августе. Старый сайт трогать нельзя, пока новый не примем."></textarea>
-            <div class="hint">Необязательно. Но если заполните — прототип сразу придёт ближе к делу.</div>
+            <div class="hint">Это же номер WhatsApp — туда и пришлю ссылку.</div>
           </div>
           <button class="btn wide" type="submit">Получить прототип бесплатно</button>
-          <label class="agree"><input type="checkbox" required checked><span>Согласен на обработку персональных данных в соответствии с <a href="privacy.html">политикой конфиденциальности</a></span></label>
+          <label class="agree"><input type="checkbox" required checked><span>Согласен на обработку персональных данных в соответствии с <a href="privacy.html">политикой конфиденциальности</a></span></label>
           <div class="formfoot">
             <span class="dot"><i></i>Отвечу в течение часа</span>
-            <span>Прототип — через 4–5 дней</span>
             <span><b>0 ₽</b> и никаких обязательств</span>
           </div>
         </form>
@@ -413,273 +427,141 @@ adipiscing elit, sed do eiusmod tempor…</span>
   </div>
 </section>
 
-<!-- ============ 6. ВЫГОДЫ ============ -->
+<!-- ============ 6. ЧТО ИЗМЕНИТСЯ ============ -->
 <section class="band b-onyx tight" data-sec="s06" data-title="Что изменится">
   <div class="wrap">
     <div class="rub"><span class="n">06</span>Что изменится</div>
-    <h2 class="wide">Шесть вещей, которые начнут работать на вас каждый день</h2>
+    <h2 class="wide">Пять вещей, которые начнут приводить пациентов каждый день</h2>
     <div class="gains">
       <div class="gain lead">
         <div class="ic"><svg class="i"><use href="#i-eye"/></svg></div>
-        <h3>Вас находят по услуге, а не по названию</h3>
-        <p>Отдельная страница под каждое из 14 направлений — со своим заголовком, описанием и ценами. По запросу «уролог Площадь Мужества» человек попадает к вам, а не в чужой каталог, где вы стоите двадцатым в списке рядом с конкурентами.</p>
-        <span class="no">Сейчас: заголовок «АМДЦ | Главная» — по названию клиники вас найдёт только тот, кто его уже знает</span>
+        <h3>Вас находят по услуге, а не по названию</h3>
+        <p>У каждого из 14 направлений — своя страница с ценами и врачом. По запросу «уролог Площадь Мужества» человек попадает к вам, а не в каталог, где вы двадцатый в списке.</p>
+        <span class="no">Сейчас: заголовок «АМДЦ | Главная» — вас найдёт только тот, кто уже знает название</span>
       </div>
       <div class="gain">
         <div class="ic"><svg class="i"><use href="#i-price"/></svg></div>
-        <h3>Цену видно до звонка</h3>
-        <p>Прайс по всем направлениям на странице, а не только по анализам. Человек приходит уже согласный, а не «поинтересоваться, сколько у вас».</p>
-        <span class="no">Сейчас: в прайсе только анализы — ни одной позиции по стоматологии</span>
+        <h3>Цену видно до звонка</h3>
+        <p>Прайс по всем направлениям, а не только по анализам. Человек приходит уже согласный на сумму.</p>
       </div>
       <div class="gain">
         <div class="ic"><svg class="i"><use href="#i-phone-m"/></svg></div>
-        <h3>Запись в одно касание</h3>
-        <p>Кнопка на каждом экране, телефон, WhatsApp и Telegram. 72,6% петербуржцев хотят записываться без звонка — сейчас у вас работает только звонок.</p>
+        <h3>Запись без звонка</h3>
+        <p>72,6% петербуржцев звонить не хотят. Кнопка, WhatsApp и Telegram — на каждом экране.</p>
       </div>
       <div class="gain">
         <div class="ic"><svg class="i"><use href="#i-user"/></svg></div>
         <h3>Врачи с лицами и стажем</h3>
-        <p>Раздел «Врачи», где не один уролог, а вся команда: фото, специальность, стаж. Пациент выбирает человека, а уже потом клинику.</p>
+        <p>Пациент сначала выбирает человека и только потом клинику. Сейчас в разделе один уролог.</p>
       </div>
       <div class="gain">
-        <div class="ic"><svg class="i"><use href="#i-shield"/></svg></div>
-        <h3>Лицензия и отзывы на виду</h3>
-        <p>24 года работы, лицензия и живые отзывы стоят там, где их видит тот, кто ещё сомневается, — рядом с кнопкой записи, а не в разделе «О центре».</p>
-      </div>
-      <div class="gain full">
         <div class="ic"><svg class="i"><use href="#i-clock"/></svg></div>
-        <div class="txt">
-          <h3>Работает, пока вы принимаете</h3>
-          <p>Сайт не берёт процент с записи и не просит бюджет каждый месяц — в отличие от площадок, на которых вы сидите сейчас. Купили один раз — работает каждый день, и в выходные тоже.</p>
-          <span class="no">Сейчас: поток идёт через чужие карточки, и правила там меняются без вас</span>
-        </div>
+        <h3>Поток не зависит от площадок</h3>
+        <p>Сайт не берёт процент с записи и не просит бюджет каждый месяц. Работает и в выходные.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 7. 14 НАПРАВЛЕНИЙ ============ -->
-<section class="band b-indigo" data-sec="s07" data-title="Направления">
+<!-- ============ 7. КАК РАБОТАЮ ============ -->
+<section class="band b-paper tight" id="how" data-sec="s07" data-title="Как работаю">
   <div class="wrap">
-    <div class="rub"><span class="n">07</span>Ваши направления</div>
-    <h2 class="wide">Четырнадцать направлений. Продаются — три.</h2>
-    <div class="score">
-    <figure class="ring" role="img" aria-label="Три направления из четырнадцати имеют страницу с ценой">
-      <svg viewBox="0 0 120 120" aria-hidden="true">
-        <defs>
-          <linearGradient id="au-arc" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#EBD6A6"/>
-            <stop offset="1" stop-color="#AE8946"/>
-          </linearGradient>
-        </defs>
-        <circle class="rg-bg" cx="60" cy="60" r="36.0"/>
-        <circle class="rg-fg" cx="60" cy="60" r="36.0"
-                stroke-dasharray="48.47 177.72" transform="rotate(-90 60 60)"/>
-        <line class="t-yes" x1="60.00" y1="19.00" x2="60.00" y2="13.00"/>
-        <line class="t-yes" x1="77.79" y1="23.06" x2="80.39" y2="17.65"/>
-        <line class="t-yes" x1="92.06" y1="34.44" x2="96.75" y2="30.70"/>
-        <line class="t-part" x1="99.97" y1="50.88" x2="105.82" y2="49.54"/>
-        <line class="t-part" x1="99.97" y1="69.12" x2="105.82" y2="70.46"/>
-        <line class="t-no" x1="92.06" y1="85.56" x2="96.75" y2="89.30"/>
-        <line class="t-no" x1="77.79" y1="96.94" x2="80.39" y2="102.35"/>
-        <line class="t-no" x1="60.00" y1="101.00" x2="60.00" y2="107.00"/>
-        <line class="t-no" x1="42.21" y1="96.94" x2="39.61" y2="102.35"/>
-        <line class="t-no" x1="27.94" y1="85.56" x2="23.25" y2="89.30"/>
-        <line class="t-no" x1="20.03" y1="69.12" x2="14.18" y2="70.46"/>
-        <line class="t-no" x1="20.03" y1="50.88" x2="14.18" y2="49.54"/>
-        <line class="t-no" x1="27.94" y1="34.44" x2="23.25" y2="30.70"/>
-        <line class="t-no" x1="42.21" y1="23.06" x2="39.61" y2="17.65"/>
-      </svg>
-      <figcaption><b>3</b><i>из 14</i></figcaption>
-    </figure>
-      <div class="c">
-        <p>Три направления из четырнадцати имеют собственную страницу, цену и описание. Остальные одиннадцать пациент на сайте не найдёт — по ним вас просто нет в поиске.</p>
-        <div class="ded">
-          <span><i class="t-yes"></i>3 продают</span>
-          <span><i class="t-part"></i>2 наполовину</span>
-          <span><i class="t-no"></i>9 не существует</span>
-        </div>
-      </div>
-    </div>
-    <div class="dirs">
-      <span class="dir yes"><svg class="i"><use href="#i-check"/></svg>Урология</span>
-      <span class="dir yes"><svg class="i"><use href="#i-check"/></svg>Лаборатория</span>
-      <span class="dir yes"><svg class="i"><use href="#i-check"/></svg>Гинекология</span>
-      <span class="dir part"><svg class="i"><use href="#i-x"/></svg>Проктология</span>
-      <span class="dir part"><svg class="i"><use href="#i-x"/></svg>Дерматовенерология</span>
-      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Стоматология</span>
-      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Косметология</span>
-      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Эндокринология</span>
-      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Терапия</span>
-      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Хирургия</span>
-      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Невролог</span>
-      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Детский невролог</span>
-      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Детский психолог</span>
-      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Репродуктология</span>
-    </div>
-    <div class="facts">
-      <div class="fact ok">
-        <div class="n">50+</div>
-        <h3>позиций прайса по урологии</h3>
-        <p>Двадцать страниц услуг, консультация 300 ₽, спермограмма 2 000 ₽. Так это должно выглядеть — и так уже сделано.</p>
-      </div>
-      <div class="fact bad">
-        <div class="n">0</div>
-        <h3>позиций по стоматологии</h3>
-        <p>Направление работает с 2010 года. В прайсе — ни одной строки, в разделе «Врачи» — ни одного стоматолога.</p>
-      </div>
-      <div class="fact warn">
-        <div class="n">11</div>
-        <h3>направлений без полноценной витрины</h3>
-        <p>У девяти — только пункт меню. Ещё у двух страницы есть, но без цен и без врача. Человек, который ищет терапевта рядом с домом, о вас не узнает.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 8. КАК РАБОТАЮ ============ -->
-<section class="band b-paper tight" id="how" data-sec="s08" data-title="Как работаю">
-  <div class="wrap">
-    <div class="rub"><span class="n">08</span>Как проходит работа</div>
-    <h2 class="wide">Десять дней, четыре шага и ни одного вашего выходного</h2>
+    <div class="rub"><span class="n">07</span>Как проходит работа</div>
+    <h2 class="wide">Десять дней, четыре шага и ни одного вашего выходного</h2>
     <div class="steps">
       <div class="step now">
         <div class="badge">01</div>
         <div class="when">Дни 1–5 · бесплатно</div>
         <h3>Прототип главной</h3>
-        <p>Собираю черновую главную страницу на своих материалах. От вас — ничего.</p>
-        <div class="got">Вы получаете: готовую страницу, которую можно открыть с телефона</div>
+        <div class="got">Вы получаете: готовую страницу, которую можно открыть с телефона</div>
       </div>
       <div class="step">
         <div class="badge">02</div>
         <div class="when">День 6 · 30 минут</div>
         <h3>Разговор о деле</h3>
-        <p>Полчаса про клинику, врачей и цены — чтобы сайт говорил вашими словами, а не моими.</p>
-        <div class="got">Вы получаете: список того, что поправим, и точную смету</div>
+        <div class="got">Вы получаете: точную смету и список того, что поправим</div>
       </div>
       <div class="step">
         <div class="badge">03</div>
         <div class="when">Дни 7–9</div>
-        <h3>Сборка всех направлений</h3>
-        <p>Четырнадцать страниц услуг, прайс, врачи, формы записи, телефонная версия.</p>
-        <div class="got">Вы получаете: сайт целиком на тестовом адресе</div>
+        <h3>Сборка 14 направлений</h3>
+        <div class="got">Вы получаете: сайт целиком на тестовом адресе</div>
       </div>
       <div class="step">
         <div class="badge">04</div>
         <div class="when">День 10</div>
         <h3>Запуск и приёмка</h3>
-        <p>Переношу на ваш домен, ставлю Яндекс.Метрику и цели на заявки.</p>
-        <div class="got">Вы получаете: работающий сайт — и только теперь платите</div>
+        <div class="got">Вы получаете: работающий сайт — и только теперь платите</div>
       </div>
     </div>
-    <div class="strip good">Ваше участие за все десять дней — один разговор на полчаса. Тексты, структуру, цены и картинки беру на себя.</div>
+    <div class="strip good">Ваше участие за все десять дней — один разговор на полчаса. Тексты, структуру, цены и картинки беру на себя.</div>
   </div>
 </section>
 
-<!-- ============ 9. СОСЕДИ ============ -->
-<section class="band b-onyx" data-sec="s09" data-title="Соседи">
+<!-- ============ 8. СОСТАВ РАБОТЫ ============ -->
+<section class="band b-indigo tight" data-sec="s08" data-title="Состав работы">
   <div class="wrap">
-    <div class="vs-head">
-      <div class="vs-intro">
-        <div class="rub"><span class="n">09</span>Соседи по кварталу</div>
-        <h2 class="wide">Ближайшие конкуренты забирают ваших пациентов с помощью сайтов</h2>
-        <p class="lede">Все трое — в пятнадцати минутах пешком. Двое из них стоят в выдаче выше вас по тем же запросам, а один сидит буквально в вашем подъезде.</p>
+    <div class="rub"><span class="n">08</span>Состав работы</div>
+    <h2 class="wide">Что окажется у вас на руках через десять дней</h2>
+    <div class="incl">
+      <div class="col">
+        <h3>Смыслы</h3>
+        <ul>
+          <li><svg class="i"><use href="#i-check"/></svg>Разбор ниши и трёх ближайших конкурентов</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Прототип главной и страницы услуги</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Тексты под пациента, а не Lorem ipsum</li>
+        </ul>
       </div>
-      <figure class="quarter" role="img"
-              aria-label="Схема: АМДЦ и три ближайших конкурента в радиусе 750 метров">
-        <svg viewBox="0 0 320 260" aria-hidden="true">
-          <g class="q-rings">
-            <circle cx="150" cy="140" r="42"/>
-            <circle cx="150" cy="140" r="80"/>
-            <circle cx="150" cy="140" r="116"/>
-          </g>
-          <g class="q-ray">
-            <line x1="150" y1="140" x2="76" y2="105"/>
-            <line x1="150" y1="140" x2="252" y2="187"/>
-            <line x1="150" y1="140" x2="168" y2="122"/>
-          </g>
-          <circle class="q-dot q-them" cx="76"  cy="105" r="6"/>
-          <circle class="q-dot q-them" cx="252" cy="187" r="6"/>
-          <circle class="q-dot q-them" cx="168" cy="122" r="6"/>
-          <circle class="q-dot q-me"   cx="150" cy="140" r="8.5"/>
-        </svg>
-        <span class="q-lab q-l-me"   style="--x:47%;--y:59%">АМДЦ<i>вы</i></span>
-        <span class="q-lab q-l-a"    style="--x:54%;--y:38%">Амрита<i>тот же дом</i></span>
-        <span class="q-lab q-l-m"    style="--x:4%;--y:29%">МИРОС<i>500 м</i></span>
-        <span class="q-lab q-l-p"    style="--x:70%;--y:76%">Праксимед<i>одна остановка</i></span>
-        <figcaption>Радиусы — 250, 500 и 750 метров</figcaption>
-      </figure>
-    </div>
-    <div class="vs">
-      <div class="row ok">
-        <div class="who">Амрита<small>ул. Орбели, 19 — ваш дом · clinic-amrita.ru</small></div>
-        <div class="what">Тот же адрес, что у вас. Врачи, акции и кнопка «записаться на приём» на первом экране, 10 специалистов, онлайн-запись. Метка «Хорошее место» от Яндекса.</div>
-        <div class="rate"><div class="n">4,9</div><div class="o">196 оценок</div></div>
+      <div class="col">
+        <h3>Сайт</h3>
+        <ul>
+          <li><svg class="i"><use href="#i-check"/></svg>Страница под каждое из 14 направлений</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Прайс по всем направлениям</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Врачи с фото, стажем и специальностью</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Запись, WhatsApp, Telegram и версия для телефона</li>
+        </ul>
       </div>
-      <div class="row ok">
-        <div class="who">МИРОС на Мужества<small>просп. Непокорённых, 6к1 · medis-spb.ru</small></div>
-        <div class="what">Пятьсот метров от вас. Сайт сети с полным лечебным циклом — и 391 отзыв на НаПоправку, собранный этой страницей.</div>
-        <div class="rate"><div class="n">391</div><div class="o">отзыв</div></div>
-      </div>
-      <div class="row ok">
-        <div class="who">Праксимед<small>2-й Муринский просп., 26 · praximed.ru</small></div>
-        <div class="what">Одна остановка. Все направления вынесены на главную, раздел «Все наши врачи» — 19 специалистов с фото и стажем.</div>
-        <div class="rate"><div class="n">94</div><div class="o">отзыва</div></div>
-      </div>
-      <div class="row me">
-        <div class="who">АМДЦ<small>ул. Орбели, 19 · am-dc.ru</small></div>
-        <div class="what">Центр с 2002 года, четырнадцать направлений, свой главврач и лицензия. <b>Но на сайте заголовок «АМДЦ | Главная», в разделе «Врачи» один уролог, а у стоматологии и косметологии — Lorem ipsum.</b></div>
-        <div class="rate"><div class="n">4,3</div><div class="o">28 оценок</div></div>
+      <div class="col">
+        <h3>Запуск</h3>
+        <ul>
+          <li><svg class="i"><use href="#i-check"/></svg>Перенос на ваш домен am-dc.ru</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Заголовки для поиска и og-теги для мессенджеров</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Яндекс.Метрика и цели на каждую заявку</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Админка: цены и врачей меняете сами</li>
+        </ul>
       </div>
     </div>
-    <div class="strip warn">Вы проигрываете не мастерством и не оборудованием, а тем, что у соседей страница отвечает на вопросы пациента, а ваша — нет.</div>
+    <div class="guards">
+      <div class="guard">
+        <h3>Срок — в договоре</h3>
+        <p>10 дней, состав работ и стоимость прописаны юридически.</p>
+      </div>
+      <div class="guard">
+        <h3>Деньги — после результата</h3>
+        <p>Сначала принимаете сайт, потом платите. Ни аванса, ни доплат за правки.</p>
+      </div>
+      <div class="guard">
+        <h3>Всё остаётся вашим</h3>
+        <p>Домен, тексты и фотографии — ваша собственность. Отключить или забрать нельзя.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ============ 10. ОПРОС ============ -->
-<section class="band b-indigo" data-sec="s10" data-title="Опрос">
-  <div class="wrap">
-    <div class="rub"><span class="n">10</span>Опрос пациентов · исследование НаПоправку</div>
-    <h2 class="wide">72,6% петербуржцев хотят записываться без звонка. У вас работает только звонок.</h2>
-    <div class="bars">
-      <div class="brow">
-        <div class="blab">Онлайн через агрегаторы</div>
-        <div class="track"><span class="fill" data-w="92%" style="background:linear-gradient(90deg,#8E2F1F,#D2604B)"></span></div>
-        <div class="val">41,5%</div>
-        <div class="cap no"><span>В ваших карточках стоит только телефон — кнопки записи нет</span></div>
-      </div>
-      <div class="brow">
-        <div class="blab">Онлайн на сайте клиники</div>
-        <div class="track"><span class="fill" data-w="54%" style="background:linear-gradient(90deg,#8E2F1F,#C4563E)"></span></div>
-        <div class="val">24,5%</div>
-        <div class="cap no"><span>Форма записи спрятана в разделе «Клиентам» — ни на главной, ни в контактах её нет</span></div>
-      </div>
-      <div class="brow">
-        <div class="blab">По телефону</div>
-        <div class="track"><span class="fill" data-w="44%" style="background:linear-gradient(90deg,#0B6A53,#46C79E)"></span></div>
-        <div class="val">19,8%</div>
-        <div class="cap yes"><span>Единственный канал, который у вас сегодня работает</span></div>
-      </div>
-    </div>
-    <div class="strip">66% петербуржцев записываются онлайн — и оба этих канала у вас закрыты. Это не холодная аудитория: люди уже выбрали вас и отваливаются на последнем шаге.</div>
-  </div>
-</section>
-
-<!-- ============ 11. КЕЙС ============ -->
-<section class="band b-paper tight" id="case" data-sec="s11" data-title="Пример работы">
+<!-- ============ 9. КЕЙС ============ -->
+<section class="band b-paper tight" id="case" data-sec="s09" data-title="Пример работы">
   <div class="wrap">
     <div class="case">
       <div class="l">
-        <div class="rub"><span class="n">11</span>Пример моей работы</div>
-        <h2 class="wide">Вот сайт, который я сделал недавно</h2>
-        <p class="lede">Студия «Дофамин» пришла ровно с тем же: карточки на картах есть, своей страницы нет. Собрал лендинг на 17 блоков с квизом, прайсом, отзывами и телефонной версией — от первого разговора до запуска.</p>
+        <div class="rub"><span class="n">09</span>Пример моей работы</div>
+        <h2 class="wide">Такой сайт я уже собрал — откройте его прямо сейчас</h2>
+        <p class="lede">Студия «Дофамин» пришла ровно с тем же: карточки на картах есть, своей страницы нет. Задача у вас та же — только направлений четырнадцать, а не одно.</p>
         <a class="biglink" href="https://dopaminestudio.site" target="_blank" rel="noopener">dopaminestudio.site <svg class="i"><use href="#i-arr"/></svg></a>
         <div class="kpi">
-          <div class="k"><b>17</b><span>блоков со смыслами</span></div>
+          <div class="k"><b>17</b><span>блоков со смыслами</span></div>
           <div class="k"><b>6</b><span>шагов квиза-конвертера</span></div>
           <div class="k"><b>3</b><span>разные формы захвата</span></div>
         </div>
-        <p class="note">Откройте с телефона — сайт открывается прямо с этой страницы. Это та же работа, которую я предлагаю сделать для АМДЦ, только направлений у вас четырнадцать, а не одно.</p>
       </div>
       <div class="r">
         <div class="shot">
@@ -694,209 +576,79 @@ adipiscing elit, sed do eiusmod tempor…</span>
             <div class="mk-hero" style="background:#1B1206">
               <div class="mk-eye">Аппаратная коррекция фигуры · СПб</div>
               <div class="mk-h">Минус объём там, где нужно вам</div>
-              <div class="mk-sub">Первый визит — 1 000 ₽: проверьте методику на себе, ничем не рискуя.</div>
-              <div class="mk-cta"><span class="b">Записаться за 1 000 ₽</span></div>
+              <div class="mk-sub">Первый визит — 1 000 ₽: проверьте методику на себе, ничем не рискуя.</div>
+              <div class="mk-cta"><span class="b">Записаться за 1 000 ₽</span></div>
             </div>
             <div class="mk-cards">
-              <div class="mk-card"><div class="n">Кавитация</div><div class="p">от 1 500 ₽</div><i class="l" style="width:65%"></i></div>
-              <div class="mk-card"><div class="n">Прессотерапия</div><div class="p">от 900 ₽</div><i class="l" style="width:75%"></i></div>
-              <div class="mk-card"><div class="n">Миостимуляция</div><div class="p">от 1 200 ₽</div><i class="l" style="width:58%"></i></div>
+              <div class="mk-card"><div class="n">Кавитация</div><div class="p">от 1 500 ₽</div><i class="l" style="width:65%"></i></div>
+              <div class="mk-card"><div class="n">Прессотерапия</div><div class="p">от 900 ₽</div><i class="l" style="width:75%"></i></div>
+              <div class="mk-card"><div class="n">Миостимуляция</div><div class="p">от 1 200 ₽</div><i class="l" style="width:58%"></i></div>
             </div>
           </div>
         </div>
-        <div class="capt">Живой сайт, а не картинка в портфолио. Открывается с телефона за секунду.</div>
+        <div class="capt">Живой сайт, а не картинка в портфолио.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 12. ФОРМА ЗАХВАТА №2 — ЛИД-МАГНИТ ============ -->
-<section class="band b-emerald roomy" data-sec="s12" data-title="Разбор сайта">
+<!-- ============ 10. ВОПРОСЫ ============ -->
+<section class="band b-onyx tight" id="faq" data-sec="s10" data-title="Вопросы">
   <div class="wrap">
-    <div class="formgrid">
-      <div class="l">
-        <div class="rub"><span class="n">12</span>Если прототип — пока слишком</div>
-        <h2 class="wide">Заберите разбор <span class="nb">am-dc.ru</span>: 11 пунктов, что чинить в первую очередь</h2>
-        <p class="lede">Список, который я составил, пока готовил это предложение: что именно сломано на вашем сайте, чем это грозит и в каком порядке это чинится. <b>Пригодится, даже если делать будете не со мной</b> — отдайте его своему разработчику.</p>
-        <ul class="bul">
-          <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span>Каждый пункт — с адресом страницы, где я это нашёл</span></li>
-          <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span>Три пункта чинятся за час и без переделки сайта</span></li>
-          <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span>Ни одного звонка с продажей — пришлю файлом и всё</span></li>
-        </ul>
-        <div class="aside">Тот же список я отдал бы вашему подрядчику бесплатно — он нужен вам, а не мне.</div>
-      </div>
-      <div class="r">
-        <form class="form" data-lead data-kind="разбор сайта">
-          <h3>Получить разбор сайта</h3>
-          <div class="sub">Пришлю в WhatsApp в течение часа. Ничего решать не нужно.</div>
-          <div class="field">
-            <label for="f2-phone">Номер, на который прислать разбор</label>
-            <input id="f2-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
-          </div>
-          <button class="btn wide" type="submit">Получить разбор сайта</button>
-          <label class="agree"><input type="checkbox" required checked><span>Согласен на обработку персональных данных в соответствии с <a href="privacy.html">политикой конфиденциальности</a></span></label>
-          <div class="formfoot">
-            <span class="dot"><i></i>PDF на 11 пунктов, пришлю в течение часа</span>
-            <span>Без звонка, если сами не попросите</span>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 13. СТРАХИ ============ -->
-<section class="band b-onyx tight" id="faq" data-sec="s13" data-title="Вопросы">
-  <div class="wrap">
-    <div class="rub"><span class="n">13</span>Вопросы, которые вы себе задаёте</div>
-    <h2 class="wide">Отвечаю на то, о чём обычно не спрашивают вслух</h2>
+    <div class="rub"><span class="n">10</span>Вопросы, которые вы себе задаёте</div>
+    <h2 class="wide">Отвечаю на то, о чём обычно не спрашивают вслух</h2>
     <div class="faq">
       <details open>
-        <summary>А если мне не понравится?</summary>
-        <div class="ans"><b>Тогда мы расходимся, и вы не должны мне ничего.</b> Прототип главной — бесплатный: вы смотрите готовую страницу и говорите «да» или «нет». Это и есть весь риск, который вы на себя берёте на первом шаге.</div>
+        <summary>А если мне не понравится?</summary>
+        <div class="ans"><b>Расходимся, и вы не должны мне ничего.</b> Прототип бесплатный: смотрите готовую страницу и говорите «да» или «нет». Это и есть весь ваш риск на первом шаге.</div>
       </details>
       <details>
-        <summary>Можно ли вам верить? Вы не пропадёте с деньгами?</summary>
-        <div class="ans"><b>Пропадать не с чем: денег вперёд я не беру.</b> Сначала прототип, который вы смотрите своими глазами, потом договор с составом работ, сроком и стоимостью, и только потом оплата — после того как вы приняли результат. Живой пример моей работы — <a href="https://dopaminestudio.site" target="_blank" rel="noopener">dopaminestudio.site</a>, его можно открыть прямо сейчас.</div>
+        <summary>Можно ли вам верить? Не пропадёте с деньгами?</summary>
+        <div class="ans"><b>Пропадать не с чем: денег вперёд я не беру.</b> Сначала прототип, потом договор с составом работ и сроком, и только потом оплата — после приёмки. Работающий пример — <a href="https://dopaminestudio.site" target="_blank" rel="noopener">dopaminestudio.site</a>.</div>
       </details>
       <details>
-        <summary>Мы уже заказывали сайт — деньги ушли, толку нет</summary>
-        <div class="ans">Это видно по вашему сайту: jQuery 2014 года, «Костомный титул» на контактах и Lorem ipsum в четырёх разделах — работу когда-то бросили на середине. <b>Поэтому я и начинаю с бесплатного прототипа:</b> вы увидите результат раньше, чем зайдёт разговор о деньгах. Второй раз платить за обещание не придётся.</div>
+        <summary>Мы уже заказывали сайт — деньги ушли, толку нет</summary>
+        <div class="ans">Это видно по вашему сайту: «Костомный титул» и Lorem ipsum — работу бросили на середине. <b>Поэтому я и начинаю с бесплатного прототипа:</b> результат вы увидите раньше, чем зайдёт разговор о деньгах.</div>
       </details>
       <details>
         <summary>У нас нет времени этим заниматься</summary>
-        <div class="ans"><b>Ваше участие — один разговор на полчаса.</b> Тексты, структуру, описания услуг и цены я готовлю сам: направления, прайс и врачей я уже выписал с вашего сайта и из справочников. От вас нужно только подтвердить цифры и сказать, что убрать.</div>
-      </details>
-      <details>
-        <summary>А кто потом будет всё это наполнять и обновлять?</summary>
-        <div class="ans">Цены и врачей вы меняете сами — через простую админку, без разработчика и без ежемесячной платы за «поддержку». <b>Если не захотите возиться</b> — присылаете мне правку в WhatsApp, и я вношу её сам.</div>
-      </details>
-      <details>
-        <summary>А вы вообще разбираетесь в маркетинге, а не только в вёрстке?</summary>
-        <div class="ans"><b>Судите по тому, что уже лежит перед вами.</b> Разбор ниши, аудит вашего сайта, арифметику по вашим карточкам и расчёт потока я сделал до первого рубля и до первого разговора. Так же я работаю и дальше: сначала смыслы и цифры, потом дизайн.</div>
+        <div class="ans"><b>Ваше участие — один разговор на полчаса.</b> Направления, прайс и врачей я уже выписал с вашего сайта: нужно только подтвердить цифры. Дальше цены меняете через простую админку или присылаете правку мне в WhatsApp.</div>
       </details>
       <details>
         <summary>Сколько это стоит?</summary>
-        <div class="ans">Назову точную сумму на созвоне, после прототипа: она зависит только от того, сколько направлений запускаем сразу — четырнадцать или начнём с пяти. <b>Ориентир для решения:</b> чтобы сайт не окупился, он должен стоить дороже, чем приносит за первый месяц. Первые двое пациентов из тех двадцати двух закрывают вложение целиком.</div>
+        <div class="ans">Назову на созвоне, после прототипа: сумма зависит только от того, запускаем сразу четырнадцать направлений или начнём с пяти. <b>Ориентир для решения:</b> первые двое пациентов из тех двадцати двух закрывают вложение целиком.</div>
       </details>
     </div>
   </div>
 </section>
 
-<!-- ============ 14. ЧТО ВХОДИТ ============ -->
-<section class="band b-indigo tight" data-sec="s14" data-title="Состав работы">
-  <div class="wrap">
-    <div class="rub"><span class="n">14</span>Состав работы</div>
-    <h2 class="wide">Что входит в сайт за 10 дней</h2>
-    <div class="incl">
-      <div class="col">
-        <h3>Смыслы и структура</h3>
-        <ul>
-          <li><svg class="i"><use href="#i-check"/></svg>Анализ ниши и трёх ближайших конкурентов</li>
-          <li><svg class="i"><use href="#i-check"/></svg>Разбор аудитории по направлениям и их страхам</li>
-          <li><svg class="i"><use href="#i-check"/></svg>Формулировка оффера и заголовков</li>
-          <li><svg class="i"><use href="#i-check"/></svg>Прототип главной и типовой страницы услуги</li>
-          <li><svg class="i"><use href="#i-check"/></svg>Копирайтинг всех текстов</li>
-        </ul>
-      </div>
-      <div class="col">
-        <h3>Сайт</h3>
-        <ul>
-          <li><svg class="i"><use href="#i-check"/></svg>Главная страница на 12–15 блоков</li>
-          <li><svg class="i"><use href="#i-check"/></svg>Страница под каждое из 14 направлений</li>
-          <li><svg class="i"><use href="#i-check"/></svg>Прайс по всем направлениям, а не только по анализам</li>
-          <li><svg class="i"><use href="#i-check"/></svg>Раздел «Врачи» с фото, стажем и специальностью</li>
-          <li><svg class="i"><use href="#i-check"/></svg>Формы записи, WhatsApp, Telegram и клик по телефону</li>
-          <li><svg class="i"><use href="#i-check"/></svg>Телефонная версия — отдельной заботой</li>
-        </ul>
-      </div>
-      <div class="col">
-        <h3>Запуск</h3>
-        <ul>
-          <li><svg class="i"><use href="#i-check"/></svg>Заголовки и описания под каждую услугу</li>
-          <li><svg class="i"><use href="#i-check"/></svg>og-теги: ссылка в мессенджере с картинкой и названием</li>
-          <li><svg class="i"><use href="#i-check"/></svg>Перенос на ваш домен am-dc.ru</li>
-          <li><svg class="i"><use href="#i-check"/></svg>Яндекс.Метрика и цели на каждую заявку</li>
-          <li><svg class="i"><use href="#i-check"/></svg>Политика конфиденциальности под 152-ФЗ</li>
-          <li><svg class="i"><use href="#i-check"/></svg>Инструкция, как менять цены самим</li>
-        </ul>
-      </div>
-    </div>
-    <div class="guards">
-      <div class="guard">
-        <h3>Срок — в договоре</h3>
-        <p>10 дней от старта до запуска прописаны юридически, вместе с составом работ и стоимостью.</p>
-      </div>
-      <div class="guard">
-        <h3>Деньги — после результата</h3>
-        <p>Сначала вы видите и принимаете сайт, потом платите. Ни аванса, ни почасовки, ни доплат за правки.</p>
-      </div>
-      <div class="guard">
-        <h3>Всё остаётся вашим</h3>
-        <p>Домен, тексты, фотографии и сам сайт — ваша собственность. Их нельзя отключить или забрать.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 15. ЧЕРЕЗ ГОД ============ -->
-<section class="band b-paper" data-sec="s15" data-title="Через год">
-  <div class="wrap">
-    <div class="rub"><span class="n">15</span>Куда вы придёте через год</div>
-    <h2 class="wide">Одна и та же клиника через двенадцать месяцев. Разница — в решении, которое принимается сейчас.</h2>
-    <div class="tickets">
-      <div class="ticket bad">
-        <div class="lab">Если ничего не менять</div>
-        <ul>
-          <li><span class="tm">−2,3 млн</span><span>оборота ушли к тем, у кого страница отвечает на вопросы</span></li>
-          <li><span class="tm">−264</span><span>пациента прошли мимо, и вы не узнали ни об одном</span></li>
-          <li><span class="tm">Так же</span><span>загрузка зависит от чужих карточек и чужих алгоритмов</span></li>
-          <li><span class="tm">Дальше</span><span>соседи докручивают то, чего у вас нет, — разрыв растёт</span></li>
-        </ul>
-      </div>
-      <div class="ticket good">
-        <div class="lab">Если запустить сайт в этом месяце</div>
-        <ul>
-          <li><span class="tm">11 мес.</span><span>страница отработала из двенадцати — с первого месяца</span></li>
-          <li><span class="tm">База</span><span>выросла на людях, которые нашли вас сами, без рекламы</span></li>
-          <li><span class="tm">Чек</span><span>подрос сам: цены по всем направлениям видно до звонка</span></li>
-          <li><span class="tm">Ваше</span><span>домен, тексты и фотографии — их нельзя отключить</span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="strip">Через год выбор будет тот же — только год уже потрачен.</div>
-  </div>
-</section>
-
-<!-- ============ 16. ФИНАЛЬНЫЙ CTA ============ -->
-<section class="band b-emerald roomy" id="final" data-sec="s16" data-title="Начать">
+<!-- ============ 11. ФИНАЛЬНЫЙ CTA ============ -->
+<section class="band b-emerald roomy" id="final" data-sec="s11" data-title="Начать">
   <div class="wrap">
     <div class="formgrid">
       <div class="l">
-        <div class="rub"><span class="n">16</span>Начать проще, чем кажется</div>
-        <h2 class="wide">Не соглашайтесь сразу на сайт. Просто разрешите показать, как он будет выглядеть.</h2>
-        <p class="lede">Решать ничего не нужно. Один шаг, за которым не следует никаких обязательств:</p>
+        <div class="rub"><span class="n">11</span>Начать проще, чем кажется</div>
+        <h2 class="wide">Не соглашайтесь на сайт. Просто разрешите показать, как он будет выглядеть.</h2>
         <ul class="bul">
-          <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span>Через 4–5 дней вы получаете черновой прототип главной страницы</span></li>
-          <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span>Смотрите бесплатно, без обязательств. Не понравилось — на этом расходимся</span></li>
-          <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span>Понравилось — обсуждаем детали и сроки, уже глядя на реальный результат</span></li>
+          <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span>Через 4–5 дней у вас на руках прототип главной страницы. Бесплатно</span></li>
+          <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span>Понравится — обсуждаем детали, уже глядя на результат. Нет — расходимся</span></li>
         </ul>
-        <div class="strip">Каждый месяц без нормального сайта — это 22 пациента и 191 000 ₽, которые искали такую клинику и не нашли вас. Сентябрь: люди вышли из отпусков и берутся за отложенное здоровье.</div>
+        <div class="strip">Каждый месяц ожидания — это 22 пациента, которые искали такую клинику и не нашли вас.</div>
       </div>
       <div class="r">
         <form class="form" data-lead data-kind="прототип (финальная форма)">
-          <h3>Показать, как будет выглядеть сайт АМДЦ</h3>
-          <div class="sub">Одно сообщение — и через 4–5 дней у вас на руках готовый прототип главной. Бесплатно. Материалов от вас не нужно.</div>
+          <h3>Показать, как будет выглядеть сайт АМДЦ</h3>
+          <div class="sub">Одно сообщение — и через 4–5 дней у вас готовый прототип главной. Бесплатно.</div>
           <div class="field">
             <label for="f3-name">Как к вам обращаться</label>
             <input id="f3-name" name="name" type="text" placeholder="Имя и отчество" autocomplete="name">
           </div>
           <div class="field">
-            <label for="f3-phone">Номер, на который прислать прототип</label>
+            <label for="f3-phone">Номер, на который прислать прототип</label>
             <input id="f3-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
           </div>
           <button class="btn wide" type="submit">Показать прототип — бесплатно</button>
-          <label class="agree"><input type="checkbox" required checked><span>Согласен на обработку персональных данных в соответствии с <a href="privacy.html">политикой конфиденциальности</a></span></label>
+          <label class="agree"><input type="checkbox" required checked><span>Согласен на обработку персональных данных в соответствии с <a href="privacy.html">политикой конфиденциальности</a></span></label>
           <div class="formfoot">
             <span class="dot"><i></i>Отвечу в течение часа</span>
             <span>Или напишите сами: <b><a href="https://wa.me/79111112122" target="_blank" rel="noopener">+7 911 111-21-22</a></b></span>
@@ -907,13 +659,14 @@ adipiscing elit, sed do eiusmod tempor…</span>
   </div>
 </section>
 
+
 <!-- ============ ПОДВАЛ ============ -->
 <footer>
   <div class="wrap">
     <div class="cols">
       <div style="flex:1 1 20rem">
-        <h4>Сайты для медицинских центров</h4>
-        <p style="max-width:24rem">Смыслы, тексты, дизайн и сборка — одним человеком, без агентских накруток и менеджеров-посредников. Санкт-Петербург, работаю по договору.</p>
+        <h4>Сайты для медицинских центров</h4>
+        <p style="max-width:24rem">Смыслы, тексты, дизайн и сборка — одним человеком, без агентских накруток. Санкт-Петербург, по договору.</p>
       </div>
       <div>
         <h4>Связаться</h4>
@@ -924,8 +677,8 @@ adipiscing elit, sed do eiusmod tempor…</span>
         </div>
       </div>
       <div>
-        <h4>Об этом предложении</h4>
-        <p style="max-width:19rem">Страница подготовлена лично для АМДЦ, ул. Орбели, 19. Все факты о сайте проверены вручную 11 сентября 2026 года.</p>
+        <h4>Об этом предложении</h4>
+        <p style="max-width:19rem">Подготовлено лично для АМДЦ, ул. Орбели, 19. Факты о сайте проверены вручную 11 сентября 2026 года.</p>
         <p style="margin-top:.7rem"><a href="privacy.html" style="text-decoration:underline">Политика конфиденциальности</a></p>
       </div>
     </div>
@@ -934,11 +687,11 @@ adipiscing elit, sed do eiusmod tempor…</span>
     <div class="colophon">
       <span><b>Набрано</b>Cormorant Garamond · Manrope · JetBrains Mono</span>
       <span><b>Собрано</b>вручную, без конструкторов и тем</span>
-      <span><b>Проверено</b>на am-dc.ru 11 сентября 2026</span>
+      <span><b>Проверено</b>на am-dc.ru 11 сентября 2026</span>
     </div>
     <div class="fmark" aria-hidden="true">АМДЦ</div>
     <div class="fbot">
-      <span>© 2026 · Персональное предложение для АМДЦ</span>
+      <span>© 2026 · Персональное предложение для АМДЦ</span>
       <span>Данные: am-dc.ru, Яндекс Карты, 2ГИС, Zoon, ПроДокторов, НаПоправку</span>
     </div>
   </div>
@@ -1037,9 +790,9 @@ adipiscing elit, sed do eiusmod tempor…</span>
     'section:not(.hero) .wrap > .lede',
     'section:not(.hero) .wrap > .strip',
     'section:not(.hero) .wrap > .note',
-    '.ticket', '.audit > *', '.funnel', '.ledger', '.total',
+    '.audit > *', '.funnel', '.total',
     '.formgrid > *', '.gain', '.score', '.dirs',
-    '.fact', '.step', '.vs .row', '.brow', '.case > *',
+    '.step', '.vs .row', '.case > *',
     '.faq details', '.incl .col', '.guard'
   ].join(',');
 
