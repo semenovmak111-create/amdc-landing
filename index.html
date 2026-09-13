@@ -54,26 +54,50 @@
 
 <!-- ============ ШАПКА ============ -->
 <header class="top">
-  <div class="wrap">
-    <a class="brand" href="#top">
-      <span class="mark">+</span>
-      <span>
-        <span class="bname">Сайты для клиник</span>
-        <span class="bsub">Санкт-Петербург</span>
-      </span>
-    </a>
-    <nav class="menu">
-      <a href="#money">Расчёт</a>
-      <a href="#problem">Ваш сайт</a>
-      <a href="#case">Пример</a>
-      <a href="#faq">Вопросы</a>
-      <a href="#how">Предложение</a>
-    </nav>
-    <div class="topr">
-      <a class="toptel" href="tel:+79111112122">+7 911 111-21-22</a>
-      <a class="btn sm" href="#start"><span class="w-lg">Получить прототип</span><span class="w-sm">Прототип</span></a>
+
+  <!-- Верхняя строка — реквизиты бланка: кому, откуда, номер.
+       На прокрутке складывается, и шапка становится рабочей. -->
+  <div class="topbar">
+    <div class="wrap">
+      <span class="tb-l"><i class="live" aria-hidden="true"></i>Отвечаю в течение часа · сегодня до 21:00</span>
+      <span class="tb-c">Персональное предложение для медицинского центра АМДЦ · ул. Орбели, 19</span>
+      <span class="tb-r">Санкт-Петербург<i class="tb-sep" aria-hidden="true"></i>№ 001 / 2026</span>
     </div>
   </div>
+
+  <!-- Рабочая строка: знак, оглавление, связь. -->
+  <div class="topmain">
+    <div class="wrap">
+
+      <a class="brand" href="#top">
+        <span class="mark" aria-hidden="true"><i class="mk-cross"></i></span>
+        <span class="btext">
+          <span class="bname">Разработка конверсионных сайтов</span>
+          <span class="bsub">«под ключ»</span>
+        </span>
+      </a>
+
+      <!-- Меню набрано как оглавление документа: номер полосы
+           под номером раздела на странице, а не «пункты». -->
+      <nav class="menu" aria-label="Разделы предложения">
+        <a href="#money"><em>02</em><span>Расчёт</span></a>
+        <a href="#problem"><em>03</em><span>Ваш сайт</span></a>
+        <a href="#case"><em>10</em><span>Пример</span></a>
+        <a href="#faq"><em>11</em><span>Вопросы</span></a>
+        <a href="#how"><em>12</em><span>Предложение</span></a>
+      </nav>
+
+      <div class="topr">
+        <a class="toptel" href="tel:+79111112122">
+          <svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>
+          <span class="tel-n">+7 911 111-21-22</span>
+        </a>
+        <a class="btn sm" href="#start"><span class="w-lg">Получить прототип</span><span class="w-sm">Прототип</span></a>
+      </div>
+
+    </div>
+  </div>
+
 </header>
 
 <!-- ============ 1. ПЕРВЫЙ ЭКРАН ============ -->
@@ -279,69 +303,76 @@
 <section class="band b-indigo" data-sec="s04" data-title="Кто уже сделал">
   <div class="wrap">
     <div class="rub"><span class="n">04</span>Кто этот шаг уже сделал</div>
-    <h2 class="wide">Сайт есть у <mark>87%</mark> частных клиник Петербурга. Выигрывает тот, у кого он отвечает на вопросы.</h2>
-    <p class="lede">Я открыл вручную 251 домен по городу. Сайт с услугами, ценами и записью есть у 217 клиник: он давно не преимущество — преимуществом стало то, что на нём написано.</p>
-    <div class="score">
-    <figure class="ring" role="img" aria-label="Три направления из четырнадцати имеют страницу с ценой">
-      <svg viewBox="0 0 120 120" aria-hidden="true">
-        <defs>
-          <linearGradient id="au-arc" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#EBD6A6"/>
-            <stop offset="1" stop-color="#AE8946"/>
-          </linearGradient>
-        </defs>
-        <circle class="rg-bg" cx="60" cy="60" r="36.0"/>
-        <circle class="rg-fg" cx="60" cy="60" r="36.0"
-                stroke-dasharray="48.47 177.72" transform="rotate(-90 60 60)"/>
-        <line class="t-yes" x1="60.00" y1="19.00" x2="60.00" y2="13.00"/>
-        <line class="t-yes" x1="77.79" y1="23.06" x2="80.39" y2="17.65"/>
-        <line class="t-yes" x1="92.06" y1="34.44" x2="96.75" y2="30.70"/>
-        <line class="t-part" x1="99.97" y1="50.88" x2="105.82" y2="49.54"/>
-        <line class="t-part" x1="99.97" y1="69.12" x2="105.82" y2="70.46"/>
-        <line class="t-no" x1="92.06" y1="85.56" x2="96.75" y2="89.30"/>
-        <line class="t-no" x1="77.79" y1="96.94" x2="80.39" y2="102.35"/>
-        <line class="t-no" x1="60.00" y1="101.00" x2="60.00" y2="107.00"/>
-        <line class="t-no" x1="42.21" y1="96.94" x2="39.61" y2="102.35"/>
-        <line class="t-no" x1="27.94" y1="85.56" x2="23.25" y2="89.30"/>
-        <line class="t-no" x1="20.03" y1="69.12" x2="14.18" y2="70.46"/>
-        <line class="t-no" x1="20.03" y1="50.88" x2="14.18" y2="49.54"/>
-        <line class="t-no" x1="27.94" y1="34.44" x2="23.25" y2="30.70"/>
-        <line class="t-no" x1="42.21" y1="23.06" x2="39.61" y2="17.65"/>
-      </svg>
-      <figcaption><b>3</b><i>из 14</i></figcaption>
-    </figure>
-      <div class="c">
-        <p>У вас так оформлены три направления из четырнадцати. У остальных одиннадцати — шаблонный заголовок и пустое описание, по услуге их не найти.</p>
+    <h2 class="wide">Сайт есть у <mark>87%</mark> частных клиник Петербурга. Выигрывает тот, у кого он лучше продаёт.</h2>
+    <p class="lede">«Продаёт» — это не про красоту. Это четыре вещи, которые страница делает вместо администратора, пока вы ведёте приём.</p>
+
+    <!-- Часть первая: что именно делает страница, которая продаёт.
+         Четыре признака — по одному на карточку, без подпунктов. -->
+    <div class="sells">
+      <article class="sell">
+        <span class="sn">01</span>
+        <h3>Их находят по услуге</h3>
+        <p>По запросу «уролог Площадь Мужества» открывается их страница, а не чужой каталог со списком конкурентов.</p>
+      </article>
+      <article class="sell">
+        <span class="sn">02</span>
+        <h3>Цену видно до звонка</h3>
+        <p>Человек приходит уже согласный на сумму, а не «поинтересоваться, сколько у вас стоит приём».</p>
+      </article>
+      <article class="sell">
+        <span class="sn">03</span>
+        <h3>Есть куда вести рекламу</h3>
+        <p>На страницу без описания и цен рекламу вести нельзя: бюджет сгорит на первом же клике.</p>
+      </article>
+      <article class="sell">
+        <span class="sn">04</span>
+        <h3>Отзывы копятся у них</h3>
+        <p>Кто дошёл и записался — тот и оставит оценку. У соседей по дому 196 отзывов, у вас — 28.</p>
+      </article>
+    </div>
+
+    <!-- Часть вторая: сколько этого у АМДЦ. Одна панель, одна цифра. -->
+    <div class="own">
+      <figure class="ring" role="img" aria-label="Три направления из четырнадцати имеют страницу с ценой">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <defs>
+            <linearGradient id="au-arc" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#EBD6A6"/>
+              <stop offset="1" stop-color="#AE8946"/>
+            </linearGradient>
+          </defs>
+          <circle class="rg-bg" cx="60" cy="60" r="36.0"/>
+          <circle class="rg-fg" cx="60" cy="60" r="36.0"
+                  stroke-dasharray="48.47 177.72" transform="rotate(-90 60 60)"/>
+          <line class="t-yes" x1="60.00" y1="19.00" x2="60.00" y2="13.00"/>
+          <line class="t-yes" x1="77.79" y1="23.06" x2="80.39" y2="17.65"/>
+          <line class="t-yes" x1="92.06" y1="34.44" x2="96.75" y2="30.70"/>
+          <line class="t-part" x1="99.97" y1="50.88" x2="105.82" y2="49.54"/>
+          <line class="t-part" x1="99.97" y1="69.12" x2="105.82" y2="70.46"/>
+          <line class="t-no" x1="92.06" y1="85.56" x2="96.75" y2="89.30"/>
+          <line class="t-no" x1="77.79" y1="96.94" x2="80.39" y2="102.35"/>
+          <line class="t-no" x1="60.00" y1="101.00" x2="60.00" y2="107.00"/>
+          <line class="t-no" x1="42.21" y1="96.94" x2="39.61" y2="102.35"/>
+          <line class="t-no" x1="27.94" y1="85.56" x2="23.25" y2="89.30"/>
+          <line class="t-no" x1="20.03" y1="69.12" x2="14.18" y2="70.46"/>
+          <line class="t-no" x1="20.03" y1="50.88" x2="14.18" y2="49.54"/>
+          <line class="t-no" x1="27.94" y1="34.44" x2="23.25" y2="30.70"/>
+          <line class="t-no" x1="42.21" y1="23.06" x2="39.61" y2="17.65"/>
+        </svg>
+        <figcaption><b>3</b><i>из 14</i></figcaption>
+      </figure>
+      <div class="own-c">
+        <div class="own-h">Все четыре пункта работают у вас <b>только на трёх направлениях из четырнадцати</b></div>
+        <p>Остальные одиннадцать на сайте есть только пунктом меню: ни цены, ни описания, ни врача. Человек, который ищет стоматолога или косметолога рядом с домом, до вас не доходит — хотя вы их принимаете.</p>
         <div class="ded">
           <span><i class="t-yes"></i>3 продают</span>
           <span><i class="t-part"></i>2 наполовину</span>
-          <span><i class="t-no"></i>9 не существует</span>
+          <span><i class="t-no"></i>9 не существует</span>
         </div>
       </div>
     </div>
-    <div class="dirs">
-      <span class="dir yes"><svg class="i"><use href="#i-check"/></svg>Урология</span>
-      <span class="dir yes"><svg class="i"><use href="#i-check"/></svg>Лаборатория</span>
-      <span class="dir yes"><svg class="i"><use href="#i-check"/></svg>Гинекология</span>
-      <span class="dir part"><svg class="i"><use href="#i-x"/></svg>Проктология</span>
-      <span class="dir part"><svg class="i"><use href="#i-x"/></svg>Дерматовенерология</span>
-      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Стоматология</span>
-      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Косметология</span>
-      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Эндокринология</span>
-      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Терапия</span>
-      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Хирургия</span>
-      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Невролог</span>
-      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Детский невролог</span>
-      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Детский психолог</span>
-      <span class="dir no"><svg class="i"><use href="#i-x"/></svg>Репродуктология</span>
-    </div>
-    <ul class="bul">
-      <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span><b>Их находят по услуге.</b> По запросу «уролог Площадь Мужества» открывается их страница, а не каталог с конкурентами</span></li>
-      <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span><b>Цену видно до звонка</b> — человек приходит уже согласный, а не «поинтересоваться, сколько у вас»</span></li>
-      <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span><b>Им есть куда вести рекламу.</b> На страницу без описания и цен её вести нельзя: бюджет сгорит на первом же клике</span></li>
-      <li><span class="ck"><svg class="i"><use href="#i-check"/></svg></span><span><b>Отзывы копятся у них.</b> У соседей по дому 196 оценок на Яндекс Картах, у вас — 28</span></li>
-    </ul>
-    <div class="strip">Дело не в том, кто лучше лечит. В минуту выбора видно их, а вас нет — и 191 000 ₽ каждый месяц уходят к тем, кто просто оказался на виду.</div>
+
+    <div class="strip">Дело не в том, кто лучше лечит. В минуту выбора видно их, а вас нет — и 191 000 ₽ каждый месяц уходят к тем, кто просто оказался на виду.</div>
   </div>
 </section>
 
@@ -352,7 +383,7 @@
       <div class="vs-intro">
         <div class="rub"><span class="n">05</span>Соседи по кварталу</div>
         <h2 class="wide">Ближайшие конкуренты забирают ваших клиентов с помощью сайтов</h2>
-        <p class="lede">Все трое — в пятнадцати минутах пешком, один сидит в вашем же доме. Я открыл каждый сайт и выписал, что человек видит там за тридцать секунд.</p>
+        <p class="lede">Все трое — в пятнадцати минутах пешком, один сидит в вашем же доме. Вот их первые экраны так, как их видит человек, — и ваш, в том же ряду.</p>
       </div>
       <figure class="quarter" role="img"
               aria-label="Схема: АМДЦ и три ближайших конкурента в радиусе 750 метров">
@@ -379,28 +410,65 @@
         <figcaption>Радиусы — 250, 500 и 750 метров</figcaption>
       </figure>
     </div>
-    <div class="vs">
-      <div class="row ok">
-        <div class="who">Амрита<small>ул. Орбели, 19 — ваш дом</small></div>
-        <div class="what">Врачи, акции и кнопка «записаться» на первом экране. Онлайн-запись, метка «Хорошее место» от Яндекса.</div>
-        <div class="rate"><div class="n">4,9</div><div class="o">196 оценок</div></div>
-      </div>
-      <div class="row ok">
-        <div class="who">МИРОС на Мужества<small>просп. Непокорённых, 6к1</small></div>
-        <div class="what">500 метров. Сайт сети с полным лечебным циклом собрал 391 отзыв на НаПоправку.</div>
-        <div class="rate"><div class="n">391</div><div class="o">отзыв</div></div>
-      </div>
-      <div class="row ok">
-        <div class="who">Праксимед<small>2-й Муринский просп., 26</small></div>
-        <div class="what">Одна остановка. Все направления вынесены на главную, раздел «Все наши врачи» — 19 специалистов.</div>
-        <div class="rate"><div class="n">94</div><div class="o">отзыва</div></div>
-      </div>
-      <div class="row me">
-        <div class="who">АМДЦ<small>ул. Орбели, 19 · am-dc.ru</small></div>
-        <div class="what">24 года работы, 14 направлений, свой главврач и лицензия. <b>Но на сайте — один врач и Lorem ipsum.</b></div>
-        <div class="rate"><div class="n">4,3</div><div class="o">28 оценок</div></div>
-      </div>
+    <!-- Четыре первых экрана: три соседа и вы. Снимки настоящие,
+         поэтому спорить не с чем — видно одно и то же, что видит
+         человек в поиске. -->
+    <div class="sites">
+
+      <figure class="site">
+        <div class="win">
+          <div class="bar"><i></i><i></i><i></i><span class="url">clinic-amrita.ru</span></div>
+          <img src="assets/shots/amrita.webp" width="1120" height="875" loading="lazy" decoding="async"
+               alt="Первый экран сайта клиники «Амрита»: телефоны обоих адресов, кнопка «Записаться на приём», меню с врачами, отзывами, услугами, акциями и ценами">
+        </div>
+        <figcaption>
+          <div class="st-h"><b>Амрита</b><span class="st-r">4,9 · 196 оценок</span></div>
+          <div class="st-d">Ваш дом — ул. Орбели, 19</div>
+          <p>Телефон каждого адреса и жёлтая кнопка «Записаться на приём» в шапке. В меню — врачи, отзывы, услуги, акции и цены.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="site">
+        <div class="win">
+          <div class="bar"><i></i><i></i><i></i><span class="url">medis-spb.ru</span></div>
+          <img src="assets/shots/miros.webp" width="1120" height="875" loading="lazy" decoding="async"
+               alt="Первый экран филиала клиники МИРОС на площади Мужества: поиск врача по имени или специализации, расписание врачей, блоки «Сдать анализ» и «Узнать результаты»">
+        </div>
+        <figcaption>
+          <div class="st-h"><b>МИРОС на Мужества</b><span class="st-r">391 отзыв</span></div>
+          <div class="st-d">500 метров — просп. Непокорённых, 6к1</div>
+          <p>У филиала своя страница: поиск врача по имени и специализации, расписание приёма, анализы и личный кабинет — всё на первом экране.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="site">
+        <div class="win">
+          <div class="bar"><i></i><i></i><i></i><span class="url">praximed.ru</span></div>
+          <img src="assets/shots/praximed.webp" width="1120" height="875" loading="lazy" decoding="async"
+               alt="Главная страница центра «Праксимед»: меню с отделениями и плитка из десяти направлений — спортивная медицина, педиатрия, терапия, реабилитация, физиотерапия, массаж, УЗИ">
+        </div>
+        <figcaption>
+          <div class="st-h"><b>Праксимед</b><span class="st-r">94 отзыва</span></div>
+          <div class="st-d">Одна остановка — 2-й Муринский просп., 26</div>
+          <p>Десять отделений плиткой сразу под шапкой и поиск по сайту: человек попадает в своё направление за один клик.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="site me">
+        <div class="win">
+          <div class="bar"><i></i><i></i><i></i><span class="url">am-dc.ru</span></div>
+          <img src="assets/shots/amdc.webp" width="1120" height="875" loading="lazy" decoding="async"
+               alt="Первый экран сайта АМДЦ: логотип, два телефона, декоративная картинка и текстовый блок «О центре»">
+        </div>
+        <figcaption>
+          <div class="st-h"><b>АМДЦ — ваш сайт</b><span class="st-r">4,3 · 28 оценок</span></div>
+          <div class="st-d">Ул. Орбели, 19 · 24 года работы, 14 направлений</div>
+          <p>На первом экране — логотип, телефоны и картинка. Ни цены, ни врача, ни кнопки записи: дальше идёт текст «О центре».</p>
+        </figcaption>
+      </figure>
+
     </div>
+    <p class="note">Снимки сделаны 13 сентября 2026 года, окно 1280 пикселей — так эти страницы видит человек с ноутбука. Откройте любую и сверьте.</p>
     <div class="strip warn">Вы проигрываете не мастерством и не оборудованием, а тем, что у соседей страница отвечает на вопросы клиента, а ваша — нет. Это решается раньше, чем человек узнает, кто лучше лечит.</div>
   </div>
 </section>
@@ -409,28 +477,100 @@
 <section class="band b-onyx" data-sec="s06" data-title="Один вечер">
   <div class="wrap">
     <div class="rub"><span class="n">06</span>Один вечер, два исхода</div>
-    <h2 class="wide">Два человека, один и тот же запрос. Разница только в том, что один <mark>нашёл страницу</mark>.</h2>
-    <div class="tickets">
-      <div class="ticket good">
-        <div class="lab">Нашёл страницу — записался</div>
-        <ul>
-          <li><span class="tm">21:31</span><span>открывает первую ссылку: врачи с фото, цены, кнопка записи</span></li>
-          <li><span class="tm">21:33</span><span>смотрит, что входит в приём и сколько это стоит</span></li>
-          <li><span class="tm">21:34</span><span>нажимает «записаться», выбирает четверг</span></li>
-          <li><span class="tm">21:34</span><span><b>Заявка у администратора. Вопрос закрыт за четыре минуты</b></span></li>
-        </ul>
+    <h2 class="wide">Два человека, один и тот же запрос. Разница только в том, что один <mark>нашёл страницу</mark>.</h2>
+
+    <!-- Развилка. Сверху общий вход — один и тот же вечер и один
+         и тот же запрос; дальше дорога расходится, и видно, в
+         какую минуту и на каком экране это происходит. -->
+    <div class="fork">
+
+      <div class="fk-start">
+        <span class="fk-tm">21:31 · вторник</span>
+        <div class="fk-txt">
+          <b>Один и тот же запрос в поиске</b>
+          <p>Второй день тянет поясницу. Человек берёт телефон и пишет: «уролог площадь мужества». Дальше всё решают три минуты и два экрана.</p>
+        </div>
       </div>
-      <div class="ticket bad">
-        <div class="lab">Дошёл до вас — ушёл</div>
-        <ul>
-          <li><span class="tm">21:31</span><span>в выдаче каталог: вы в общем списке, без цен</span></li>
-          <li><span class="tm">21:32</span><span>заходит на am-dc.ru и видит «АМДЦ | Главная»</span></li>
-          <li><span class="tm">21:33</span><span>ни цены, ни кнопки записи на экране — закрывает вкладку</span></li>
-          <li><span class="tm">Завтра</span><span><b>Не звонит. Вопрос закрылся сам, у соседей</b></span></li>
-        </ul>
+
+      <svg class="fk-split" viewBox="0 0 1000 62" preserveAspectRatio="none" aria-hidden="true">
+        <path class="fk-a" vector-effect="non-scaling-stroke"
+              d="M500 0 V14 C500 30 486 32 470 32 H280 C262 32 250 38 250 48 V62"/>
+        <path class="fk-b" vector-effect="non-scaling-stroke"
+              d="M500 0 V14 C500 30 514 32 530 32 H720 C738 32 750 38 750 48 V62"/>
+      </svg>
+
+      <div class="ways">
+
+        <article class="way good">
+          <div class="w-head">
+            <span class="w-k">Путь А</span>
+            <h3>Первой открылась страница соседа</h3>
+          </div>
+          <ol class="w-steps">
+            <li>
+              <span class="tm">21:31</span>
+              <span class="ic"><svg class="i"><use href="#i-eye"/></svg></span>
+              <span class="tx">Первая же ссылка — не каталог, а страница услуги: <b>«Приём уролога, ул. Орбели»</b>, врач с фотографией и адрес в двух шагах от дома</span>
+            </li>
+            <li>
+              <span class="tm">21:32</span>
+              <span class="ic"><svg class="i"><use href="#i-price"/></svg></span>
+              <span class="tx">Рядом с услугой стоит цена: <b>приём 1 500 ₽, УЗИ 2 200 ₽</b>. Решение принято до того, как он кому-то позвонил</span>
+            </li>
+            <li>
+              <span class="tm">21:33</span>
+              <span class="ic"><svg class="i"><use href="#i-clock"/></svg></span>
+              <span class="tx">Нажимает «Записаться», выбирает <b>четверг, 18:30</b>, оставляет имя и телефон — без звонка, в тишине</span>
+            </li>
+            <li class="fin">
+              <span class="tm">21:34</span>
+              <span class="ic"><svg class="i"><use href="#i-check"/></svg></span>
+              <span class="tx"><b>Заявка у администратора.</b> Вопрос закрыт за четыре минуты</span>
+            </li>
+          </ol>
+          <div class="w-out">
+            <div class="w-sum">8 700 ₽</div>
+            <p>средний первый визит — и человек вернётся: теперь у него есть «своя клиника», и она в соседнем доме.</p>
+          </div>
+        </article>
+
+        <article class="way bad">
+          <div class="w-head">
+            <span class="w-k">Путь Б</span>
+            <h3>Он дошёл до вашего сайта</h3>
+          </div>
+          <ol class="w-steps">
+            <li>
+              <span class="tm">21:31</span>
+              <span class="ic"><svg class="i"><use href="#i-eye"/></svg></span>
+              <span class="tx">По услуге вас в выдаче нет: только <b>строчка в чужом каталоге</b>, в общем списке из двадцати клиник и без цены</span>
+            </li>
+            <li>
+              <span class="tm">21:32</span>
+              <span class="ic"><svg class="i"><use href="#i-phone-m"/></svg></span>
+              <span class="tx">Всё-таки открывает am-dc.ru и видит <b>«АМДЦ | Главная»</b>: логотип, два телефона, картинка и текст «О центре»</span>
+            </li>
+            <li>
+              <span class="tm">21:33</span>
+              <span class="ic"><svg class="i"><use href="#i-price"/></svg></span>
+              <span class="tx">Ни цены, ни врача, ни кнопки записи. <b>Остаётся только позвонить</b> — в половине десятого вечера, наугад, вдруг уже закрыто</span>
+            </li>
+            <li class="fin">
+              <span class="tm">21:34</span>
+              <span class="ic"><svg class="i"><use href="#i-x"/></svg></span>
+              <span class="tx"><b>Закрывает вкладку</b> и возвращается в выдачу — к тем, у кого всё это было</span>
+            </li>
+          </ol>
+          <div class="w-out">
+            <div class="w-sum">0 ₽</div>
+            <p>и ни следа: он не позвонил, не написал и не оставил заявку. Вы об этом человеке никогда не узнаете.</p>
+          </div>
+        </article>
+
       </div>
     </div>
-    <div class="strip">Он не выбрал конкурента — он просто не смог выбрать вас: на вашей странице не нашлось ответа ни на один его вопрос.</div>
+
+    <div class="strip">Он не выбрал конкурента — он просто не смог выбрать вас: на вашей странице не нашлось ответа ни на один его вопрос.</div>
   </div>
 </section>
 
@@ -859,9 +999,9 @@
     'section:not(.hero) .wrap > .strip',
     'section:not(.hero) .wrap > .note',
     'section:not(.hero) .wrap > .bul',
-    '.audit > *', '.funnel', '.total', '.ticket', '.brow',
-    '.formgrid > *', '.gain', '.score', '.dirs',
-    '.step', '.vs .row', '.case > *',
+    '.audit > *', '.funnel', '.total', '.ticket', '.way', '.brow',
+    '.formgrid > *', '.gain', '.sell', '.own',
+    '.step', '.vs .row', '.site', '.case > *',
     '.faq details', '.incl .col', '.guard'
   ].join(',');
 
@@ -922,7 +1062,8 @@
       a.setAttribute('aria-label', sec.dataset.title || '');
       rail.appendChild(a);
     });
-    var links = [].slice.call(rail.children);
+    var links  = [].slice.call(rail.children);
+    var mlinks = [].slice.call(document.querySelectorAll('.menu a'));
     var markRail = function(){
       /* активна та полоса, что пересекает треть высоты экрана */
       var line = window.pageYOffset + window.innerHeight * 0.34;
@@ -931,6 +1072,11 @@
       links.forEach(function(a,i){ a.classList.toggle('here', i === cur); });
       /* на светлой полосе рельса переворачивается в чернила */
       rail.classList.toggle('on-paper', /b-paper/.test(secs[cur].className));
+      /* тот же раздел подсвечивается в оглавлении шапки */
+      var hash = '#' + secs[cur].id;
+      mlinks.forEach(function(a){
+        a.classList.toggle('here', a.getAttribute('href') === hash);
+      });
     };
     addEventListener('scroll', function(){
       if (!railTick){ railTick = true; requestAnimationFrame(function(){
