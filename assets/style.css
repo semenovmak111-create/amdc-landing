@@ -2243,107 +2243,71 @@ html.js .hero.lit h1 .ln > i{
 .b-onyx .vs .row.me .rate .n,.b-indigo .vs .row.me .rate .n{color:var(--au-hi)}
 
 /* ============================================================
-   ПОЧЕМУ ОНИ НЕ ДОХОДЯТ
+   10. СТО ЧЕЛОВЕК
 
-   Опрос был отдельной полосой и висел в воздухе: «в стране так
-   принято». На своём месте — сразу за расчётом потерь — он
-   объясняет, откуда берётся дыра: половина людей записывается
-   через сайт клиники, а на этом сайте записаться нельзя.
+   Полосы показывали проценты, а речь о людях. Сто фигурок:
+   каждая — человек, цвет — то, как он хочет записаться.
+   Сразу видно, что синих и красных вместе втрое больше, чем
+   зелёных, — и что нажать им некуда.
    ============================================================ */
-
-/* подрубрика внутри полосы: делит блок на две мысли */
-.mini-rub{
-  display:flex;align-items:center;gap:.8rem;
-  margin:clamp(1.8rem,3vw,2.6rem) 0 .9rem;
-  font:700 var(--f-rub)/1 var(--mono);
-  letter-spacing:.2em;text-transform:uppercase;
-  color:var(--au-ink);
-}
-.mini-rub::after{
-  content:'';flex:1 1 auto;height:1px;min-width:2rem;
-  background:linear-gradient(90deg,var(--rule-l),transparent);
-}
-.b-onyx .mini-rub,.b-indigo .mini-rub,.b-emerald .mini-rub{color:var(--au)}
-.b-onyx .mini-rub::after,.b-indigo .mini-rub::after{
-  background:linear-gradient(90deg,var(--rule),transparent);
-}
-
-.why-h{
-  margin:0;
-  font:500 clamp(1.3rem,1.05rem + 1.05vw,1.85rem)/1.28 var(--serif);
-  letter-spacing:-.01em;color:var(--ink);max-width:34ch;
-}
-.why-h b{font-weight:500;color:var(--carn-ink)}
 
 .people{
   display:grid;grid-template-columns:auto minmax(0,1fr);
-  gap:clamp(1.4rem,3.2vw,3rem);
+  gap:clamp(1.5rem,3.4vw,3.2rem);
   align-items:start;
-  margin-top:clamp(1.2rem,2.2vw,1.8rem);
+  margin-top:clamp(1.5rem,2.6vw,2.15rem);
 }
-
-/* ---- сто человек --------------------------------------- */
 .ppl{
   display:grid;grid-template-columns:repeat(10,1fr);
   gap:.3rem;
-  width:clamp(250px,26vw,320px);
-  padding:clamp(.85rem,1.5vw,1.15rem);
-  border:1px solid var(--rule-l);
+  width:clamp(268px,29vw,360px);
+  padding:clamp(.9rem,1.6vw,1.25rem);
+  border:1px solid var(--rule);
   border-radius:var(--r-md);
-  background:linear-gradient(180deg,var(--paper-3),rgba(255,255,255,.45));
+  background:linear-gradient(180deg,rgba(244,241,233,.05),rgba(244,241,233,.015));
 }
 .pp{display:block;line-height:0}
-.pp .i{width:100%;height:auto;aspect-ratio:1;stroke-width:2.1}
-.p-site .i{color:var(--carn)}
-.p-oth .i{color:rgba(18,22,26,.17)}
-
-/* ---- откуда люди приходят ------------------------------ */
-.ppl-leg{display:grid;gap:1rem;align-content:start}
-.chans{display:grid;gap:.55rem}
-.chan{
-  display:grid;grid-template-columns:3.1rem minmax(7rem,1fr) minmax(0,1.25fr);
-  gap:.4rem .9rem;align-items:baseline;
-  padding-bottom:.5rem;
-  border-bottom:1px solid var(--rule-l2);
+.pp .i{
+  width:100%;height:auto;aspect-ratio:1;
+  stroke-width:2.1;
 }
-.ch-n{
-  font:500 1.12rem/1 var(--serif);
+.p-agg .i{color:var(--carn)}
+.p-site .i{color:var(--amber)}
+.p-tel .i{color:var(--jade)}
+.p-oth .i{color:rgba(244,241,233,.22)}
+
+/* ---- расшифровка --------------------------------------- */
+.ppl-leg{display:grid;gap:.85rem;align-content:start}
+.lg{
+  display:grid;grid-template-columns:3.2rem minmax(0,1fr);
+  gap:.9rem;align-items:baseline;
+  padding-bottom:.8rem;
+  border-bottom:1px solid var(--rule-2);
+}
+.lg-n{
+  font:500 clamp(1.5rem,1.2rem + .9vw,1.95rem)/1 var(--serif);
   font-variant-numeric:tabular-nums lining-nums;
-  color:var(--ink);text-align:right;
+  letter-spacing:-.015em;text-align:right;
 }
-.ch-t{font:600 var(--f-sm)/1.3 var(--sans);color:var(--ink)}
-.ch-c{
-  display:flex;align-items:baseline;gap:.45rem;
-  font-size:.78rem;line-height:1.4;color:var(--ink-3);
+.lg.agg .lg-n{color:var(--carn-hi)}
+.lg.site .lg-n{color:var(--amber)}
+.lg.tel .lg-n{color:var(--jade-hi)}
+.lg.oth .lg-n{color:var(--t4)}
+.lg-t b{
+  display:block;margin-bottom:.18rem;
+  font:700 var(--f-sm)/1.3 var(--sans);color:var(--t1);
 }
-.ch-c::before{
-  content:'';width:6px;height:6px;border-radius:50%;flex:none;
-  position:relative;top:-1px;
+.lg-t p{margin:0;font-size:.82rem;line-height:1.5;color:var(--t3)}
+.lg-sum{
+  margin-top:.15rem;
+  font:400 clamp(1.06rem,1rem + .42vw,1.3rem)/1.45 var(--serif);
+  color:var(--t1);
 }
-.chan.yes .ch-c::before{background:var(--jade)}
-.chan.no .ch-c::before{background:var(--carn)}
-.chan.nil .ch-c::before{background:rgba(18,22,26,.22)}
-.chan.no .ch-n{color:var(--carn-ink)}
-.chan.yes .ch-n{color:var(--jade-ink)}
-
-.src{
-  margin:0;
-  font:400 .74rem/1.55 var(--sans);color:var(--ink-4);
-}
-.src a{
-  display:inline-flex;align-items:center;gap:.32rem;
-  color:var(--au-ink);text-decoration:none;
-  border-bottom:1px solid rgba(107,85,39,.35);
-  transition:border-color .3s;
-}
-.src a:hover{border-bottom-color:var(--au-ink)}
-.src a .i{width:.85em;height:.85em;stroke-width:2.2}
+.lg-sum b{color:var(--au-hi);font-weight:500}
 
 @media (max-width:900px){
   .people{grid-template-columns:1fr}
   .ppl{width:min(320px,100%)}
-  .chan{grid-template-columns:3.1rem minmax(0,1fr);}
-  .ch-c{grid-column:2/3}
 }
 
 /* ============================================================
