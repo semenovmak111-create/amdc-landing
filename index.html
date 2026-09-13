@@ -54,18 +54,6 @@
 
 <!-- ============ ШАПКА ============ -->
 <header class="top">
-
-  <!-- Верхняя строка — реквизиты бланка: кому, откуда, номер.
-       На прокрутке складывается, и шапка становится рабочей. -->
-  <div class="topbar">
-    <div class="wrap">
-      <span class="tb-l"><i class="live" aria-hidden="true"></i>Отвечаю в течение часа · сегодня до 21:00</span>
-      <span class="tb-c">Персональное предложение для медицинского центра АМДЦ · ул. Орбели, 19</span>
-      <span class="tb-r">Санкт-Петербург<i class="tb-sep" aria-hidden="true"></i>№ 001 / 2026</span>
-    </div>
-  </div>
-
-  <!-- Рабочая строка: знак, оглавление, связь. -->
   <div class="topmain">
     <div class="wrap">
 
@@ -73,18 +61,18 @@
         <span class="mark" aria-hidden="true"><i class="mk-cross"></i></span>
         <span class="btext">
           <span class="bname">Разработка конверсионных сайтов</span>
-          <span class="bsub">«под ключ»</span>
+          <span class="bkey">под ключ</span>
         </span>
       </a>
 
-      <!-- Меню набрано как оглавление документа: номер полосы
-           под номером раздела на странице, а не «пункты». -->
+      <!-- Оглавление собрано в одну капсулу: не пять ссылок
+           вразнобой, а переключатель разделов. -->
       <nav class="menu" aria-label="Разделы предложения">
-        <a href="#money"><em>02</em><span>Расчёт</span></a>
-        <a href="#problem"><em>03</em><span>Ваш сайт</span></a>
-        <a href="#case"><em>10</em><span>Пример</span></a>
-        <a href="#faq"><em>11</em><span>Вопросы</span></a>
-        <a href="#how"><em>12</em><span>Предложение</span></a>
+        <a href="#money">Расчёт</a>
+        <a href="#problem">Ваш сайт</a>
+        <a href="#case">Пример</a>
+        <a href="#faq">Вопросы</a>
+        <a href="#how">Предложение</a>
       </nav>
 
       <div class="topr">
@@ -97,7 +85,6 @@
 
     </div>
   </div>
-
 </header>
 
 <!-- ============ 1. ПЕРВЫЙ ЭКРАН ============ -->
@@ -194,51 +181,74 @@
   <div class="wrap">
     <div class="rub"><span class="n">02</span>Сколько это стоит вам</div>
     <h2 class="wide">22 клиента и 191 000 ₽ проходят мимо каждый месяц</h2>
-    <p class="lede">Эти люди уже ищут вас — и не доходят. Здесь первый поток: те, кто открыл вашу карточку в справочниках и не захотел звонить.</p>
-    <figure class="funnel" role="img"
-            aria-label="Из 420 просмотров карточек до приёма доходят 13 человек">
-      <svg viewBox="0 0 1100 300" preserveAspectRatio="none" aria-hidden="true">
-        <defs>
-          <linearGradient id="fnl" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0"   stop-color="#D9B87A"/>
-            <stop offset=".52" stop-color="#BE8B4E"/>
-            <stop offset="1"   stop-color="#B24630"/>
-          </linearGradient>
-          <linearGradient id="fnlv" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0"   stop-color="#fff" stop-opacity=".34"/>
-            <stop offset=".5"  stop-color="#fff" stop-opacity="0"/>
-            <stop offset="1"   stop-color="#000" stop-opacity=".14"/>
-          </linearGradient>
-        </defs>
-        <g class="fnl-grid">
-          <line x1="60" y1="18" x2="60" y2="282"/>
-          <line x1="400" y1="18" x2="400" y2="282"/>
-          <line x1="740" y1="18" x2="740" y2="282"/>
-          <line x1="1040" y1="18" x2="1040" y2="282"/>
-        </g>
-        <path class="fnl-body"
-              d="M60 32 L400 49 L740 126 L1040 129 L1040 171 L740 174 L400 251 L60 268 Z"
-              fill="url(#fnl)"/>
-        <path class="fnl-body"
-              d="M60 32 L400 49 L740 126 L1040 129 L1040 171 L740 174 L400 251 L60 268 Z"
-              fill="url(#fnlv)"/>
-      </svg>
-      <figcaption class="fnl-lab">
-        <span style="--x:5.4%;--v:100%">
-          <b>420</b><i>просмотров карточек<br>в месяц</i></span>
-        <span style="--x:36.4%;--v:85%">
-          <b>305</b><i>ушли, не позвонив<br>72,6%</i></span>
-        <span style="--x:67.3%;--v:21%">
-          <b>18</b><i>оставили бы заявку<br>на странице с кнопкой</i></span>
-        <span class="end" style="--x:94.5%;--v:18%">
-          <b>13</b><i>дошли бы до приёма<br>≈ 65 000 ₽</i></span>
-      </figcaption>
-    </figure>
+    <p class="lede">Слева — что происходит с этими людьми сейчас, справа — что было бы, если бы у услуги была своя страница. Люди в обоих столбцах одни и те же.</p>
+    <!-- Раньше это была одна воронка, и в ней мешались две разные
+         истории: что происходит сейчас и что было бы со страницей.
+         Теперь их две, рядом, и люди в обеих одни и те же. -->
+    <div class="two-ways">
+
+      <div class="tw-top">
+        <span class="tw-n">420</span>
+        <div class="tw-t">
+          <b>раз в месяц открывают вашу карточку в справочниках</b>
+          <p>Это не холодная аудитория: человек уже ищет клинику рядом с домом и уже смотрит на вас. Дальше всё решает одно — есть ли ему куда нажать.</p>
+        </div>
+      </div>
+
+      <div class="tw-grid">
+
+        <section class="tw-col bad">
+          <div class="tw-head">
+            <span class="tw-k">Как сейчас</span>
+            <h3>Записаться можно только звонком</h3>
+          </div>
+          <ul class="tw-rows">
+            <li>
+              <div class="tw-l"><b>420</b><span>открыли карточку</span></div>
+              <i class="bar" style="--w:100%"></i>
+            </li>
+            <li>
+              <div class="tw-l"><b>305</b><span>ушли, не позвонив — это 72,6%</span></div>
+              <i class="bar" style="--w:85%"></i>
+            </li>
+            <li class="acc">
+              <div class="tw-l"><b>0</b><span>из них дошли до приёма</span></div>
+              <i class="bar" style="--w:1.5%"></i>
+            </li>
+          </ul>
+          <div class="tw-sum"><b>0 ₽</b><span>с этих 305 человек. Вы даже не узнали, что они приходили</span></div>
+        </section>
+
+        <section class="tw-col good">
+          <div class="tw-head">
+            <span class="tw-k">Со страницей услуги</span>
+            <h3>Цена и кнопка записи прямо на экране</h3>
+          </div>
+          <ul class="tw-rows">
+            <li>
+              <div class="tw-l"><b>305</b><span>те же люди, но уже на вашей странице</span></div>
+              <i class="bar" style="--w:85%"></i>
+            </li>
+            <li>
+              <div class="tw-l"><b>18</b><span>оставили заявку, не звоня</span></div>
+              <i class="bar" style="--w:21%"></i>
+            </li>
+            <li class="acc">
+              <div class="tw-l"><b>13</b><span>дошли до приёма</span></div>
+              <i class="bar" style="--w:18%"></i>
+            </li>
+          </ul>
+          <div class="tw-sum"><b>65 000 ₽</b><span>в месяц с тех же 305 человек — по урологии и анализам</span></div>
+        </section>
+
+      </div>
+      <p class="tw-scale">Полосы нарисованы по корню из числа: при обычной шкале 13 рядом с 420 превращается в невидимую нитку.</p>
+    </div>
     <div class="total">
       <div class="big">2,3 млн ₽<small>за двенадцать месяцев</small></div>
       <div class="txt">пройдёт мимо кассы, пока страницы нет.<br>Месяц ожидания — <b>минус 22 клиента</b>, квартал — <b>минус 66</b>: у человека появляется «своя клиника», и это уже не вы.</div>
     </div>
-    <p class="note">В воронке только урология и анализы. Стоматология и косметология, которых на сайте нет вовсе, добавляют ещё 9 клиентов и 126 000 ₽ — это 3 170 запросов в месяц в вашем районе. Цифры оценочные, по числу отзывов на площадках: точные лежат в вашей Метрике, сверим на созвоне.</p>
+    <p class="note">В расчёте только урология и анализы. Стоматология и косметология, которых на сайте нет вовсе, добавляют ещё 9 клиентов и 126 000 ₽ — это 3 170 запросов в месяц в вашем районе. Цифры оценочные, по числу отзывов на площадках: точные лежат в вашей Метрике, сверим на созвоне.</p>
   </div>
 </section>
 
@@ -395,18 +405,18 @@
           </g>
           <g class="q-ray">
             <line x1="150" y1="140" x2="76" y2="105"/>
-            <line x1="150" y1="140" x2="252" y2="187"/>
+            <line x1="150" y1="140" x2="130" y2="163"/>
             <line x1="150" y1="140" x2="168" y2="122"/>
           </g>
           <circle class="q-dot q-them" cx="76"  cy="105" r="6"/>
-          <circle class="q-dot q-them" cx="252" cy="187" r="6"/>
+          <circle class="q-dot q-them" cx="130" cy="163" r="6"/>
           <circle class="q-dot q-them" cx="168" cy="122" r="6"/>
           <circle class="q-dot q-me"   cx="150" cy="140" r="8.5"/>
         </svg>
         <span class="q-lab q-l-me"   style="--x:47%;--y:59%">АМДЦ<i>вы</i></span>
         <span class="q-lab q-l-a"    style="--x:54%;--y:38%">Амрита<i>тот же дом</i></span>
         <span class="q-lab q-l-m"    style="--x:4%;--y:29%">МИРОС<i>500 м</i></span>
-        <span class="q-lab q-l-p"    style="--x:70%;--y:76%">Праксимед<i>одна остановка</i></span>
+        <span class="q-lab q-l-p"    style="--x:16%;--y:70%">Мой Зубной<i>соседний дом</i></span>
         <figcaption>Радиусы — 250, 500 и 750 метров</figcaption>
       </figure>
     </div>
@@ -443,14 +453,14 @@
 
       <figure class="site">
         <div class="win">
-          <div class="bar"><i></i><i></i><i></i><span class="url">praximed.ru</span></div>
-          <img src="assets/shots/praximed.webp" width="1120" height="875" loading="lazy" decoding="async"
-               alt="Главная страница центра «Праксимед»: меню с отделениями и плитка из десяти направлений — спортивная медицина, педиатрия, терапия, реабилитация, физиотерапия, массаж, УЗИ">
+          <div class="bar"><i></i><i></i><i></i><span class="url">moyzubnoy.ru</span></div>
+          <img src="assets/shots/zubnoy.webp" width="1120" height="875" loading="lazy" decoding="async"
+               alt="Страница стоматологии «Мой Зубной» на улице Орбели, 17: адрес, часы работы, телефон, пеший маршрут от метро, вкладки «Врачи» и «Отзывы», внизу кнопки «Цены» и «Записаться»">
         </div>
         <figcaption>
-          <div class="st-h"><b>Праксимед</b><span class="st-r">94 отзыва</span></div>
-          <div class="st-d">Одна остановка — 2-й Муринский просп., 26</div>
-          <p>Десять отделений плиткой сразу под шапкой и поиск по сайту: человек попадает в своё направление за один клик.</p>
+          <div class="st-h"><b>Мой Зубной</b><span class="st-r">5,0 · 139 оценок</span></div>
+          <div class="st-d">Соседний дом — ул. Орбели, 17</div>
+          <p>У каждого кабинета своя страница: часы, телефон, пеший маршрут от метро, свои врачи и отзывы. Внизу всегда «Цены» и «Записаться».</p>
         </figcaption>
       </figure>
 
@@ -510,22 +520,22 @@
             <li>
               <span class="tm">21:31</span>
               <span class="ic"><svg class="i"><use href="#i-eye"/></svg></span>
-              <span class="tx">Первая же ссылка — не каталог, а страница услуги: <b>«Приём уролога, ул. Орбели»</b>, врач с фотографией и адрес в двух шагах от дома</span>
+              <span class="tx">Первая же ссылка — <b>страница «Приём уролога на Орбели»</b>.</span>
             </li>
             <li>
               <span class="tm">21:32</span>
               <span class="ic"><svg class="i"><use href="#i-price"/></svg></span>
-              <span class="tx">Рядом с услугой стоит цена: <b>приём 1 500 ₽, УЗИ 2 200 ₽</b>. Решение принято до того, как он кому-то позвонил</span>
+              <span class="tx">Рядом с услугой стоит цена: <b>1 500 ₽</b>.</span>
             </li>
             <li>
               <span class="tm">21:33</span>
               <span class="ic"><svg class="i"><use href="#i-clock"/></svg></span>
-              <span class="tx">Нажимает «Записаться», выбирает <b>четверг, 18:30</b>, оставляет имя и телефон — без звонка, в тишине</span>
+              <span class="tx">Жмёт «Записаться» и выбирает <b>четверг, 18:30</b>.</span>
             </li>
             <li class="fin">
               <span class="tm">21:34</span>
               <span class="ic"><svg class="i"><use href="#i-check"/></svg></span>
-              <span class="tx"><b>Заявка у администратора.</b> Вопрос закрыт за четыре минуты</span>
+              <span class="tx"><b>Заявка у администратора</b> — через четыре минуты.</span>
             </li>
           </ol>
           <div class="w-out">
@@ -543,22 +553,22 @@
             <li>
               <span class="tm">21:31</span>
               <span class="ic"><svg class="i"><use href="#i-eye"/></svg></span>
-              <span class="tx">По услуге вас в выдаче нет: только <b>строчка в чужом каталоге</b>, в общем списке из двадцати клиник и без цены</span>
+              <span class="tx">В выдаче вас нет — только <b>строчка в чужом каталоге</b>.</span>
             </li>
             <li>
               <span class="tm">21:32</span>
               <span class="ic"><svg class="i"><use href="#i-phone-m"/></svg></span>
-              <span class="tx">Всё-таки открывает am-dc.ru и видит <b>«АМДЦ | Главная»</b>: логотип, два телефона, картинка и текст «О центре»</span>
+              <span class="tx">Всё-таки открывает am-dc.ru и видит <b>«АМДЦ | Главная»</b>.</span>
             </li>
             <li>
               <span class="tm">21:33</span>
               <span class="ic"><svg class="i"><use href="#i-price"/></svg></span>
-              <span class="tx">Ни цены, ни врача, ни кнопки записи. <b>Остаётся только позвонить</b> — в половине десятого вечера, наугад, вдруг уже закрыто</span>
+              <span class="tx">Ни цены, ни врача, ни кнопки записи — <b>остаётся звонить</b>.</span>
             </li>
             <li class="fin">
               <span class="tm">21:34</span>
               <span class="ic"><svg class="i"><use href="#i-x"/></svg></span>
-              <span class="tx"><b>Закрывает вкладку</b> и возвращается в выдачу — к тем, у кого всё это было</span>
+              <span class="tx"><b>Закрывает вкладку</b> и уходит к соседям.</span>
             </li>
           </ol>
           <div class="w-out">
@@ -577,29 +587,61 @@
 <!-- ============ 7. ОПРОС ПАЦИЕНТОВ ============ -->
 <section class="band b-indigo tight" data-sec="s07" data-title="Опрос">
   <div class="wrap">
-    <div class="rub"><span class="n">07</span>Опрос клиентов · Санкт-Петербург</div>
-    <h2 class="wide">72,6% петербуржцев хотят записываться без звонка. У вас работает только звонок.</h2>
-    <div class="bars">
-      <div class="brow">
-        <div class="blab">Онлайн через агрегаторы</div>
-        <div class="track"><span class="fill" data-w="92%" style="background:linear-gradient(90deg,#8E2F1F,#D2604B)"></span></div>
-        <div class="val">41,5%</div>
-        <div class="cap no"><span>В ваших карточках стоит только телефон — кнопки записи нет</span></div>
+    <div class="rub"><span class="n">07</span>Данные Яндекса · Санкт-Петербург</div>
+    <h2 class="wide">По данным Яндекса, 72,6% петербуржцев хотят записываться без звонка. У вас работает только звонок.</h2>
+
+    <!-- Сто человек — сто фигурок. Так видно не проценты, а людей:
+         сколько из них уйдёт, если единственная кнопка — «позвонить». -->
+    <div class="people">
+      <div class="ppl" role="img"
+           aria-label="Из ста петербуржцев 42 записываются через агрегаторы, 24 — на сайте клиники, 20 — по телефону, 14 — другими способами">
+          <i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i>
+          <i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i>
+          <i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i>
+          <i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i>
+          <i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-agg"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i>
+          <i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i>
+          <i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-site"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i>
+          <i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i>
+          <i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-tel"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-oth"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-oth"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-oth"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-oth"><svg class="i"><use href="#i-user"/></svg></i>
+          <i class="pp p-oth"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-oth"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-oth"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-oth"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-oth"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-oth"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-oth"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-oth"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-oth"><svg class="i"><use href="#i-user"/></svg></i><i class="pp p-oth"><svg class="i"><use href="#i-user"/></svg></i>
       </div>
-      <div class="brow">
-        <div class="blab">Онлайн на сайте клиники</div>
-        <div class="track"><span class="fill" data-w="54%" style="background:linear-gradient(90deg,#8E2F1F,#C4563E)"></span></div>
-        <div class="val">24,5%</div>
-        <div class="cap no"><span>Форма записи спрятана в разделе «Клиентам» — со страницы услуги туда не попасть</span></div>
-      </div>
-      <div class="brow">
-        <div class="blab">По телефону</div>
-        <div class="track"><span class="fill" data-w="44%" style="background:linear-gradient(90deg,#0B6A53,#46C79E)"></span></div>
-        <div class="val">19,8%</div>
-        <div class="cap yes"><span>Единственный канал, который у вас сегодня работает</span></div>
+
+      <div class="ppl-leg">
+        <div class="lg agg">
+          <span class="lg-n">42</span>
+          <div class="lg-t">
+            <b>через агрегаторы и карты</b>
+            <p>В ваших карточках стоит только телефон — кнопки записи нет.</p>
+          </div>
+        </div>
+        <div class="lg site">
+          <span class="lg-n">24</span>
+          <div class="lg-t">
+            <b>на сайте клиники</b>
+            <p>Форма спрятана в разделе «Клиентам»: со страницы услуги в неё не попасть.</p>
+          </div>
+        </div>
+        <div class="lg tel">
+          <span class="lg-n">20</span>
+          <div class="lg-t">
+            <b>звонком</b>
+            <p>Единственный канал, который у вас сегодня работает.</p>
+          </div>
+        </div>
+        <div class="lg oth">
+          <span class="lg-n">14</span>
+          <div class="lg-t">
+            <b>иначе</b>
+            <p>Лично в регистратуре, через знакомых или в мессенджере.</p>
+          </div>
+        </div>
+        <div class="lg-sum">Из ста человек <b>66 готовы записаться сами</b>, не разговаривая. Нажать им пока некуда.</div>
       </div>
     </div>
-    <div class="strip">Это не холодная аудитория: люди уже выбрали вас и отваливаются на последнем шаге. Вернуть их можно одной ссылкой.</div>
+
+    <div class="strip">Это не холодная аудитория: люди уже выбрали вас и отваливаются на последнем шаге. Вернуть их можно одной ссылкой.</div>
+    <p class="note">Проценты — по данным Яндекса для Санкт-Петербурга: 41,5% агрегаторы, 24,5% сайт клиники, 19,8% телефон. В рисунке они округлены до целых человек.</p>
   </div>
 </section>
 
@@ -999,7 +1041,7 @@
     'section:not(.hero) .wrap > .strip',
     'section:not(.hero) .wrap > .note',
     'section:not(.hero) .wrap > .bul',
-    '.audit > *', '.funnel', '.total', '.ticket', '.way', '.brow',
+    '.audit > *', '.tw-top', '.tw-col', '.total', '.ticket', '.way', '.people',
     '.formgrid > *', '.gain', '.sell', '.own',
     '.step', '.vs .row', '.site', '.case > *',
     '.faq details', '.incl .col', '.guard'
@@ -1027,7 +1069,7 @@
   /* ---- 5. Данные дорисовываются на виду ------------------ */
   /* Воронка, кольцо покрытия и полосы опроса. Каждое — по
      одному разу: цифра рисуется, потом стоит. */
-  var draws = [].slice.call(document.querySelectorAll('.funnel,.ring'));
+  var draws = [].slice.call(document.querySelectorAll('.ring'));
   var fills = [].slice.call(document.querySelectorAll('.fill[data-w]'));
   function paint(el){ el.style.width = el.getAttribute('data-w'); }
 
